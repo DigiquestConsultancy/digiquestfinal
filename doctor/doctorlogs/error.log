@@ -1,0 +1,871 @@
+2024-05-16 14:15:35,906 - error_doctor - ERROR - 168 - User details already exist for this mobile number
+2024-05-16 14:16:24,279 - error_doctor - ERROR - 168 - User details already exist for 9935266740 mobile number
+2024-05-16 14:16:41,023 - error_doctor - ERROR - 173 - Mobile number is not Registered
+2024-05-16 14:17:27,287 - error_doctor - ERROR - 173 - Mobile number 993526674 is not Registered
+2024-05-16 14:17:53,363 - error_doctor - ERROR - 164 - Mobile number is missing in the request
+2024-05-16 15:06:20,725 - error_doctor - ERROR - 144 - Internal Server Error: type object 'DoctorRegister' has no attribute 'object'
+2024-05-16 15:06:53,172 - error_doctor - ERROR - 144 - Internal Server Error: 'str' object is not a mapping
+2024-05-16 15:08:20,074 - error_doctor - ERROR - 144 - Internal Server Error:
+2024-05-16 15:15:03,405 - error_doctor - ERROR - 129 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 15:15:15,075 - error_doctor - ERROR - 154 - Incorrect OTP.
+2024-05-16 15:16:01,363 - error_doctor - ERROR - 129 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 15:17:56,787 - error_doctor - ERROR - 150 - Incorrect OTP.
+2024-05-16 15:21:29,347 - error_doctor - ERROR - 161 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 15:21:42,382 - error_doctor - ERROR - 182 - Incorrect OTP.
+2024-05-16 15:47:07,717 - error_doctor - ERROR - 161 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 15:48:52,124 - error_doctor - ERROR - 161 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 15:55:18,882 - error_doctor - ERROR - 161 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 15:55:48,735 - error_doctor - ERROR - 161 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 15:58:28,304 - error_doctor - ERROR - 161 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 16:14:22,483 - error_doctor - ERROR - 35 - Mobile number is already registered: 9935889905
+2024-05-16 16:15:10,745 - error_doctor - ERROR - 35 - Mobile number is already registered: 9935889989
+2024-05-16 16:16:29,769 - error_doctor - ERROR - 35 - Mobile number is already registered: 9935889988
+2024-05-16 16:22:04,373 - error_doctor - ERROR - 151 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 16:22:05,909 - error_doctor - ERROR - 151 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 18:00:06,499 - error_doctor - ERROR - 150 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 18:02:38,605 - error_doctor - ERROR - 119 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 18:02:39,316 - error_doctor - ERROR - 119 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 18:05:19,913 - error_doctor - ERROR - 121 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 18:05:30,311 - error_doctor - ERROR - 149 - Internal Server Error: get() returned more than one DoctorRegister -- it returned 6!
+2024-05-16 18:06:45,532 - error_doctor - ERROR - 152 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 18:06:55,679 - error_doctor - ERROR - 180 - Internal Server Error: get() returned more than one DoctorRegister -- it returned 6!
+2024-05-16 18:09:31,023 - error_doctor - ERROR - 167 - Multiple users found for mobile number: 9935266755
+2024-05-16 18:11:27,976 - error_doctor - ERROR - 167 - Multiple users found for mobile number: 9935266740
+2024-05-16 18:13:36,281 - error_doctor - ERROR - 189 - Internal Server Error: 'str' object has no attribute 'decode'
+2024-05-16 18:15:54,086 - error_doctor - ERROR - 152 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-16 18:19:01,540 - error_doctor - ERROR - 180 - Internal Server Error: name 'user_id' is not defined
+2024-05-16 18:37:28,961 - error_doctor - ERROR - 35 - Mobile number is already registered: 9935889988
+2024-05-16 18:38:51,383 - error_doctor - ERROR - 62 - Mobile number 9935889988 is not registered or OTP session expired. Resend OTP.
+2024-05-16 18:38:54,546 - error_doctor - ERROR - 62 - Mobile number 9935889988 is not registered or OTP session expired. Resend OTP.
+2024-05-16 18:39:15,001 - error_doctor - ERROR - 68 - Mobile number is already registered: 9935889986
+2024-05-16 18:39:17,074 - error_doctor - ERROR - 68 - Mobile number is already registered: 9935889986
+2024-05-16 18:39:20,985 - error_doctor - ERROR - 62 - Mobile number 993588986 is not registered or OTP session expired. Resend OTP.
+2024-05-16 18:39:27,749 - error_doctor - ERROR - 62 - Mobile number 99588986 is not registered or OTP session expired. Resend OTP.
+2024-05-16 18:40:17,782 - error_doctor - ERROR - 62 - Please enter a 10-digit number.
+2024-05-16 18:40:28,160 - error_doctor - ERROR - 65 - Mobile number is already registered: 9935889986
+2024-05-18 13:51:41,603 - error_doctor - ERROR - 123 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-27 11:21:51,521 - error_doctor - ERROR - 123 - OTP has expired or mobile number is not registered: 9935266755
+2024-05-27 11:23:12,722 - error_doctor - ERROR - 173 - Doctor not found for mobile number: 0000000000
+2024-05-28 11:06:37,941 - error_doctor - ERROR - 179 - Mobile number is missing in the request
+2024-05-28 11:06:46,403 - error_doctor - ERROR - 196 - Invalid data: {'doctor': [ErrorDetail(string='This field is required.', code='required')], 'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')]}
+2024-05-28 11:09:46,134 - error_doctor - ERROR - 197 - Invalid data: {'doctor': [ErrorDetail(string='This field is required.', code='required')], 'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')]}
+2024-05-28 11:11:08,695 - error_doctor - ERROR - 197 - Invalid data: {'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')]}
+2024-06-03 10:29:41,479 - error_doctor - ERROR - 187 - Mobile number 1234569876 is not Registered
+2024-06-03 12:57:57,866 - error_doctor - ERROR - 32 - Mobile number is already registered: 1234569876
+2024-06-03 13:36:55,611 - error_doctor - ERROR - 32 - Mobile number is already registered: 1234569876
+2024-06-03 14:17:19,570 - error_doctor - ERROR - 61 - Mobile number is already registered: 1234569876
+2024-06-05 16:00:30,016 - error_doctor - ERROR - 191 - Mobile number 1234569876 is not Registered
+2024-06-05 16:02:58,355 - error_doctor - ERROR - 187 - User details already exist for 9935266755 mobile number
+2024-06-05 16:38:43,830 - error_doctor - ERROR - 215 - User details not found for the provided mobile number
+2024-06-06 14:55:57,898 - error_doctor - ERROR - 32 - Mobile number is already registered: 8800980355
+2024-06-06 14:56:06,102 - error_doctor - ERROR - 32 - Mobile number is already registered: 8800980355
+2024-06-06 14:57:43,335 - error_doctor - ERROR - 126 - Incorrect OTP entered for mobile number: 8888888888
+2024-06-06 14:58:38,987 - error_doctor - ERROR - 221 - User details not found for the provided mobile number
+2024-06-06 15:01:38,369 - error_doctor - ERROR - 188 - User details already exist for 8888888888 mobile number
+2024-06-06 15:02:29,736 - error_doctor - ERROR - 188 - User details already exist for 8888888888 mobile number
+2024-06-06 15:05:07,781 - error_doctor - ERROR - 188 - User details already exist for 8888888888 mobile number
+2024-06-06 15:15:14,273 - error_doctor - ERROR - 32 - Mobile number is already registered: 8888888888
+2024-06-06 15:16:25,641 - error_doctor - ERROR - 207 - Invalid data: {'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-06 15:20:49,441 - error_doctor - ERROR - 188 - User details already exist for 8888888888 mobile number
+2024-06-06 15:21:04,988 - error_doctor - ERROR - 188 - User details already exist for 8888888888 mobile number
+2024-06-06 15:26:13,940 - error_doctor - ERROR - 188 - User details already exist for 8888888888 mobile number
+2024-06-07 13:52:07,626 - error_doctor - ERROR - 207 - Invalid data: {'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-06-07 13:52:59,068 - error_doctor - ERROR - 188 - User details already exist for 8383813486 mobile number
+2024-06-15 15:30:48,035 - error_doctor - ERROR - 222 - User details not found for the provided mobile number
+2024-06-15 15:31:31,746 - error_doctor - ERROR - 222 - User details not found for the provided mobile number
+2024-06-15 15:31:48,173 - error_doctor - ERROR - 222 - User details not found for the provided mobile number
+2024-06-15 15:32:16,461 - error_doctor - ERROR - 32 - Mobile number is already registered: 9935266755
+2024-06-15 15:32:27,771 - error_doctor - ERROR - 222 - User details not found for the provided mobile number
+2024-06-15 15:32:37,756 - error_doctor - ERROR - 208 - Invalid data: {'experience': [ErrorDetail(string='This field is required.', code='required')], 'qualification': [ErrorDetail(string='This field is required.', code='required')]}
+2024-06-17 10:41:00,271 - error_doctor - ERROR - 122 - OTP has expired or mobile number is not registered: 9935266755
+2024-06-17 10:56:30,088 - error_doctor - ERROR - 95 - Mobile number 7518868219 is not registered. Please register first.
+2024-06-17 12:05:07,619 - error_doctor - ERROR - 111 - Mobile number 1234567858 is not registered. Please register first.
+2024-06-17 13:18:35,606 - error_doctor - ERROR - 35 - Mobile number is already registered: 9935266755
+2024-06-17 13:18:50,405 - error_doctor - ERROR - 35 - Mobile number is already registered: 9935266755
+2024-06-18 11:27:19,063 - error_doctor - ERROR - 117 - Mobile number 8178308411 is not registered. Please register first.
+2024-06-18 12:16:10,312 - error_doctor - ERROR - 244 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='A valid integer is required.', code='invalid')], 'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')], 'qualification': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-06-18 12:16:49,637 - error_doctor - ERROR - 244 - Invalid data: {'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='A valid integer is required.', code='invalid')], 'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-06-18 12:17:26,082 - error_doctor - ERROR - 244 - Invalid data: {'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-18 12:17:27,463 - error_doctor - ERROR - 244 - Invalid data: {'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-18 12:17:28,535 - error_doctor - ERROR - 244 - Invalid data: {'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-18 12:17:28,745 - error_doctor - ERROR - 244 - Invalid data: {'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-18 12:17:33,872 - error_doctor - ERROR - 244 - Invalid data: {'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-18 12:17:40,486 - error_doctor - ERROR - 244 - Invalid data: {'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-18 12:18:05,950 - error_doctor - ERROR - 244 - Invalid data: {'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-18 12:18:59,183 - error_doctor - ERROR - 225 - User details already exist for 7518868219 mobile number
+2024-06-18 13:23:31,717 - error_doctor - ERROR - 35 - Mobile number is already registered: 7518868219
+2024-06-18 13:29:48,514 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 75188682193
+2024-06-18 14:37:28,442 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-18 15:26:30,737 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 1234567896
+2024-06-18 15:27:41,038 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 1234567896
+2024-06-18 15:28:19,210 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 1234567896
+2024-06-18 16:35:47,402 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 1234567896
+2024-06-18 16:42:22,807 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-18 16:55:04,738 - error_doctor - ERROR - 117 - Mobile number 1234567896 is not registered. Please register first.
+2024-06-18 16:58:47,710 - error_doctor - ERROR - 117 - Mobile number 1234567896 is not registered. Please register first.
+2024-06-18 16:59:21,805 - error_doctor - ERROR - 117 - Mobile number 1234567896 is not registered. Please register first.
+2024-06-18 17:52:06,477 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 7518868219
+2024-06-18 17:52:43,983 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 7518868219
+2024-06-18 17:55:39,821 - error_doctor - ERROR - 35 - Mobile number is already registered: 1234567896
+2024-06-18 17:56:21,918 - error_doctor - ERROR - 35 - Mobile number is already registered: 1234567896
+2024-06-18 17:59:35,036 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-18 18:02:50,638 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-18 18:02:50,822 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-18 18:02:51,005 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-18 18:02:54,301 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-18 18:10:02,881 - error_doctor - ERROR - 32 - Please enter a 10-digit number.
+2024-06-18 18:42:21,336 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 1111111111
+2024-06-19 12:08:19,947 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-19 12:20:34,070 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 7518868219
+2024-06-19 12:35:44,195 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 1111111111
+2024-06-19 13:20:15,256 - error_doctor - ERROR - 225 - User details already exist for 7518868219 mobile number
+2024-06-19 15:22:06,510 - error_doctor - ERROR - 117 - Mobile number 1234567896 is not registered. Please register first.
+2024-06-19 15:22:06,582 - error_doctor - ERROR - 117 - Mobile number 1234567896 is not registered. Please register first.
+2024-06-19 15:22:54,350 - error_doctor - ERROR - 117 - Mobile number 1234567896 is not registered. Please register first.
+2024-06-19 15:24:34,846 - error_doctor - ERROR - 117 - Mobile number 1234567896 is not registered. Please register first.
+2024-06-19 15:24:36,076 - error_doctor - ERROR - 117 - Mobile number 1234567896 is not registered. Please register first.
+2024-06-19 15:24:36,444 - error_doctor - ERROR - 117 - Mobile number 1234567896 is not registered. Please register first.
+2024-06-19 15:25:16,544 - error_doctor - ERROR - 117 - Mobile number 1234567896 is not registered. Please register first.
+2024-06-19 15:25:55,965 - error_doctor - ERROR - 117 - Mobile number 7518868219 is not registered. Please register first.
+2024-06-19 15:26:04,054 - error_doctor - ERROR - 117 - Mobile number 7518868219 is not registered. Please register first.
+2024-06-19 15:49:29,170 - error_doctor - ERROR - 117 - Mobile number 1234567896 is not registered. Please register first.
+2024-06-19 15:49:44,774 - error_doctor - ERROR - 117 - Mobile number 1234567896 is not registered. Please register first.
+2024-06-19 15:55:56,863 - error_doctor - ERROR - 117 - Mobile number 7518868219 is not registered. Please register first.
+2024-06-19 15:56:13,076 - error_doctor - ERROR - 117 - Mobile number 7518868219 is not registered. Please register first.
+2024-06-19 16:03:15,803 - error_doctor - ERROR - 117 - Mobile number 7518868219 is not registered. Please register first.
+2024-06-19 17:10:55,340 - error_doctor - ERROR - 225 - User details already exist for 7518868219 mobile number
+2024-06-19 17:26:59,239 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 1111111111
+2024-06-19 17:26:59,248 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 1111111111
+2024-06-19 17:26:59,298 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 1111111111
+2024-06-19 17:27:14,037 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 1111111111
+2024-06-19 17:27:36,383 - error_doctor - ERROR - 117 - Mobile number 1236547896 is not registered. Please register first.
+2024-06-20 12:44:19,101 - error_doctor - ERROR - 32 - Please enter a 10-digit number.
+2024-06-20 12:44:25,472 - error_doctor - ERROR - 35 - Mobile number is already registered: 9999999999
+2024-06-20 13:06:40,686 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 7518868219
+2024-06-20 14:32:35,034 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-20 14:33:44,864 - error_doctor - ERROR - 35 - Mobile number is already registered: 9999999999
+2024-06-20 16:01:17,895 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 9999999999
+2024-06-20 16:29:28,235 - error_doctor - ERROR - 117 - Mobile number 1234567890 is not registered. Please register first.
+2024-06-20 18:08:56,629 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 7518868219
+2024-06-21 11:06:55,640 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-21 11:11:20,273 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 7518868219
+2024-06-21 11:11:25,097 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 7518868219
+2024-06-21 12:42:47,906 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-21 15:27:49,943 - error_doctor - ERROR - 225 - User details already exist for 7518868219 mobile number
+2024-06-21 15:52:19,691 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-21 15:52:22,153 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-21 15:52:49,380 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-21 15:54:20,101 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-21 15:54:22,342 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-21 15:54:50,384 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-21 15:55:29,645 - error_doctor - ERROR - 35 - Mobile number is already registered: 7518868219
+2024-06-21 15:56:04,899 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-21 16:17:55,376 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-21 16:18:09,679 - error_doctor - ERROR - 35 - Mobile number is already registered: 7518868219
+2024-06-21 16:18:13,860 - error_doctor - ERROR - 35 - Mobile number is already registered: 7518868219
+2024-06-21 16:18:15,200 - error_doctor - ERROR - 35 - Mobile number is already registered: 7518868219
+2024-06-21 16:18:42,633 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-21 16:27:29,823 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-21 16:36:53,083 - error_doctor - ERROR - 32 - Please enter a 10-digit number.
+2024-06-21 17:46:08,996 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 7518868219
+2024-06-22 11:01:53,038 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-22 11:02:01,826 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-22 13:45:50,740 - error_doctor - ERROR - 117 - Mobile number 8901234567 is not registered. Please register first.
+2024-06-22 13:46:59,193 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 4444444444
+2024-06-22 13:47:34,522 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 4444444444
+2024-06-22 14:46:49,435 - error_doctor - ERROR - 186 - Internal Server Error: ClinicRegister matching query does not exist.
+2024-06-22 14:46:58,237 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-22 14:48:04,613 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-22 14:48:10,225 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-22 14:48:18,334 - error_doctor - ERROR - 35 - Mobile number is already registered: 7518868219
+2024-06-22 14:52:34,846 - error_doctor - ERROR - 186 - Internal Server Error: cannot access local variable 'doctor_id' where it is not associated with a value
+2024-06-22 14:56:09,264 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 1234567896
+2024-06-22 14:56:21,836 - error_doctor - ERROR - 185 - Internal Server Error: 'DocterLoginApi' object has no attribute 'generate_tokens'
+2024-06-22 14:57:02,694 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 1234567896
+2024-06-22 14:57:20,602 - error_doctor - ERROR - 200 - Failed to retrieve doctor_id for user reception: type object 'DoctorRegister' has no attribute 'doctor_id'
+2024-06-22 14:58:15,680 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 1234567896
+2024-06-22 14:58:27,429 - error_doctor - ERROR - 200 - Failed to retrieve doctor_id for user reception: type object 'DoctorRegister' has no attribute 'doctor_id'
+2024-06-22 16:11:03,980 - error_doctor - ERROR - 117 - Mobile number 8901234567 is not registered. Please register first.
+2024-06-22 16:22:22,666 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-22 17:10:16,367 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-22 17:18:52,929 - error_doctor - ERROR - 117 - Mobile number 8901234567 is not registered. Please register first.
+2024-06-22 17:19:06,691 - error_doctor - ERROR - 117 - Mobile number 8901234567 is not registered. Please register first.
+2024-06-22 17:20:45,867 - error_doctor - ERROR - 117 - Mobile number 8901234567 is not registered. Please register first.
+2024-06-24 13:04:02,540 - error_doctor - ERROR - 255 - User details already exist for 9935266755 mobile number
+2024-06-24 13:28:22,588 - error_doctor - ERROR - 255 - User details already exist for 9935266798 mobile number
+2024-06-24 13:55:16,866 - error_doctor - ERROR - 35 - Mobile number is already registered: 7518868219
+2024-06-24 14:56:28,317 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-24 14:57:14,271 - error_doctor - ERROR - 117 - Mobile number 6666666666 is not registered. Please register first.
+2024-06-24 14:57:18,945 - error_doctor - ERROR - 117 - Mobile number 6666666666 is not registered. Please register first.
+2024-06-24 15:00:19,736 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-24 15:06:41,478 - error_doctor - ERROR - 260 - Mobile number 6666666666 is not Registered
+2024-06-24 15:40:29,425 - error_doctor - ERROR - 273 - Invalid data: {'qualifications': [ErrorDetail(string='Not a valid string.', code='invalid')]}
+2024-06-24 15:40:52,835 - error_doctor - ERROR - 273 - Invalid data: {'qualifications': [ErrorDetail(string='Not a valid string.', code='invalid')]}
+2024-06-24 15:41:03,052 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 15:43:20,647 - error_doctor - ERROR - 260 - User details already exist for 9935266798 mobile number
+2024-06-24 15:43:43,887 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 15:43:52,610 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 15:44:07,932 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 15:46:08,393 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 15:47:16,674 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 15:47:18,179 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 15:47:23,228 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 15:47:24,477 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 15:47:40,445 - error_doctor - ERROR - 117 - Mobile number 6666666666 is not registered. Please register first.
+2024-06-24 15:47:47,821 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-24 15:48:19,094 - error_doctor - ERROR - 73 - Mobile number 6666666666 is not registered or OTP session expired. Resend OTP.
+2024-06-24 15:48:19,122 - error_doctor - ERROR - 73 - Mobile number 6666666666 is not registered or OTP session expired. Resend OTP.
+2024-06-24 15:48:22,544 - error_doctor - ERROR - 73 - Mobile number 6666666666 is not registered or OTP session expired. Resend OTP.
+2024-06-24 15:48:34,610 - error_doctor - ERROR - 80 - Incorrect OTP for mobile number 6666666666
+2024-06-24 15:48:50,649 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-24 15:48:55,466 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-24 15:53:35,895 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 15:53:57,792 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 15:53:58,830 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 15:53:59,447 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 15:55:43,829 - error_doctor - ERROR - 117 - Mobile number 7777777777 is not registered. Please register first.
+2024-06-24 15:59:13,526 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7777777777
+2024-06-24 15:59:27,705 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 7777777777
+2024-06-24 16:00:00,724 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 16:00:06,959 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-24 16:01:19,597 - error_doctor - ERROR - 273 - Invalid data: {'qualifications': [ErrorDetail(string='Expected a list of items but got type "str".', code='not_a_list')]}
+2024-06-24 16:01:40,430 - error_doctor - ERROR - 273 - Invalid data: {'qualifications': [ErrorDetail(string='Incorrect type. Expected pk value, received str.', code='incorrect_type')]}
+2024-06-24 16:15:03,988 - error_doctor - ERROR - 278 - User details already exist for 6454645464 mobile number
+2024-06-24 17:06:35,667 - error_doctor - ERROR - 291 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-24 17:08:52,738 - error_doctor - ERROR - 291 - Invalid data: {'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-06-24 17:30:24,978 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 9935266755
+2024-06-25 10:15:57,242 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-25 10:32:08,330 - error_doctor - ERROR - 117 - Mobile number 1231231235 is not registered. Please register first.
+2024-06-25 10:33:25,072 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-25 11:01:38,101 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 1231231235
+2024-06-25 11:27:23,327 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 2222222222
+2024-06-25 11:34:00,676 - error_doctor - ERROR - 117 - Mobile number 2626262626 is not registered. Please register first.
+2024-06-25 11:34:40,256 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-25 11:42:45,589 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 7518868219
+2024-06-25 11:52:50,794 - error_doctor - ERROR - 273 - Invalid data: {'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-06-25 11:52:59,837 - error_doctor - ERROR - 277 - Exception occurred: 'qualifications'
+2024-06-25 11:55:31,169 - error_doctor - ERROR - 277 - Exception occurred: 'qualifications'
+2024-06-25 11:57:26,694 - error_doctor - ERROR - 255 - Mobile number 1212333342 is not Registered
+2024-06-25 11:57:52,875 - error_doctor - ERROR - 277 - Exception occurred: 'qualifications'
+2024-06-25 11:58:02,436 - error_doctor - ERROR - 277 - Exception occurred: 'qualifications'
+2024-06-25 11:58:38,263 - error_doctor - ERROR - 277 - Exception occurred: 'qualification'
+2024-06-25 11:59:43,649 - error_doctor - ERROR - 277 - Exception occurred: 'qualifications'
+2024-06-25 12:01:45,487 - error_doctor - ERROR - 277 - Exception occurred: 'qualifications'
+2024-06-25 12:01:46,956 - error_doctor - ERROR - 277 - Exception occurred: 'qualifications'
+2024-06-25 12:02:00,086 - error_doctor - ERROR - 277 - Exception occurred: 'qualifications'
+2024-06-25 12:03:33,788 - error_doctor - ERROR - 273 - Invalid data: {'gender': [ErrorDetail(string='"M" is not a valid choice.', code='invalid_choice')], 'doc_file': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')], 'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-06-25 12:04:04,342 - error_doctor - ERROR - 277 - Exception occurred: 'qualifications'
+2024-06-25 12:05:10,222 - error_doctor - ERROR - 273 - Invalid data: {'gender': [ErrorDetail(string='"M" is not a valid choice.', code='invalid_choice')], 'doc_file': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')], 'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-06-25 12:07:17,362 - error_doctor - ERROR - 273 - Invalid data: {'gender': [ErrorDetail(string='"M" is not a valid choice.', code='invalid_choice')], 'doc_file': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')], 'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-06-25 12:10:14,776 - error_doctor - ERROR - 277 - Exception occurred: 'qualifications'
+2024-06-25 12:10:22,592 - error_doctor - ERROR - 277 - Exception occurred: 'qualifications'
+2024-06-25 12:11:11,713 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 2121212121
+2024-06-25 13:09:48,791 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 5656565656
+2024-06-25 13:10:09,113 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 5656565656
+2024-06-25 13:11:07,433 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 5656565656
+2024-06-25 13:11:41,584 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 5656565656
+2024-06-25 13:13:40,953 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 5656565656
+2024-06-25 13:15:12,910 - error_doctor - ERROR - 260 - User details already exist for 0000000000 mobile number
+2024-06-25 13:51:30,100 - error_doctor - ERROR - 273 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')], 'qualifications': [ErrorDetail(string='This field is required.', code='required')]}
+2024-06-25 14:42:35,075 - error_doctor - ERROR - 273 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')], 'qualifications': [ErrorDetail(string='This field is required.', code='required')]}
+2024-06-25 14:44:47,021 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219.
+2024-06-25 14:44:51,689 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219.
+2024-06-25 14:44:54,323 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-25 14:58:51,195 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-25 14:58:51,256 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-25 14:58:51,360 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 7518868219
+2024-06-25 14:58:51,412 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 7518868219
+2024-06-25 18:13:12,759 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-26 10:25:10,009 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 2323232323
+2024-06-26 10:48:30,557 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 5656565656
+2024-06-26 11:20:04,707 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 2323232323
+2024-06-26 11:20:17,779 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 2323232323
+2024-06-26 11:20:29,849 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 2323232323
+2024-06-26 11:32:15,981 - error_doctor - ERROR - 260 - User details already exist for 9639639639 mobile number
+2024-06-26 11:32:31,287 - error_doctor - ERROR - 260 - User details already exist for 9639639639 mobile number
+2024-06-26 11:32:54,019 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-26 11:33:03,594 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-26 11:34:16,376 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-26 11:34:41,226 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-26 11:34:42,527 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-26 11:35:13,063 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-26 11:35:14,110 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-26 12:00:39,943 - error_doctor - ERROR - 117 - Mobile number 1111111111 is not registered. Please register first.
+2024-06-26 12:37:57,614 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 5656565656
+2024-06-26 12:38:10,317 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 5656565656
+2024-06-26 12:38:41,047 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 5656565656
+2024-06-26 12:39:07,622 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 5656565656
+2024-06-26 13:19:04,452 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 5656565656
+2024-06-26 13:19:51,418 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 5656565656
+2024-06-26 13:21:01,182 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 7518868219
+2024-06-26 13:21:25,896 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-26 13:24:19,522 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 2323232323
+2024-06-26 13:29:43,239 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-26 13:44:11,559 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 5656565656
+2024-06-26 13:45:55,983 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-26 14:27:34,579 - error_doctor - ERROR - 117 - Mobile number 5656565656 is not registered. Please register first.
+2024-06-26 14:27:35,597 - error_doctor - ERROR - 117 - Mobile number 5656565656 is not registered. Please register first.
+2024-06-26 14:27:45,003 - error_doctor - ERROR - 117 - Mobile number 5656565656 is not registered. Please register first.
+2024-06-26 14:34:09,230 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-26 14:43:51,407 - error_doctor - ERROR - 273 - Invalid data: {'qualifications': [ErrorDetail(string='This field is required.', code='required')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-26 14:48:46,085 - error_doctor - ERROR - 277 - Exception occurred: 'qualifications'
+2024-06-26 14:49:12,382 - error_doctor - ERROR - 260 - User details already exist for 6546541236 mobile number
+2024-06-26 14:51:40,088 - error_doctor - ERROR - 277 - Exception occurred: Field name `mobile_number` is not valid for model `DoctorDetail` in `doctor.serializers.DoctorDetailSerializer`.
+2024-06-26 14:52:06,182 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-26 14:52:45,209 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-26 14:52:46,385 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-26 14:52:47,296 - error_doctor - ERROR - 277 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-26 15:03:32,292 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-26 15:04:37,671 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 2323232311
+2024-06-26 15:35:17,727 - error_doctor - ERROR - 273 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-26 15:56:18,052 - error_doctor - ERROR - 150 - Incorrect OTP entered for mobile number: 1234567890
+2024-06-26 16:28:54,129 - error_doctor - ERROR - 273 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-26 16:49:15,223 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-26 18:30:06,960 - error_doctor - ERROR - 103 - Please enter a 10-digit number.
+2024-06-27 11:27:24,386 - error_doctor - ERROR - 273 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-27 13:49:20,667 - error_doctor - ERROR - 117 - Mobile number 9415750211 is not registered. Please register first.
+2024-06-27 13:50:32,383 - error_doctor - ERROR - 273 - Invalid data: {'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-06-27 13:50:41,659 - error_doctor - ERROR - 277 - Exception occurred: 'qualifications'
+2024-06-27 14:08:53,383 - error_doctor - ERROR - 273 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-27 14:16:17,801 - error_doctor - ERROR - 273 - Invalid data: {'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-27 14:24:02,878 - error_doctor - ERROR - 117 - Mobile number 2323232323 is not registered. Please register first.
+2024-06-27 14:24:26,993 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 5353535353
+2024-06-27 16:46:35,978 - error_doctor - ERROR - 273 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-27 16:47:14,955 - error_doctor - ERROR - 273 - Invalid data: {'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-06-27 16:47:30,189 - error_doctor - ERROR - 273 - Invalid data: {'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-06-27 17:16:28,533 - error_doctor - ERROR - 117 - Mobile number 9898989898 is not registered. Please register first.
+2024-06-27 17:16:53,495 - error_doctor - ERROR - 117 - Mobile number 4444444444 is not registered. Please register first.
+2024-06-27 17:17:20,112 - error_doctor - ERROR - 117 - Mobile number 3333333333 is not registered. Please register first.
+2024-06-27 17:17:39,532 - error_doctor - ERROR - 117 - Mobile number 5555555555 is not registered. Please register first.
+2024-06-28 12:57:33,764 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-28 12:58:12,979 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-28 12:58:24,761 - error_doctor - ERROR - 35 - Mobile number is already registered: 7518868219
+2024-06-28 12:58:36,781 - error_doctor - ERROR - 146 - OTP has expired or mobile number is not registered: 7518868219
+2024-06-28 14:23:26,885 - error_doctor - ERROR - 36 - Mobile number is already registered: 9415750211
+2024-06-28 14:25:30,275 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-06-28 14:25:42,264 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-06-28 14:26:22,024 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-06-28 14:27:04,470 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-06-28 14:29:29,590 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-06-28 14:31:23,776 - error_doctor - ERROR - 278 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-28 14:32:21,318 - error_doctor - ERROR - 278 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-28 14:32:22,479 - error_doctor - ERROR - 278 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-28 14:33:21,280 - error_doctor - ERROR - 278 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-28 14:33:38,677 - error_doctor - ERROR - 278 - Exception occurred: NOT NULL constraint failed: doctor_doctordetail.doctor_id
+2024-06-28 14:45:43,375 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-06-28 14:57:27,390 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-06-28 14:58:29,415 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-06-28 15:00:00,016 - error_doctor - ERROR - 274 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-06-28 15:00:53,442 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-06-28 15:02:17,185 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-06-28 15:03:07,956 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-06-28 15:07:04,532 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-06-29 16:33:23,305 - error_doctor - ERROR - 256 - Mobile number 3453535 is not Registered
+2024-06-29 16:33:34,540 - error_doctor - ERROR - 261 - User details already exist for 7518868219 mobile number
+2024-06-29 17:30:48,055 - error_doctor - ERROR - 261 - User details already exist for 7518868219 mobile number
+2024-06-29 17:39:51,339 - error_doctor - ERROR - 251 - Mobile number is missing in the request
+2024-06-29 18:23:48,769 - error_doctor - ERROR - 261 - User details already exist for 7518868219 mobile number
+2024-06-29 18:27:00,999 - error_doctor - ERROR - 261 - User details already exist for 7518868219 mobile number
+2024-07-01 14:29:29,744 - error_doctor - ERROR - 74 - Mobile number 6565656565 is not registered or OTP session expired. Resend OTP.
+2024-07-01 14:29:31,220 - error_doctor - ERROR - 74 - Mobile number 6565656565 is not registered or OTP session expired. Resend OTP.
+2024-07-01 15:00:35,232 - error_doctor - ERROR - 274 - Invalid data: {'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')]}
+2024-07-01 15:00:56,437 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-07-01 15:01:07,445 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-07-01 15:10:40,960 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-07-01 15:10:50,868 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-07-01 15:10:55,540 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-07-01 15:15:55,824 - error_doctor - ERROR - 36 - Mobile number is already registered: 1234567890
+2024-07-01 16:24:45,259 - error_doctor - ERROR - 118 - Mobile number 2323232323 is not registered. Please register first.
+2024-07-01 16:35:53,377 - error_doctor - ERROR - 274 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-07-01 16:38:36,959 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-07-01 17:06:13,728 - error_doctor - ERROR - 278 - Exception occurred: 'qualifications'
+2024-07-01 17:08:09,253 - error_doctor - ERROR - 274 - Invalid data: {'doc_file': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')], 'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-07-01 17:09:28,681 - error_doctor - ERROR - 274 - Invalid data: {'doc_file': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')], 'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-07-01 17:16:42,181 - error_doctor - ERROR - 151 - Incorrect OTP entered for mobile number: 9898989898
+2024-07-01 17:16:48,863 - error_doctor - ERROR - 147 - OTP has expired or mobile number is not registered: 9898989898
+2024-07-01 17:25:01,540 - error_doctor - ERROR - 274 - Invalid data: {'doc_file': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')], 'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-07-01 17:30:14,411 - error_doctor - ERROR - 274 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'doc_file': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')], 'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')], 'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-07-01 17:30:39,934 - error_doctor - ERROR - 274 - Invalid data: {'doc_file': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')], 'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-07-01 17:30:57,304 - error_doctor - ERROR - 274 - Invalid data: {'doc_file': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')], 'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-07-02 11:29:43,363 - error_doctor - ERROR - 104 - Please enter a 10-digit number.
+2024-07-02 14:19:40,702 - error_doctor - ERROR - 118 - Mobile number 8528528528 is not registered. Please register first.
+2024-07-02 14:19:47,847 - error_doctor - ERROR - 118 - Mobile number 8528528525 is not registered. Please register first.
+2024-07-02 14:20:53,605 - error_doctor - ERROR - 118 - Mobile number 7410741074 is not registered. Please register first.
+2024-07-02 14:21:17,575 - error_doctor - ERROR - 104 - Please enter a 10-digit number.
+2024-07-02 16:00:13,164 - error_doctor - ERROR - 147 - OTP has expired or mobile number is not registered: 9935266755
+2024-07-02 16:00:13,223 - error_doctor - ERROR - 147 - OTP has expired or mobile number is not registered: 9935266755
+2024-07-02 16:00:45,370 - error_doctor - ERROR - 147 - OTP has expired or mobile number is not registered: 9935266755
+2024-07-02 16:00:45,439 - error_doctor - ERROR - 147 - OTP has expired or mobile number is not registered: 9935266755
+2024-07-03 12:33:12,685 - error_doctor - ERROR - 33 - Please enter a 10-digit number.
+2024-07-03 12:53:41,863 - error_doctor - ERROR - 104 - Please enter a 10-digit number.
+2024-07-03 13:01:24,119 - error_doctor - ERROR - 147 - OTP has expired or mobile number is not registered: 5353535353
+2024-07-03 13:01:48,048 - error_doctor - ERROR - 147 - OTP has expired or mobile number is not registered: 5353535353
+2024-07-03 13:01:57,310 - error_doctor - ERROR - 147 - OTP has expired or mobile number is not registered: 7518868219
+2024-07-03 13:02:28,660 - error_doctor - ERROR - 147 - OTP has expired or mobile number is not registered: 5353535353
+2024-07-03 13:02:30,331 - error_doctor - ERROR - 147 - OTP has expired or mobile number is not registered: 7518868219
+2024-07-03 13:03:02,001 - error_doctor - ERROR - 36 - Mobile number is already registered: 7518868219
+2024-07-03 13:05:09,775 - error_doctor - ERROR - 151 - Incorrect OTP entered for mobile number: 5353535353
+2024-07-04 11:46:19,417 - error_doctor - ERROR - 104 - Please enter a 10-digit number.
+2024-07-04 12:36:56,630 - error_doctor - ERROR - 151 - Incorrect OTP entered for mobile number: 9988776655
+2024-07-05 11:37:55,952 - error_doctor - ERROR - 118 - Mobile number 9988776655 is not registered. Please register first.
+2024-07-05 11:38:04,356 - error_doctor - ERROR - 118 - Mobile number 9988776655 is not registered. Please register first.
+2024-07-05 12:39:50,760 - error_doctor - ERROR - 118 - Mobile number 4545454545 is not registered. Please register first.
+2024-07-05 12:40:39,182 - error_doctor - ERROR - 118 - Mobile number 6655443322 is not registered. Please register first.
+2024-07-05 12:41:00,419 - error_doctor - ERROR - 118 - Mobile number 6363636363 is not registered. Please register first.
+2024-07-05 13:28:34,224 - error_doctor - ERROR - 104 - Please enter a 10-digit number.
+2024-07-05 13:28:55,155 - error_doctor - ERROR - 104 - Please enter a 10-digit number.
+2024-07-05 16:09:00,971 - error_doctor - ERROR - 118 - Mobile number 6363636363 is not registered. Please register first.
+2024-07-05 16:09:36,696 - error_doctor - ERROR - 118 - Mobile number 6655443322 is not registered. Please register first.
+2024-07-05 16:09:43,232 - error_doctor - ERROR - 118 - Mobile number 4545454545 is not registered. Please register first.
+2024-07-06 11:48:59,462 - error_doctor - ERROR - 147 - OTP has expired or mobile number is not registered: 7518868219
+2024-07-06 11:49:18,715 - error_doctor - ERROR - 147 - OTP has expired or mobile number is not registered: 7518868219
+2024-07-06 15:19:11,380 - error_doctor - ERROR - 147 - OTP has expired or mobile number is not registered: 5353535353
+2024-07-06 15:19:25,275 - error_doctor - ERROR - 147 - OTP has expired or mobile number is not registered: 5353535353
+2024-07-06 17:23:26,046 - error_doctor - ERROR - 36 - Mobile number is already registered: 5656565656
+2024-07-06 17:23:39,005 - error_doctor - ERROR - 36 - Mobile number is already registered: 0000000000
+2024-07-06 17:24:56,159 - error_doctor - ERROR - 265 - Invalid data: {'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-07-06 17:25:14,151 - error_doctor - ERROR - 269 - Exception occurred: 'qualifications'
+2024-07-06 17:25:40,956 - error_doctor - ERROR - 269 - Exception occurred: 'qualifications'
+2024-07-06 17:25:57,537 - error_doctor - ERROR - 269 - Exception occurred: 'qualifications'
+2024-07-06 18:25:39,935 - error_doctor - ERROR - 104 - Please enter a 10-digit number.
+2024-07-08 15:11:29,730 - error_doctor - ERROR - 35 - Mobile number is already registered: 9935266798
+2024-07-08 15:12:51,142 - error_doctor - ERROR - 35 - Mobile number is already registered: 9935266799
+2024-07-08 15:12:54,005 - error_doctor - ERROR - 35 - Mobile number is already registered: 9935266799
+2024-07-08 15:59:14,114 - error_doctor - ERROR - 181 - Mobile number 7518868219 is not registered. Please register first.
+2024-07-08 15:59:51,872 - error_doctor - ERROR - 181 - Mobile number 5353535353 is not registered. Please register first.
+2024-07-08 16:40:34,484 - error_doctor - ERROR - 290 - Invalid data: {'address': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-07-08 16:43:04,704 - error_doctor - ERROR - 277 - User details already exist for 7518868219 mobile number
+2024-07-08 16:55:32,038 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 7518868219
+2024-07-08 16:56:01,681 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 7518868219
+2024-07-08 16:56:26,717 - error_doctor - ERROR - 35 - Mobile number is already registered: 7518868219
+2024-07-08 17:12:39,185 - error_doctor - ERROR - 277 - User details already exist for 8935266780 mobile number
+2024-07-08 17:47:56,647 - error_doctor - ERROR - 277 - User details already exist for 7518868219 mobile number
+2024-07-08 17:55:42,463 - error_doctor - ERROR - 277 - User details already exist for 7518868219 mobile number
+2024-07-08 17:56:38,106 - error_doctor - ERROR - 277 - User details already exist for 7518868219 mobile number
+2024-07-09 11:46:05,431 - error_doctor - ERROR - 143 - Mobile number 3333333333 is not registered. Please register first.
+2024-07-09 11:46:22,483 - error_doctor - ERROR - 143 - Mobile number 3333333333 is not registered. Please register first.
+2024-07-09 11:55:59,571 - error_doctor - ERROR - 290 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'address': [ErrorDetail(string='This field may not be blank.', code='blank')], 'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')], 'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-07-09 11:56:13,526 - error_doctor - ERROR - 73 - Mobile number is already registered: 8935266769
+2024-07-09 12:26:06,999 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 2222222222
+2024-07-09 12:41:29,022 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 7518868219
+2024-07-09 13:16:36,320 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 7518868219
+2024-07-09 16:36:52,276 - error_doctor - ERROR - 143 - Mobile number 9696969696 is not registered. Please register first.
+2024-07-09 16:37:04,177 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-07-09 16:37:08,030 - error_doctor - ERROR - 143 - Mobile number 5353535353 is not registered. Please register first.
+2024-07-10 11:42:59,438 - error_doctor - ERROR - 211 - Internal Server Error: get() returned more than one ClinicRegister -- it returned 3!
+2024-07-10 12:07:28,792 - error_doctor - ERROR - 197 - User not found for mobile number: 6386326186
+2024-07-10 14:42:27,371 - error_doctor - ERROR - 181 - Mobile number 9935266755 is not registered. Please register first.
+2024-07-10 14:42:29,375 - error_doctor - ERROR - 181 - Mobile number 9935266755 is not registered. Please register first.
+2024-07-10 14:43:24,970 - error_doctor - ERROR - 143 - Mobile number 8585858585 is not registered. Please register first.
+2024-07-12 10:37:16,213 - error_doctor - ERROR - 330 - Exception occurred: Invalid field name(s) given in select_related: 'doctor_detail'. Choices are: (none)
+2024-07-12 10:37:39,730 - error_doctor - ERROR - 330 - Exception occurred: Invalid field name(s) given in select_related: 'doctor'. Choices are: (none)
+2024-07-12 10:42:13,384 - error_doctor - ERROR - 331 - Exception occurred: Invalid field name(s) given in select_related: 'doctor_detail'. Choices are: (none)
+2024-07-12 10:44:53,613 - error_doctor - ERROR - 332 - Exception occurred: 'str' object has no attribute 'pk'
+2024-07-12 10:45:11,827 - error_doctor - ERROR - 332 - Exception occurred: 'NoneType' object has no attribute 'pk'
+2024-07-12 10:49:33,873 - error_doctor - ERROR - 305 - Invalid or missing doctor ID
+2024-07-12 15:00:03,257 - error_doctor - ERROR - 32 - Please enter a 10-digit number.
+2024-07-12 18:34:30,987 - error_doctor - ERROR - 290 - Invalid data: {'gender': [ErrorDetail(string='"F" is not a valid choice.', code='invalid_choice')]}
+2024-07-12 18:36:14,221 - error_doctor - ERROR - 290 - Invalid data: {'gender': [ErrorDetail(string='"F" is not a valid choice.', code='invalid_choice')]}
+2024-07-13 17:51:14,846 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 6392535512
+2024-07-13 17:52:14,167 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 6392535512
+2024-07-13 18:14:45,514 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 2222222222
+2024-07-15 11:52:25,035 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 2222222222
+2024-07-15 14:35:13,049 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-07-15 14:58:52,153 - error_doctor - ERROR - 143 - Mobile number 8383813486 is not registered. Please register first.
+2024-07-15 14:59:22,256 - error_doctor - ERROR - 143 - Mobile number 8178308411 is not registered. Please register first.
+2024-07-15 14:59:24,447 - error_doctor - ERROR - 143 - Mobile number 8178308411 is not registered. Please register first.
+2024-07-15 15:00:29,693 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 8178308411
+2024-07-15 15:14:17,896 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-07-15 15:14:24,575 - error_doctor - ERROR - 143 - Mobile number 9898985555 is not registered. Please register first.
+2024-07-15 15:14:34,847 - error_doctor - ERROR - 32 - Please enter a 10-digit number.
+2024-07-16 10:13:01,979 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 6363636363
+2024-07-16 11:45:13,761 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 6363636363
+2024-07-16 11:45:29,533 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 6363636363
+2024-07-17 11:35:11,427 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-07-17 12:54:27,977 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-07-17 13:55:01,227 - error_doctor - ERROR - 143 - Mobile number 7524885707 is not registered. Please register first.
+2024-07-17 13:55:23,666 - error_doctor - ERROR - 143 - Mobile number 7518868219 is not registered. Please register first.
+2024-07-17 13:55:47,516 - error_doctor - ERROR - 143 - Mobile number 7518868219 is not registered. Please register first.
+2024-07-17 13:56:54,592 - error_doctor - ERROR - 143 - Mobile number 7524885707 is not registered. Please register first.
+2024-07-17 13:58:37,421 - error_doctor - ERROR - 143 - Mobile number 7518868219 is not registered. Please register first.
+2024-07-17 14:00:16,615 - error_doctor - ERROR - 143 - Mobile number 7524185707 is not registered. Please register first.
+2024-07-17 14:00:29,077 - error_doctor - ERROR - 143 - Mobile number 7524185707 is not registered. Please register first.
+2024-07-17 14:33:26,757 - error_doctor - ERROR - 143 - Mobile number 7524185707 is not registered. Please register first.
+2024-07-17 14:33:45,860 - error_doctor - ERROR - 35 - Mobile number is already registered: 7524885707
+2024-07-17 14:34:08,609 - error_doctor - ERROR - 143 - Mobile number 7518868219 is not registered. Please register first.
+2024-07-17 14:52:12,111 - error_doctor - ERROR - 143 - Mobile number 2222222222 is not registered. Please register first.
+2024-07-17 14:54:26,851 - error_doctor - ERROR - 181 - Mobile number 9898989899 is not registered. Please register first.
+2024-07-17 14:54:27,579 - error_doctor - ERROR - 181 - Mobile number 9898989899 is not registered. Please register first.
+2024-07-17 14:54:27,784 - error_doctor - ERROR - 181 - Mobile number 9898989899 is not registered. Please register first.
+2024-07-17 14:54:58,515 - error_doctor - ERROR - 277 - User details already exist for 2222222222 mobile number
+2024-07-17 15:44:12,344 - error_doctor - ERROR - 290 - Invalid data: {'address': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-07-17 15:44:26,424 - error_doctor - ERROR - 277 - User details already exist for 7524885707 mobile number
+2024-07-17 18:08:55,617 - error_doctor - ERROR - 210 - OTP has expired or mobile number is not registered: 8585858585
+2024-07-17 18:26:05,638 - error_doctor - ERROR - 143 - Mobile number 7518868219 is not registered. Please register first.
+2024-07-17 18:34:00,734 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 7518868219
+2024-07-17 18:34:14,276 - error_doctor - ERROR - 35 - Mobile number is already registered: 7518868219
+2024-07-18 10:56:29,068 - error_doctor - ERROR - 143 - Mobile number 6386326186 is not registered. Please register first.
+2024-07-18 11:10:06,072 - error_doctor - ERROR - 143 - Mobile number 6363636363 is not registered. Please register first.
+2024-07-18 11:32:42,196 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 9898989898
+2024-07-18 13:55:26,252 - error_doctor - ERROR - 181 - Mobile number 9898989899 is not registered. Please register first.
+2024-07-18 13:55:26,971 - error_doctor - ERROR - 181 - Mobile number 9898989899 is not registered. Please register first.
+2024-07-18 13:55:27,457 - error_doctor - ERROR - 181 - Mobile number 9898989899 is not registered. Please register first.
+2024-07-18 13:56:41,479 - error_doctor - ERROR - 181 - Mobile number 9898989899 is not registered. Please register first.
+2024-07-18 14:37:54,386 - error_doctor - ERROR - 143 - Mobile number 7524885707 is not registered. Please register first.
+2024-07-18 14:43:41,393 - error_doctor - ERROR - 290 - Invalid data: {'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-07-18 14:44:54,510 - error_doctor - ERROR - 290 - Invalid data: {'specialization': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-07-18 16:48:42,024 - error_doctor - ERROR - 167 - Mobile number and OTP are required
+2024-07-18 16:53:17,229 - error_doctor - ERROR - 167 - Mobile number and OTP are required
+2024-07-18 17:02:19,918 - error_doctor - ERROR - 181 - Mobile number 9898989899 is not registered. Please register first.
+2024-07-18 17:03:56,181 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 7518868219
+2024-07-18 17:04:12,126 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 7518868219
+2024-07-18 17:51:40,095 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 6363636363
+2024-07-18 17:51:49,853 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 6363636363
+2024-07-19 11:08:38,128 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 7524885707
+2024-07-19 12:02:53,723 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 6386326186
+2024-07-19 13:13:54,814 - error_doctor - ERROR - 341 - Mobile number 8935266780 is not Registered
+2024-07-19 17:06:52,691 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 6386326186
+2024-07-19 17:07:07,064 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 6386326186
+2024-07-20 12:45:18,980 - error_doctor - ERROR - 167 - Please enter a 10-digit number.
+2024-07-20 12:54:40,210 - error_doctor - ERROR - 167 - Please enter a 10-digit number.
+2024-07-20 17:28:25,615 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 6363636363
+2024-07-20 17:34:21,179 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-07-22 10:42:26,733 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 7518868219
+2024-07-22 11:52:08,568 - error_doctor - ERROR - 361 - Invalid data: {'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')]}
+2024-07-22 12:46:13,968 - error_doctor - ERROR - 336 - Mobile number is missing in the request
+2024-07-22 12:47:09,577 - error_doctor - ERROR - 336 - Mobile number is missing in the request
+2024-07-22 13:13:02,146 - error_doctor - ERROR - 336 - Mobile number is missing in the request
+2024-07-22 13:20:33,578 - error_doctor - ERROR - 336 - Mobile number is missing in the request
+2024-07-22 13:20:47,913 - error_doctor - ERROR - 336 - Mobile number is missing in the request
+2024-07-22 13:24:32,576 - error_doctor - ERROR - 181 - Mobile number 6392535512 is not registered. Please register first.
+2024-07-22 16:05:28,935 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 7518868219
+2024-07-22 16:05:36,322 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 7518868219
+2024-07-22 16:05:44,561 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 7518868219
+2024-07-22 16:07:17,415 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 7518868219
+2024-07-22 18:25:59,873 - error_doctor - ERROR - 181 - Mobile number 9898989899 is not registered. Please register first.
+2024-07-23 15:23:42,028 - error_doctor - ERROR - 277 - User details already exist for 7878787878 mobile number
+2024-07-23 15:23:49,487 - error_doctor - ERROR - 277 - User details already exist for 7878787878 mobile number
+2024-07-23 15:42:45,905 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-07-23 15:42:47,060 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-07-23 16:37:56,463 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 7777777777
+2024-07-24 11:23:01,763 - error_doctor - ERROR - 214 - Incorrect OTP entered for mobile number: 6392535512
+2024-07-24 11:27:08,519 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 7524885707
+2024-07-24 11:27:14,340 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 7524885707
+2024-07-24 11:29:39,099 - error_doctor - ERROR - 214 - Incorrect OTP entered for mobile number: 6386326186
+2024-07-24 16:43:37,342 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 6386326186
+2024-07-24 17:31:19,934 - error_doctor - ERROR - 35 - Mobile number is already registered: 7518868219
+2024-07-25 12:45:09,921 - error_doctor - ERROR - 143 - Mobile number 6392535512 is not registered. Please register first.
+2024-07-25 13:31:20,620 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 7518868219
+2024-07-25 13:31:22,991 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 7518868219
+2024-07-25 17:09:45,495 - error_doctor - ERROR - 181 - Mobile number 6863226186 is not registered. Please register first.
+2024-07-25 17:18:50,847 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 6386326186
+2024-07-25 17:18:53,141 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 6386326186
+2024-07-25 17:20:09,583 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 6363636363
+2024-07-25 17:24:04,897 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 6363636363
+2024-07-25 17:24:08,367 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 6363636363
+2024-07-25 17:46:33,410 - error_doctor - ERROR - 143 - Mobile number 6363636363 is not registered. Please register first.
+2024-07-25 17:46:46,478 - error_doctor - ERROR - 143 - Mobile number 7518868219 is not registered. Please register first.
+2024-07-25 17:49:45,334 - error_doctor - ERROR - 143 - Mobile number 6386326186 is not registered. Please register first.
+2024-07-25 17:50:31,574 - error_doctor - ERROR - 35 - Mobile number is already registered: 7518868219
+2024-07-25 17:54:23,930 - error_doctor - ERROR - 281 - User details already exist for 7518868219 mobile number
+2024-07-25 18:01:42,637 - error_doctor - ERROR - 143 - Mobile number 6386326186 is not registered. Please register first.
+2024-07-25 18:48:41,133 - error_doctor - ERROR - 211 - Internal Server Error: 'DoctorRegister' object has no attribute 'doctor_id'
+2024-07-26 10:12:33,988 - error_doctor - ERROR - 211 - Internal Server Error: 'ClinicRegister' object has no attribute 'is_verified'
+2024-07-26 10:12:53,295 - error_doctor - ERROR - 211 - Internal Server Error: 'ClinicRegister' object has no attribute 'is_verified'
+2024-07-26 10:12:55,283 - error_doctor - ERROR - 211 - Internal Server Error: 'ClinicRegister' object has no attribute 'is_verified'
+2024-07-26 11:38:57,423 - error_doctor - ERROR - 143 - Mobile number 7524885707 is not registered. Please register first.
+2024-07-26 11:38:57,482 - error_doctor - ERROR - 143 - Mobile number 7524885707 is not registered. Please register first.
+2024-07-26 11:38:57,542 - error_doctor - ERROR - 143 - Mobile number 7524885707 is not registered. Please register first.
+2024-07-26 11:38:58,577 - error_doctor - ERROR - 143 - Mobile number 7524885707 is not registered. Please register first.
+2024-07-26 12:36:45,671 - error_doctor - ERROR - 307 - User details already exist for 6394137022 mobile number
+2024-07-26 17:09:38,352 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 2222222222
+2024-07-26 17:31:45,138 - error_doctor - ERROR - 143 - Mobile number 7524885707 is not registered. Please register first.
+2024-07-26 17:33:47,400 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 7524885707
+2024-07-26 17:34:18,048 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 7524885707
+2024-07-26 17:35:01,792 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 7518868219
+2024-07-26 17:52:48,338 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 9898989898
+2024-07-27 13:16:13,645 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 7518868219
+2024-07-27 15:19:18,114 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 7518868219
+2024-07-27 15:19:31,564 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 7518868219
+2024-07-27 15:58:25,616 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-07-29 10:36:36,939 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 98989898983
+2024-07-29 10:36:39,808 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-07-29 10:37:29,237 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 6386326186
+2024-07-29 10:37:42,828 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 6386326186
+2024-07-29 10:37:44,644 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 6386326186
+2024-07-29 12:07:52,236 - error_doctor - ERROR - 143 - Mobile number 2682682682 is not registered. Please register first.
+2024-07-29 15:26:36,147 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-07-29 15:27:25,344 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 3693693693
+2024-07-30 10:38:01,502 - error_doctor - ERROR - 143 - Mobile number 3693693699 is not registered. Please register first.
+2024-07-30 14:41:55,333 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 6394137022
+2024-07-30 14:41:55,391 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 6394137022
+2024-07-31 12:43:27,307 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 6394137022
+2024-07-31 13:14:11,426 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 6363636363
+2024-07-31 15:06:12,616 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-08-01 15:48:34,880 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-08-02 11:05:53,432 - error_doctor - ERROR - 143 - Mobile number 6394137032 is not registered. Please register first.
+2024-08-02 12:54:08,830 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-08-02 12:59:25,517 - error_doctor - ERROR - 143 - Mobile number 4000000004 is not registered. Please register first.
+2024-08-02 12:59:45,500 - error_doctor - ERROR - 143 - Mobile number 4000000004 is not registered. Please register first.
+2024-08-02 12:59:55,786 - error_doctor - ERROR - 143 - Mobile number 7000000007 is not registered. Please register first.
+2024-08-02 14:27:08,621 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-08-02 14:36:53,580 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-08-02 15:19:18,451 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-08-02 16:18:34,488 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 3693693693
+2024-08-03 11:55:58,488 - error_doctor - ERROR - 143 - Mobile number 8000000008 is not registered. Please register first.
+2024-08-06 13:22:10,363 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-08-08 11:59:08,281 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 9898989898
+2024-08-08 14:42:49,448 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-08-08 14:56:39,427 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 9898989898
+2024-08-08 14:58:26,057 - error_doctor - ERROR - 143 - Mobile number 8888888888 is not registered. Please register first.
+2024-08-09 15:10:00,678 - error_doctor - ERROR - 176 - Incorrect OTP entered for mobile number: 7518868219
+2024-08-10 10:42:24,950 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-08-10 14:26:11,115 - error_doctor - ERROR - 354 - User details already exist for 7518868219 mobile number
+2024-08-10 15:33:46,778 - error_doctor - ERROR - 143 - Mobile number 9898989898 is not registered. Please register first.
+2024-08-10 15:46:13,087 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-08-10 15:46:16,882 - error_doctor - ERROR - 143 - Mobile number 8000000008 is not registered. Please register first.
+2024-08-10 15:49:48,451 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-08-10 15:58:02,406 - error_doctor - ERROR - 143 - Mobile number 8000000008 is not registered. Please register first.
+2024-08-10 15:58:16,200 - error_doctor - ERROR - 143 - Mobile number 8000000008 is not registered. Please register first.
+2024-08-10 15:58:22,154 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-08-10 16:02:40,234 - error_doctor - ERROR - 143 - Mobile number 3693693699 is not registered. Please register first.
+2024-08-12 11:09:12,107 - error_doctor - ERROR - 35 - Mobile number is already registered: 9898989898
+2024-08-12 11:09:21,192 - error_doctor - ERROR - 35 - Mobile number is already registered: 9898989898
+2024-08-12 11:10:51,805 - error_doctor - ERROR - 35 - Mobile number is already registered: 9898989898
+2024-08-12 11:22:52,330 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:22:57,377 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:22:58,451 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:22:58,716 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:22:59,016 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:23:07,865 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:23:08,832 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:23:09,060 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:23:09,403 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:23:09,676 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:23:10,973 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:23:11,593 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:23:15,350 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:24:03,046 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:24:03,989 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 11:24:06,502 - error_doctor - ERROR - 349 - Mobile number 7518119962 is not Registered
+2024-08-12 14:37:56,740 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 3693693696
+2024-08-12 14:38:11,221 - error_doctor - ERROR - 172 - OTP has expired or mobile number is not registered: 3693693696
+2024-08-12 15:53:23,156 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-08-12 15:53:36,291 - error_doctor - ERROR - 129 - Please enter a 10-digit number.
+2024-08-13 11:09:35,462 - error_doctor - ERROR - 132 - Please enter a 10-digit number.
+2024-08-14 13:42:49,436 - error_doctor - ERROR - 132 - Please enter a 10-digit number.
+2024-08-14 13:42:52,560 - error_doctor - ERROR - 146 - Mobile number 5555555555 is not registered. Please register first.
+2024-08-14 15:03:18,110 - error_doctor - ERROR - 179 - Incorrect OTP entered for mobile number: 2482482482
+2024-08-14 16:25:31,074 - error_doctor - ERROR - 146 - Mobile number 5555555555 is not registered. Please register first.
+2024-08-14 17:33:54,356 - error_doctor - ERROR - 146 - Mobile number 5555555555 is not registered. Please register first.
+2024-08-14 17:44:13,994 - error_doctor - ERROR - 146 - Mobile number 8000000008 is not registered. Please register first.
+2024-08-16 12:29:51,921 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 3693693693
+2024-08-17 16:49:14,738 - error_doctor - ERROR - 146 - Mobile number 9797979797 is not registered. Please register first.
+2024-08-20 15:46:48,025 - error_doctor - ERROR - 146 - Mobile number 9797979797 is not registered. Please register first.
+2024-08-22 16:08:32,125 - error_doctor - ERROR - 146 - Mobile number 9090909090 is not registered. Please register first.
+2024-08-23 14:07:28,562 - error_doctor - ERROR - 38 - Mobile number is already registered: 7524885707
+2024-08-24 11:50:34,860 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 3693693696
+2024-08-24 11:56:14,304 - error_doctor - ERROR - 146 - Mobile number 3333333333 is not registered. Please register first.
+2024-08-24 12:22:06,532 - error_doctor - ERROR - 179 - Incorrect OTP entered for mobile number: 3693693693
+2024-08-24 16:06:42,237 - error_doctor - ERROR - 146 - Mobile number 3333333333 is not registered. Please register first.
+2024-08-24 17:06:04,293 - error_doctor - ERROR - 132 - Please enter a 10-digit number.
+2024-08-24 18:23:02,270 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 3693693696
+2024-08-24 18:23:15,880 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 3693693696
+2024-08-28 10:30:24,875 - error_doctor - ERROR - 181 - Mobile number 9696969696 is not registered. Please register first.
+2024-08-28 10:30:25,716 - error_doctor - ERROR - 181 - Mobile number 3693693696 is not registered. Please register first.
+2024-08-28 10:30:25,776 - error_doctor - ERROR - 181 - Mobile number 3693693696 is not registered. Please register first.
+2024-08-28 10:30:46,883 - error_doctor - ERROR - 181 - Mobile number 3693693696 is not registered. Please register first.
+2024-08-28 10:31:06,336 - error_doctor - ERROR - 181 - Mobile number 3693693696 is not registered. Please register first.
+2024-08-28 10:33:51,684 - error_doctor - ERROR - 181 - Mobile number 3693693696 is not registered. Please register first.
+2024-08-28 10:34:09,644 - error_doctor - ERROR - 210 - OTP has expired or mobile number is not registered: 96969696963
+2024-08-28 10:35:31,866 - error_doctor - ERROR - 167 - Please enter a 10-digit number.
+2024-08-28 10:35:46,248 - error_doctor - ERROR - 181 - Mobile number 3693693696 is not registered. Please register first.
+2024-08-28 10:36:16,735 - error_doctor - ERROR - 181 - Mobile number 3693693696 is not registered. Please register first.
+2024-08-28 17:24:33,931 - error_doctor - ERROR - 132 - Please enter a 10-digit number.
+2024-08-29 13:01:24,629 - error_doctor - ERROR - 415 - Exception occurred: database is locked
+2024-08-29 13:23:24,712 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 8888888888
+2024-08-29 13:23:29,438 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 8888888888
+2024-08-29 14:54:41,926 - error_doctor - ERROR - 146 - Mobile number 9797979797 is not registered. Please register first.
+2024-08-29 14:55:00,615 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 7518868219
+2024-08-29 16:02:34,616 - error_doctor - ERROR - 146 - Mobile number 9879879879 is not registered. Please register first.
+2024-08-29 16:04:38,563 - error_doctor - ERROR - 329 - User details already exist for 9879879879 mobile number
+2024-08-29 16:04:59,201 - error_doctor - ERROR - 411 - Invalid data: {'hospital_name': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-08-29 16:05:44,915 - error_doctor - ERROR - 411 - Invalid data: {'hospital_name': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-08-30 12:59:12,206 - error_doctor - ERROR - 411 - Invalid data: {'hospital_name': [ErrorDetail(string='This field may not be blank.', code='blank')]}
+2024-08-31 11:02:24,433 - error_doctor - ERROR - 146 - Mobile number 9999999999 is not registered. Please register first.
+2024-08-31 17:22:22,882 - error_doctor - ERROR - 177 - OTP has expired or mobile number is not registered: 3693693696
+2024-08-31 17:22:39,752 - error_doctor - ERROR - 177 - OTP has expired or mobile number is not registered: 3693693696
+2024-08-31 18:42:26,781 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 3693693696
+2024-08-31 18:42:38,889 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 3693693696
+2024-09-02 15:32:01,042 - error_doctor - ERROR - 132 - Please enter a 10-digit number.
+2024-09-02 15:42:11,487 - error_doctor - ERROR - 179 - Incorrect OTP entered for mobile number: 9879879879
+2024-09-02 16:28:20,897 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 7845784578
+2024-09-02 16:28:20,940 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 7845784578
+2024-09-03 12:27:18,323 - error_doctor - ERROR - 128 - Mobile number is required
+2024-09-03 12:27:25,422 - error_doctor - ERROR - 128 - Mobile number is required
+2024-09-03 12:27:31,175 - error_doctor - ERROR - 128 - Mobile number is required
+2024-09-03 12:27:33,350 - error_doctor - ERROR - 128 - Mobile number is required
+2024-09-03 12:27:38,247 - error_doctor - ERROR - 128 - Mobile number is required
+2024-09-03 12:27:43,919 - error_doctor - ERROR - 128 - Mobile number is required
+2024-09-03 12:27:53,589 - error_doctor - ERROR - 128 - Mobile number is required
+2024-09-03 12:27:56,814 - error_doctor - ERROR - 128 - Mobile number is required
+2024-09-03 12:28:58,008 - error_doctor - ERROR - 128 - Mobile number is required
+2024-09-03 15:24:08,365 - error_doctor - ERROR - 146 - Mobile number 9999999999 is not registered. Please register first.
+2024-09-03 17:30:11,749 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 3693693696
+2024-09-03 18:05:32,741 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 8888888888
+2024-09-04 11:08:53,330 - error_doctor - ERROR - 146 - Mobile number 8000000008 is not registered. Please register first.
+2024-09-04 11:27:55,590 - error_doctor - ERROR - 132 - Please enter a 10-digit number.
+2024-09-04 12:30:00,346 - error_doctor - ERROR - 179 - Incorrect OTP entered for mobile number: 3693693696
+2024-09-04 18:17:39,953 - error_doctor - ERROR - 146 - Mobile number 7845784578 is not registered. Please register first.
+2024-09-04 18:17:49,584 - error_doctor - ERROR - 146 - Mobile number 7845784578 is not registered. Please register first.
+2024-09-04 18:17:57,801 - error_doctor - ERROR - 146 - Mobile number 7518868219 is not registered. Please register first.
+2024-09-04 18:42:51,433 - error_doctor - ERROR - 146 - Mobile number 6666666666 is not registered. Please register first.
+2024-09-04 18:43:19,420 - error_doctor - ERROR - 146 - Mobile number 6666666666 is not registered. Please register first.
+2024-09-05 11:04:21,180 - error_doctor - ERROR - 346 - Exception occurred: [Errno 11001] getaddrinfo failed
+2024-09-05 12:54:39,521 - error_doctor - ERROR - 132 - Please enter a 10-digit number.
+2024-09-05 13:04:40,889 - error_doctor - ERROR - 146 - Mobile number 9879879879 is not registered. Please register first.
+2024-09-05 13:07:22,239 - error_doctor - ERROR - 132 - Please enter a 10-digit number.
+2024-09-05 13:12:44,813 - error_doctor - ERROR - 146 - Mobile number 3693693693 is not registered. Please register first.
+2024-09-05 13:14:42,253 - error_doctor - ERROR - 179 - Incorrect OTP entered for mobile number: 6666666666
+2024-09-05 13:28:28,435 - error_doctor - ERROR - 132 - Please enter a 10-digit number.
+2024-09-05 14:43:26,484 - error_doctor - ERROR - 38 - Mobile number is already registered: 6666666666
+2024-09-06 10:29:00,028 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 7518868219
+2024-09-06 10:29:01,542 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 7518868219
+2024-09-06 12:58:12,968 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 7845784578
+2024-09-06 12:58:14,576 - error_doctor - ERROR - 175 - OTP has expired or mobile number is not registered: 7845784578
+2024-09-06 13:01:37,187 - error_doctor - ERROR - 179 - Incorrect OTP entered for mobile number: 7845784578
+2024-09-06 15:00:14,129 - error_doctor - ERROR - 132 - Please enter a 10-digit number.
+2024-09-07 13:28:18,564 - error_doctor - ERROR - 170 - Mobile number and OTP are required
+2024-09-09 12:09:03,558 - error_doctor - ERROR - 38 - Mobile number is already registered: 6666666666
+2024-09-10 16:23:15,781 - error_doctor - ERROR - 38 - Mobile number is already registered: 7518868219
+2024-09-10 16:30:38,785 - error_doctor - ERROR - 38 - Mobile number is already registered: 7518868219
+2024-09-10 16:30:56,313 - error_doctor - ERROR - 179 - Incorrect OTP entered for mobile number: 9696969696
+2024-09-10 17:15:19,217 - error_doctor - ERROR - 38 - Mobile number is already registered: 7518868219
+2024-09-10 18:32:16,559 - error_doctor - ERROR - 38 - Mobile number is already registered: 7518868219
+2024-09-11 12:29:46,767 - error_doctor - ERROR - 35 - Please enter a 10-digit number.
+2024-09-11 16:49:10,392 - error_doctor - ERROR - 137 - Password is required
+2024-09-11 16:49:51,799 - error_doctor - ERROR - 177 - Mobile number, OTP, and password are required
+2024-09-11 16:51:24,117 - error_doctor - ERROR - 190 - Mobile number 8935266763 is not registered or OTP session expired. Resend OTP.
+2024-09-11 16:53:06,870 - error_doctor - ERROR - 141 - Mobile number is already registered: 8935266763
+2024-09-11 16:54:36,048 - error_doctor - ERROR - 141 - Mobile number is already registered: 8935266763
+2024-09-11 16:56:22,191 - error_doctor - ERROR - 350 - Please enter a 10-digit number.
+2024-09-11 16:57:08,756 - error_doctor - ERROR - 388 - Mobile number and OTP are required
+2024-09-11 16:57:17,903 - error_doctor - ERROR - 388 - Mobile number and OTP are required
+2024-09-11 16:57:34,958 - error_doctor - ERROR - 388 - Mobile number and OTP are required
+2024-09-11 16:58:47,621 - error_doctor - ERROR - 388 - Mobile number and OTP are required
+2024-09-11 16:59:07,302 - error_doctor - ERROR - 393 - OTP has expired or mobile number is not registered: 8935266761
+2024-09-11 17:00:09,119 - error_doctor - ERROR - 238 - Mobile number and OTP are required
+2024-09-11 17:32:56,439 - error_doctor - ERROR - 141 - Mobile number is already registered: 7518868219
+2024-09-11 17:36:00,077 - error_doctor - ERROR - 419 - Mobile number and OTP are required
+2024-09-11 18:00:33,296 - error_doctor - ERROR - 419 - Mobile number and OTP are required
+2024-09-11 18:01:00,867 - error_doctor - ERROR - 419 - Mobile number and OTP are required
+2024-09-11 18:09:27,591 - error_doctor - ERROR - 419 - Mobile number and OTP are required
+2024-09-11 18:11:40,537 - error_doctor - ERROR - 419 - Mobile number and OTP are required
+2024-09-11 18:11:48,174 - error_doctor - ERROR - 419 - Mobile number and OTP are required
+2024-09-11 18:11:53,034 - error_doctor - ERROR - 419 - Mobile number and OTP are required
+2024-09-11 18:17:39,890 - error_doctor - ERROR - 238 - Mobile number and OTP are required
+2024-09-11 18:20:12,395 - error_doctor - ERROR - 141 - Mobile number is already registered: 7518868219
+2024-09-11 18:30:31,711 - error_doctor - ERROR - 238 - Mobile number and OTP are required
+2024-09-12 12:38:03,728 - error_doctor - ERROR - 1044 - Mobile number is missing in the request
+2024-09-12 12:38:59,936 - error_doctor - ERROR - 424 - OTP has expired or mobile number is not registered: 7518868219
+2024-09-12 12:39:03,037 - error_doctor - ERROR - 424 - OTP has expired or mobile number is not registered: 7518868219
+2024-09-12 12:40:01,667 - error_doctor - ERROR - 424 - OTP has expired or mobile number is not registered: 7518868219
+2024-09-12 12:45:40,211 - error_doctor - ERROR - 1050 - Mobile number 7845784512 is not Registered
+2024-09-12 13:29:13,913 - error_doctor - ERROR - 377 - Mobile number is required
+2024-09-12 13:29:25,276 - error_doctor - ERROR - 381 - Please enter a 10-digit number.
+2024-09-12 13:29:28,484 - error_doctor - ERROR - 381 - Please enter a 10-digit number.
+2024-09-12 15:07:09,273 - error_doctor - ERROR - 132 - Please enter a 10-digit number.
+2024-09-12 15:07:11,580 - error_doctor - ERROR - 137 - Password is required
+2024-09-12 15:07:18,819 - error_doctor - ERROR - 137 - Password is required
+2024-09-12 15:11:43,844 - error_doctor - ERROR - 1057 - User details already exist for 9999999999 mobile number
+2024-09-12 15:11:50,749 - error_doctor - ERROR - 1057 - User details already exist for 9999999999 mobile number
+2024-09-12 15:11:53,744 - error_doctor - ERROR - 1057 - User details already exist for 9999999999 mobile number
+2024-09-12 16:12:17,930 - error_doctor - ERROR - 141 - Mobile number is already registered: 7518868219
+2024-09-12 17:07:11,905 - error_doctor - ERROR - 137 - Password is required
+2024-09-12 17:09:53,463 - error_doctor - ERROR - 137 - Password is required
+2024-09-12 17:23:53,541 - error_doctor - ERROR - 395 - Mobile number 8989898989 is not registered. Please register first.
+2024-09-12 17:24:50,215 - error_doctor - ERROR - 141 - Mobile number is already registered: 7518868219
+2024-09-12 17:42:45,180 - error_doctor - ERROR - 141 - Mobile number is already registered: 7518868219
+2024-09-12 18:08:08,265 - error_doctor - ERROR - 1066 - Invalid data: {'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-09-12 18:11:29,063 - error_doctor - ERROR - 1066 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-09-12 18:11:40,552 - error_doctor - ERROR - 1066 - Invalid data: {'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-09-12 18:13:56,264 - error_doctor - ERROR - 1066 - Invalid data: {'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-09-12 18:14:17,702 - error_doctor - ERROR - 1066 - Invalid data: {'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-09-12 18:15:58,778 - error_doctor - ERROR - 1066 - Invalid data: {'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-09-12 18:29:16,947 - error_doctor - ERROR - 186 - Mobile number is already registered: 7518868219
+2024-09-12 18:45:57,770 - error_doctor - ERROR - 405 - Internal Server Error: type object 'DoctorRegister' has no attribute 'objects'
+2024-09-12 18:46:01,693 - error_doctor - ERROR - 405 - Internal Server Error: type object 'DoctorRegister' has no attribute 'objects'
+2024-09-13 10:41:28,864 - error_doctor - ERROR - 405 - Internal Server Error: type object 'DoctorRegister' has no attribute 'objects'
+2024-09-13 10:46:23,965 - error_doctor - ERROR - 405 - Internal Server Error: type object 'DoctorRegister' has no attribute 'objects'
+2024-09-13 10:48:47,913 - error_doctor - ERROR - 405 - Internal Server Error: type object 'DoctorRegister' has no attribute 'objects'
+2024-09-13 10:48:54,291 - error_doctor - ERROR - 405 - Internal Server Error: type object 'DoctorRegister' has no attribute 'objects'
+2024-09-13 10:48:54,961 - error_doctor - ERROR - 405 - Internal Server Error: type object 'DoctorRegister' has no attribute 'objects'
+2024-09-13 10:49:01,707 - error_doctor - ERROR - 405 - Internal Server Error: type object 'DoctorRegister' has no attribute 'objects'
+2024-09-13 11:04:19,378 - error_doctor - ERROR - 405 - Internal Server Error: type object 'DoctorRegister' has no attribute 'objects'
+2024-09-13 11:04:29,644 - error_doctor - ERROR - 405 - Internal Server Error: type object 'DoctorRegister' has no attribute 'objects'
+2024-09-13 11:04:54,988 - error_doctor - ERROR - 405 - Internal Server Error: type object 'DoctorRegister' has no attribute 'objects'
+2024-09-13 11:12:42,933 - error_doctor - ERROR - 390 - Mobile number 3693693696 is not registered. Please register first.
+2024-09-13 11:17:28,950 - error_doctor - ERROR - 76 - Mobile number is already registered: 7418529630
+2024-09-13 11:26:08,491 - error_doctor - ERROR - 76 - Mobile number is already registered: 7418529630
+2024-09-13 11:37:32,901 - error_doctor - ERROR - 390 - Mobile number 3693693696 is not registered. Please register first.
+2024-09-13 11:38:10,131 - error_doctor - ERROR - 390 - Mobile number 3693693696 is not registered. Please register first.
+2024-09-13 11:38:17,687 - error_doctor - ERROR - 390 - Mobile number 3693693696 is not registered. Please register first.
+2024-09-13 11:53:39,342 - error_doctor - ERROR - 390 - Mobile number 3693693696 is not registered. Please register first.
+2024-09-13 11:56:08,932 - error_doctor - ERROR - 390 - Mobile number 3693693696 is not registered. Please register first.
+2024-09-13 12:06:47,196 - error_doctor - ERROR - 76 - Mobile number is already registered: 7894561230
+2024-09-13 12:47:31,636 - error_doctor - ERROR - 390 - Mobile number 9999999999 is not registered. Please register first.
+2024-09-13 12:58:51,335 - error_doctor - ERROR - 419 - OTP has expired or mobile number is not registered: 7518868219
+2024-09-13 12:58:55,055 - error_doctor - ERROR - 419 - OTP has expired or mobile number is not registered: 7518868219
+2024-09-13 13:01:44,275 - error_doctor - ERROR - 1066 - Invalid data: {'email': [ErrorDetail(string='Enter a valid email address.', code='invalid')]}
+2024-09-13 13:06:28,188 - error_doctor - ERROR - 76 - Mobile number is already registered: 7518868219
+2024-09-13 13:19:46,402 - error_doctor - ERROR - 390 - Mobile number 6666666666 is not registered. Please register first.
+2024-09-13 13:19:50,048 - error_doctor - ERROR - 390 - Mobile number 6666666666 is not registered. Please register first.
+2024-09-13 13:31:15,890 - error_doctor - ERROR - 1052 - User details already exist for 8528528520 mobile number
+2024-09-13 15:08:22,099 - error_doctor - ERROR - 1070 - Exception occurred: cannot pickle 'BufferedRandom' instances
+2024-09-13 15:54:19,157 - error_doctor - ERROR - 419 - OTP has expired or mobile number is not registered: 7518868219
+2024-09-13 16:15:49,714 - error_doctor - ERROR - 1161 - Exception occurred: cannot pickle 'BufferedRandom' instances
+2024-09-13 16:32:14,256 - error_doctor - ERROR - 429 - Please enter a 10-digit number.
+2024-09-13 16:49:58,470 - error_doctor - ERROR - 472 - OTP has expired or mobile number is not registered: 7518868219
+2024-09-13 16:50:31,343 - error_doctor - ERROR - 472 - OTP has expired or mobile number is not registered: 7518868219
+2024-09-13 16:50:33,933 - error_doctor - ERROR - 472 - OTP has expired or mobile number is not registered: 7518868219
+2024-09-13 16:51:03,041 - error_doctor - ERROR - 476 - Incorrect OTP entered for mobile number: 7518868219
+2024-09-16 12:56:25,218 - error_doctor - ERROR - 190 - Password is required
+2024-09-16 12:57:00,319 - error_doctor - ERROR - 190 - Password is required
+2024-09-20 08:08:35,368 - error_doctor - ERROR - 291 - Mobile number and OTP are required
+2024-09-24 09:57:16,766 - error_doctor - ERROR - 237 - Mobile number 9935266755 is not registered or OTP session expired. Resend OTP.
+2024-09-24 09:57:38,344 - error_doctor - ERROR - 237 - Mobile number 9935266755 is not registered or OTP session expired. Resend OTP.
+2024-09-24 10:04:26,842 - error_doctor - ERROR - 246 - Mobile number 9935266755 is not registered or OTP session expired. Resend OTP.
+2024-09-24 10:05:03,108 - error_doctor - ERROR - 246 - Mobile number 9935266755 is not registered or OTP session expired. Resend OTP.
+2024-09-24 10:10:30,060 - error_doctor - ERROR - 258 - Mobile number 9935266755 is not registered or OTP session expired. Resend OTP.
+2024-09-24 10:10:46,638 - error_doctor - ERROR - 258 - Mobile number 9935266755 is not registered or OTP session expired. Resend OTP.
+2024-09-26 11:57:44,832 - error_doctor - ERROR - 722 - Mobile number is required
+2024-09-26 12:10:12,015 - error_doctor - ERROR - 722 - Mobile number is required
+2024-09-26 12:11:13,513 - error_doctor - ERROR - 722 - Mobile number is required
+2024-09-26 12:11:15,213 - error_doctor - ERROR - 722 - Mobile number is required
+2024-09-26 12:14:10,859 - error_doctor - ERROR - 722 - Mobile number is required
+2024-09-26 12:17:41,503 - error_doctor - ERROR - 722 - Mobile number is required
+2024-09-27 06:08:20,920 - error_doctor - ERROR - 722 - Mobile number is required
+2024-09-27 11:00:00,098 - error_doctor - ERROR - 295 - Mobile number is already registered: 7518868219
+2024-09-27 11:00:06,838 - error_doctor - ERROR - 295 - Mobile number is already registered: 7518868219
+2024-09-27 12:32:10,734 - error_doctor - ERROR - 1378 - Error occurred while processing GET request: no such column: doctor_personalsdetails.doc_file
+2024-09-30 05:54:55,223 - error_doctor - ERROR - 836 - Mobile number 3395266755 is not registered. Please register first.
+2024-09-30 06:54:13,214 - error_doctor - ERROR - 836 - Mobile number 1212121212 is not registered. Please register first.
+2024-09-30 06:55:58,328 - error_doctor - ERROR - 1525 - Invalid data: {'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-09-30 07:54:29,973 - error_doctor - ERROR - 1567 - Exception occurred: cannot pickle '_io.BufferedRandom' object
+2024-09-30 07:57:48,681 - error_doctor - ERROR - 1567 - Exception occurred: cannot pickle '_io.BufferedRandom' object
+2024-09-30 10:42:09,800 - error_doctor - ERROR - 865 - OTP has expired or mobile number is not registered: 7518868219
+2024-09-30 12:02:37,755 - error_doctor - ERROR - 285 - Mobile number is required
+2024-09-30 12:03:30,837 - error_doctor - ERROR - 293 - Password is required
+2024-09-30 12:16:16,047 - error_doctor - ERROR - 346 - Mobile number 9988676776 is not registered or OTP session expired. Resend OTP.
+2024-09-30 12:24:51,163 - error_doctor - ERROR - 346 - Mobile number 9988676776 is not registered or OTP session expired. Resend OTP.
+2024-09-30 12:27:15,498 - error_doctor - ERROR - 346 - Mobile number 9988676776 is not registered or OTP session expired. Resend OTP.
+2024-10-01 05:41:17,123 - error_doctor - ERROR - 184 - Mobile number, OTP, and password are required
+2024-10-01 06:40:16,551 - error_doctor - ERROR - 606 - OTP has expired or mobile number is not registered: 7518868219
+2024-10-01 06:40:18,246 - error_doctor - ERROR - 606 - OTP has expired or mobile number is not registered: 7518868219
+2024-10-01 07:23:56,495 - error_doctor - ERROR - 1304 - Invalid data: {'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-10-01 07:24:16,865 - error_doctor - ERROR - 1304 - Invalid data: {'registration_no': [ErrorDetail(string='This field may not be blank.', code='blank')], 'experience': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-10-01 09:02:19,133 - error_doctor - ERROR - 139 - Please enter a 10-digit number.
+2024-10-01 09:02:21,537 - error_doctor - ERROR - 139 - Please enter a 10-digit number.
+2024-10-01 12:24:31,133 - error_doctor - ERROR - 161 - Mobile number 9988676776 is already registered
+2024-10-01 12:48:48,420 - error_doctor - ERROR - 216 - Mobile number 7518868219 is already registered
+2024-10-01 12:49:51,326 - error_doctor - ERROR - 207 - OTP expired for mobile number 7518868219

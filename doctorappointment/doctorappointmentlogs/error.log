@@ -1,0 +1,30 @@
+2024-10-16 09:33:04,838 - error_doctorappointment - ERROR - 89 - Exception during updating reminder_sent for appointment ID: 251: 'PersonalsDetails' object has no attribute 'hospital_name'
+Traceback (most recent call last):
+  File "/home/poweruser/Desktop/PRODUCTIONTESTING/digiquest/doctorappointment/tasks.py", line 84, in update_reminder_sent
+    appointment.save()
+  File "/home/poweruser/Desktop/PRODUCTIONTESTING/venv/lib/python3.8/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/poweruser/Desktop/PRODUCTIONTESTING/venv/lib/python3.8/site-packages/django/db/models/base.py", line 892, in save_base
+    post_save.send(
+  File "/home/poweruser/Desktop/PRODUCTIONTESTING/venv/lib/python3.8/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+  File "/home/poweruser/Desktop/PRODUCTIONTESTING/venv/lib/python3.8/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "/home/poweruser/Desktop/PRODUCTIONTESTING/digiquest/doctorappointment/signals.py", line 121, in notify_when_booked_patient
+    hospital_name = instance.doctor.hospital_name
+AttributeError: 'PersonalsDetails' object has no attribute 'hospital_name'
+2024-10-16 10:08:04,991 - error_doctorappointment - ERROR - 89 - Exception during updating reminder_sent for appointment ID: 251: 'PersonalsDetails' object has no attribute 'hospital_name'
+Traceback (most recent call last):
+  File "/home/poweruser/Desktop/PRODUCTIONTESTING/digiquest/doctorappointment/tasks.py", line 84, in update_reminder_sent
+    appointment.save()
+  File "/home/poweruser/Desktop/PRODUCTIONTESTING/venv/lib/python3.8/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/poweruser/Desktop/PRODUCTIONTESTING/venv/lib/python3.8/site-packages/django/db/models/base.py", line 892, in save_base
+    post_save.send(
+  File "/home/poweruser/Desktop/PRODUCTIONTESTING/venv/lib/python3.8/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+  File "/home/poweruser/Desktop/PRODUCTIONTESTING/venv/lib/python3.8/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "/home/poweruser/Desktop/PRODUCTIONTESTING/digiquest/doctorappointment/signals.py", line 121, in notify_when_booked_patient
+    if instance.reminder_sent:
+AttributeError: 'PersonalsDetails' object has no attribute 'hospital_name'
