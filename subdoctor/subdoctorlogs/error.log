@@ -1,0 +1,1 @@
+2024-07-01 17:13:53,878 - error_subdoctor - ERROR - 176 - Error occurred while processing GET request: Cannot resolve keyword 'doctor' into field. Choices are: address, date_of_birth, gender, id, is_verified, name, profile_pic, qualification, specialization, subdoctor, subdoctor_id

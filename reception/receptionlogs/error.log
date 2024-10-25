@@ -1,0 +1,20 @@
+2024-06-24 17:46:12,834 - error_reception - ERROR - 39 - Mobile number is already registered: 9876543211
+2024-06-24 17:52:22,147 - error_reception - ERROR - 39 - Mobile number is already registered: 9876543211
+2024-06-24 17:59:10,923 - error_reception - ERROR - 39 - Mobile number is already registered: 9876543219
+2024-06-24 17:59:18,762 - error_reception - ERROR - 39 - Mobile number is already registered: 9876543299
+2024-06-25 13:04:56,362 - error_reception - ERROR - 39 - Mobile number is already registered: 9876543211
+2024-06-25 18:23:35,089 - error_reception - ERROR - 87 - Mobile number 9876543219 is not registered or OTP session expired. Resend OTP.
+2024-06-25 18:25:45,812 - error_reception - ERROR - 39 - Mobile number is already registered: 9876543219
+2024-06-26 11:01:15,733 - error_reception - ERROR - 34 - Mobile number is required
+2024-06-26 11:15:56,475 - error_reception - ERROR - 37 - Please enter a 10-digit number.
+2024-06-27 11:26:55,946 - error_reception - ERROR - 40 - Mobile number is already registered: 9876543216
+2024-07-06 14:38:29,031 - error_reception - ERROR - 91 - Incorrect OTP. Please try again.
+2024-07-06 15:01:24,297 - error_reception - ERROR - 86 - Mobile number 9876543255 is not registered or OTP session expired. Resend OTP.
+2024-07-06 16:49:54,237 - error_reception - ERROR - 35 - Please enter a 10-digit number.
+2024-07-06 17:48:58,827 - error_reception - ERROR - 91 - Incorrect OTP. Please try again.
+2024-07-09 17:41:22,818 - error_reception - ERROR - 38 - Mobile number is already registered: 9898989898
+2024-07-26 18:31:09,225 - error_reception - ERROR - 38 - Mobile number is already registered: 9898989898
+2024-08-10 16:08:15,124 - error_reception - ERROR - 39 - Mobile number is already registered: 2482482482
+2024-09-19 13:15:57,536 - error_reception - ERROR - 33 - Mobile number is required
+2024-09-20 07:18:04,380 - error_reception - ERROR - 33 - Mobile number is required
+2024-09-20 09:46:33,997 - error_reception - ERROR - 87 - Mobile number 9935266755 is not registered or OTP session expired. Resend OTP.

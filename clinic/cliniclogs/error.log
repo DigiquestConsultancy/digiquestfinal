@@ -1,0 +1,192 @@
+2024-06-22 13:31:33,216 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-22 13:32:17,293 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got '$'.
+2024-06-22 14:31:47,236 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-22 16:53:06,994 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-22 17:20:19,941 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-22 17:20:26,966 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-22 17:21:58,203 - error_clinic - ERROR - 37 - Mobile number is already registered: 8766324585
+2024-06-24 14:42:29,436 - error_clinic - ERROR - 34 - Please enter a 10-digit number.
+2024-06-24 16:12:21,585 - error_clinic - ERROR - 31 - Mobile number is required
+2024-06-24 16:21:05,264 - error_clinic - ERROR - 31 - Mobile number is required
+2024-06-24 16:33:03,130 - error_clinic - ERROR - 31 - Mobile number is required
+2024-06-24 16:33:11,671 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543210
+2024-06-24 16:44:04,074 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543210
+2024-06-24 16:44:32,529 - error_clinic - ERROR - 85 - Mobile number 9876543212 is not registered or OTP session expired. Resend OTP.
+2024-06-24 16:44:52,736 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543210
+2024-06-24 16:45:00,578 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543211
+2024-06-24 16:45:44,782 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543210
+2024-06-24 16:52:22,836 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-24 16:52:28,335 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-24 16:53:27,938 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543210
+2024-06-24 17:05:46,438 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-24 17:26:22,581 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-24 17:42:01,415 - error_clinic - ERROR - 72 - Please enter a valid 10-digit mobile number.
+2024-06-24 17:42:07,138 - error_clinic - ERROR - 72 - Please enter a valid 10-digit mobile number.
+2024-06-24 17:43:33,545 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-24 17:51:23,277 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-24 17:55:39,100 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-24 18:01:15,032 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-24 18:04:59,312 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543210
+2024-06-24 18:07:17,298 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-24 18:18:26,163 - error_clinic - ERROR - 34 - Please enter a 10-digit number.
+2024-06-24 18:20:17,865 - error_clinic - ERROR - 34 - Please enter a 10-digit number.
+2024-06-24 18:22:54,113 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-24 18:24:09,184 - error_clinic - ERROR - 31 - Mobile number is required
+2024-06-24 18:24:13,490 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-24 18:33:45,318 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-25 11:24:40,811 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 12:18:24,063 - error_clinic - ERROR - 85 - Mobile number 5656565656 is not registered or OTP session expired. Resend OTP.
+2024-06-25 12:18:33,718 - error_clinic - ERROR - 90 - Incorrect OTP. Please try again.
+2024-06-25 12:20:54,264 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 12:22:54,928 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 12:23:18,740 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 12:23:28,515 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-25 12:26:15,606 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 12:26:17,395 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 12:26:19,618 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-25 12:26:22,177 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 12:27:49,042 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 12:32:22,726 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 12:35:01,688 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 12:55:04,571 - error_clinic - ERROR - 72 - Please enter a valid 10-digit mobile number.
+2024-06-25 12:56:08,870 - error_clinic - ERROR - 72 - Please enter a valid 10-digit mobile number.
+2024-06-25 12:58:53,211 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-25 13:14:21,147 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 13:14:35,466 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-25 13:14:39,250 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 13:51:39,866 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-25 14:06:29,980 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-25 14:43:38,783 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Cannot resolve keyword 'clinic_id' into field. Choices are: clinicdetails, doctor, doctor_id, id, is_doctor, mobile_number
+2024-06-25 14:44:09,148 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Cannot resolve keyword 'clinic_id' into field. Choices are: clinicdetails, doctor, doctor_id, id, is_doctor, mobile_number
+2024-06-25 14:45:02,358 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 14:45:04,208 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 14:45:39,155 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 14:47:06,547 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 14:48:36,859 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 14:48:37,829 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 14:49:05,937 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 14:49:07,115 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 14:49:08,112 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 14:49:12,205 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 14:49:27,507 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 14:49:28,467 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 14:49:43,626 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Cannot resolve keyword 'clinic_id' into field. Choices are: clinicdetails, doctor, doctor_id, id, is_doctor, mobile_number
+2024-06-25 14:49:44,557 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Cannot resolve keyword 'clinic_id' into field. Choices are: clinicdetails, doctor, doctor_id, id, is_doctor, mobile_number
+2024-06-25 14:50:45,063 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 14:50:46,437 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 14:50:56,763 - error_clinic - ERROR - 125 - Error occurred while processing GET request: 'ClinicDetails' object has no attribute 'exists'
+2024-06-25 14:50:58,006 - error_clinic - ERROR - 125 - Error occurred while processing GET request: 'ClinicDetails' object has no attribute 'exists'
+2024-06-25 14:59:19,806 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-25 14:59:52,123 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 15:00:22,859 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 15:01:23,183 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 15:01:27,391 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-25 17:20:12,330 - error_clinic - ERROR - 125 - Error occurred while processing GET request: 'QuerySet' object has no attribute 'mobile'
+2024-06-25 17:20:13,410 - error_clinic - ERROR - 125 - Error occurred while processing GET request: 'QuerySet' object has no attribute 'mobile'
+2024-06-25 17:21:12,637 - error_clinic - ERROR - 125 - Error occurred while processing GET request: 'QuerySet' object has no attribute 'mobile_number'
+2024-06-25 17:21:13,612 - error_clinic - ERROR - 125 - Error occurred while processing GET request: 'QuerySet' object has no attribute 'mobile_number'
+2024-06-25 18:14:40,479 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543210
+2024-06-25 18:15:09,336 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-25 18:26:01,265 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543210
+2024-06-25 18:48:57,926 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-25 18:49:01,388 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-25 18:49:33,561 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-25 18:49:43,637 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 10:37:21,971 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543210
+2024-06-26 10:37:29,225 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543213
+2024-06-26 10:37:40,313 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543215
+2024-06-26 10:44:14,859 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 10:54:19,510 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 10:54:42,934 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 10:55:23,291 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 11:03:50,296 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 11:04:30,996 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 11:05:07,508 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 11:05:20,618 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 11:05:25,134 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 11:05:52,220 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 11:07:47,670 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 11:08:35,807 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 11:10:44,401 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543211
+2024-06-26 11:10:57,141 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543215
+2024-06-26 11:11:23,602 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 11:12:26,530 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 11:14:02,203 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 11:14:21,094 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 11:21:08,008 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 13:23:33,435 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 13:23:41,132 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 13:24:02,672 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543210
+2024-06-26 13:32:42,556 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-26 13:46:34,509 - error_clinic - ERROR - 34 - Please enter a 10-digit number.
+2024-06-26 13:48:52,825 - error_clinic - ERROR - 137 - Mobile number 4444444444 is not Registered
+2024-06-26 13:52:02,883 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-26 14:35:21,296 - error_clinic - ERROR - 37 - Mobile number is already registered: 2323232323
+2024-06-26 14:35:27,476 - error_clinic - ERROR - 37 - Mobile number is already registered: 2323232323
+2024-06-26 14:39:08,620 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 14:39:25,922 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-26 14:40:50,361 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-26 14:40:59,799 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-26 14:41:01,288 - error_clinic - ERROR - 34 - Please enter a 10-digit number.
+2024-06-26 14:42:32,628 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 14:44:27,740 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 14:46:52,256 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 14:52:09,699 - error_clinic - ERROR - 85 - Mobile number 2828282828 is not registered or OTP session expired. Resend OTP.
+2024-06-26 14:52:20,715 - error_clinic - ERROR - 90 - Incorrect OTP. Please try again.
+2024-06-26 14:52:42,701 - error_clinic - ERROR - 85 - Mobile number 2828282828 is not registered or OTP session expired. Resend OTP.
+2024-06-26 14:54:15,031 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 14:58:48,407 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-06-26 15:02:01,058 - error_clinic - ERROR - 34 - Please enter a 10-digit number.
+2024-06-26 15:02:35,373 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-26 15:16:12,464 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-26 15:26:19,828 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-26 15:26:43,729 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-26 15:26:48,945 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-06-26 16:40:30,534 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-26 16:41:00,577 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-26 16:42:56,695 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-06-26 16:43:34,846 - error_clinic - ERROR - 142 - User details already exist for 9876543245 mobile number
+2024-06-26 16:44:01,839 - error_clinic - ERROR - 142 - User details already exist for 9876543245 mobile number
+2024-06-27 11:05:14,573 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543215
+2024-06-27 16:49:30,596 - error_clinic - ERROR - 34 - Please enter a 10-digit number.
+2024-06-27 16:49:38,727 - error_clinic - ERROR - 37 - Mobile number is already registered: 9876543215
+2024-06-27 16:50:18,842 - error_clinic - ERROR - 155 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-07-01 15:20:47,702 - error_clinic - ERROR - 157 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-07-04 17:03:13,017 - error_clinic - ERROR - 39 - Mobile number is already registered: 9876543277
+2024-07-06 17:12:47,857 - error_clinic - ERROR - 33 - Please enter a 10-digit number.
+2024-07-06 17:13:17,256 - error_clinic - ERROR - 154 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-07-06 17:14:17,101 - error_clinic - ERROR - 154 - Invalid data: {'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-07-06 17:18:56,999 - error_clinic - ERROR - 154 - Invalid data: {'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-07-06 17:18:57,467 - error_clinic - ERROR - 154 - Invalid data: {'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-07-06 17:18:57,670 - error_clinic - ERROR - 154 - Invalid data: {'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-07-06 17:27:48,655 - error_clinic - ERROR - 154 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-07-06 17:28:30,292 - error_clinic - ERROR - 154 - Invalid data: {'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-07-06 17:28:46,489 - error_clinic - ERROR - 141 - User details already exist for 9876543275 mobile number
+2024-07-09 17:21:07,663 - error_clinic - ERROR - 141 - User details already exist for 6565656565 mobile number
+2024-07-09 17:21:19,667 - error_clinic - ERROR - 141 - User details already exist for 6565656565 mobile number
+2024-07-09 17:22:59,338 - error_clinic - ERROR - 154 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-07-09 17:34:28,932 - error_clinic - ERROR - 141 - User details already exist for 9191919191 mobile number
+2024-07-09 17:34:34,272 - error_clinic - ERROR - 141 - User details already exist for 9191919191 mobile number
+2024-07-09 17:37:26,980 - error_clinic - ERROR - 154 - Invalid data: {'name': [ErrorDetail(string='This field may not be blank.', code='blank')], 'gender': [ErrorDetail(string='"" is not a valid choice.', code='invalid_choice')]}
+2024-07-22 13:16:14,143 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-07-22 16:30:19,236 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-07-22 16:30:27,845 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-07-22 16:30:36,324 - error_clinic - ERROR - 125 - Error occurred while processing GET request: Field 'id' expected a number but got 'undefined'.
+2024-07-23 17:32:23,703 - error_clinic - ERROR - 125 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-07-25 18:22:18,221 - error_clinic - ERROR - 66 - Mobile number, doctor_id, and OTP are required.
+2024-07-25 18:22:32,783 - error_clinic - ERROR - 66 - Mobile number, doctor_id, and OTP are required.
+2024-07-25 18:33:38,989 - error_clinic - ERROR - 66 - Mobile number, doctor_id, and OTP are required.
+2024-07-25 18:36:34,508 - error_clinic - ERROR - 66 - Mobile number, doctor_id, and OTP are required.
+2024-07-26 16:54:34,841 - error_clinic - ERROR - 124 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-07-26 17:01:58,737 - error_clinic - ERROR - 124 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-07-26 17:02:00,489 - error_clinic - ERROR - 124 - Error occurred while processing GET request: ClinicRegister matching query does not exist.
+2024-08-10 17:46:39,580 - error_clinic - ERROR - 33 - Please enter a 10-digit number.
+2024-09-19 13:16:53,346 - error_clinic - ERROR - 84 - Mobile number 9935266755 is not registered or OTP session expired. Resend OTP.
+2024-09-19 13:17:08,035 - error_clinic - ERROR - 84 - Mobile number 9935266755 is not registered or OTP session expired. Resend OTP.
+2024-09-24 06:04:00,851 - error_clinic - ERROR - 39 - Mobile number is already registered: 9935266755
+2024-09-24 07:40:13,081 - error_clinic - ERROR - 39 - Mobile number is already registered: 9935266755
+2024-09-24 07:57:00,791 - error_clinic - ERROR - 39 - Mobile number is already registered: 9935266755
+2024-09-24 07:57:03,610 - error_clinic - ERROR - 39 - Mobile number is already registered: 9935266755
+2024-09-25 12:45:01,813 - error_clinic - ERROR - 39 - Mobile number is already registered: 9935266755
+2024-09-30 10:56:57,075 - error_clinic - ERROR - 39 - Mobile number is already registered: 9625393987
+2024-10-19 10:59:28,992 - error_clinic - ERROR - 159 - Invalid data: {'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
