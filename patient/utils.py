@@ -274,7 +274,6 @@ def congratulation_msg_when_patient_register_aisensy(patient_mobile_number):
         response = requests.post(url, headers=headers, json=payload)
         response.raise_for_status()  # Raises an error for HTTP errors
         
-        # Check the response for success criteria if needed
         if response.json().get('status') == 'success':
             return {'message': 'Message sent successfully!'}
         else:

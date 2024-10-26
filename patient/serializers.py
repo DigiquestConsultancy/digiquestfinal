@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from doctorappointment.models import Appointmentslots
-from .models import PatientDetails, PatientDocument, PatientDocumentById, PatientFeedback, PatientPrescription, PatientPrescriptionFile,  PatientRecord, PatientRegister, PatientVarryDetails, Time
+from .models import PatientDetails, PatientDocument, PatientDocumentById, PatientFeedback, PatientPrescription, PatientPrescriptionFile,  PatientRecord, PatientRegister, PatientVarryDetails
 
 class PatientRegisterSerializer(serializers.ModelSerializer):
     class Meta:
@@ -68,7 +68,7 @@ class PatientRecordSerializer(serializers.ModelSerializer):
 class PatientVarryDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = PatientVarryDetails
-        fields = ['id','mobile_number', 'name', 'address', 'date_of_birth', 'age', 'gender', 'blood_group', 'profile_pic', 'appointment']
+        fields = ['id','mobile_number', 'name', 'address', 'date_of_birth', 'age', 'gender', 'blood_group', 'profile_pic', 'appointment',"email"]
         
 class PatientDocumentSerializer(serializers.ModelSerializer):
     document_file = serializers.SerializerMethodField()
@@ -100,8 +100,4 @@ class PatientPrescriptionFileSerializer(serializers.ModelSerializer):
         model = PatientPrescriptionFile
         fields =  "__all__"
         
-class TimeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Time
-        fields = "__all__"
  

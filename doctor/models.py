@@ -192,6 +192,7 @@ class Opd(models.Model):
     doc_file = models.FileField(upload_to=save_doc, null=True, blank=True)
     start_day = models.TextField(null=True, blank=True)
     end_day = models.TextField(null=True, blank=True)
+    consultation_fee=models.FloatField()
     is_update = models.BooleanField(default=False, null=True, blank=True)
  
  

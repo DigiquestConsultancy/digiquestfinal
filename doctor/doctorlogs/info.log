@@ -6156,3 +6156,46 @@ AttributeError: 'QuerySet' object has no attribute 'mobile_number'
 2024-10-17 13:23:14,441 - info_doctor - INFO - 530 - Login successful for mobile number: 7518868219
 2024-10-17 13:25:10,568 - info_doctor - INFO - 481 - OTP generated successfully 002075
 2024-10-17 13:25:19,011 - info_doctor - INFO - 530 - Login successful for mobile number: 9935266755
+2024-10-19 06:54:10,553 - info_doctor - INFO - 177 - OTP generated for mobile number 6386326186: 364509
+2024-10-19 06:54:35,103 - info_doctor - INFO - 191 - Mobile number: 6386326186, OTP: 364509
+2024-10-19 06:54:35,893 - info_doctor - INFO - 240 - User with mobile number 6386326186 successfully registered
+2024-10-19 06:55:51,886 - info_doctor - INFO - 481 - OTP generated successfully 082146
+2024-10-19 06:56:05,396 - info_doctor - INFO - 530 - Login successful for mobile number: 6386326186
+2024-10-19 09:15:41,438 - info_doctor - INFO - 483 - OTP generated successfully 822487
+2024-10-19 09:16:11,203 - info_doctor - INFO - 532 - Login successful for mobile number: 6386326186
+2024-10-19 09:20:32,620 - info_doctor - INFO - 1159 - Doctor details saved successfully
+2024-10-19 10:20:16,182 - info_doctor - INFO - 483 - OTP generated successfully 775988
+2024-10-19 10:20:34,926 - info_doctor - INFO - 532 - Login successful for mobile number: 9935266755
+2024-10-21 10:07:06,627 - info_doctor - INFO - 551 - OTP generated successfully 554835
+2024-10-21 10:07:20,188 - info_doctor - INFO - 600 - Login successful for mobile number: 6386326186
+2024-10-21 10:30:01,999 - info_doctor - INFO - 507 - OTP generated successfully 239621
+2024-10-21 10:30:21,005 - info_doctor - INFO - 556 - Login successful for mobile number: 6386326186
+2024-10-21 10:33:03,016 - info_doctor - INFO - 507 - OTP generated successfully 960291
+2024-10-21 12:08:54,391 - info_doctor - INFO - 507 - OTP generated successfully 378401
+2024-10-21 12:09:16,127 - info_doctor - INFO - 556 - Login successful for mobile number: 6386326186
+2024-10-21 12:20:19,961 - info_doctor - INFO - 507 - OTP generated successfully 294227
+2024-10-21 12:20:35,876 - info_doctor - INFO - 556 - Login successful for mobile number: 6386326186
+2024-10-22 10:12:10,140 - info_doctor - INFO - 507 - OTP generated successfully 998275
+2024-10-22 10:12:29,015 - info_doctor - INFO - 556 - Login successful for mobile number: 6386326186
+2024-10-23 07:54:02,762 - info_doctor - INFO - 179 - OTP generated for mobile number 6388125831: 512368
+2024-10-23 07:55:38,666 - info_doctor - INFO - 179 - OTP generated for mobile number 9565699510: 757190
+2024-10-23 07:55:56,580 - info_doctor - INFO - 193 - Mobile number: 9565699510, OTP: 757190
+2024-10-23 07:55:57,429 - info_doctor - INFO - 242 - User with mobile number 9565699510 successfully registered
+2024-10-23 08:05:55,780 - info_doctor - INFO - 1113 - Doctor details saved successfully
+2024-10-23 08:06:21,939 - info_doctor - INFO - 1113 - Doctor details saved successfully
+2024-10-23 09:23:35,424 - info_doctor - INFO - 507 - OTP generated successfully 941660
+2024-10-23 09:25:44,701 - info_doctor - INFO - 507 - OTP generated successfully 498597
+2024-10-23 09:26:08,605 - info_doctor - INFO - 556 - Login successful for mobile number: 9565699510
+2024-10-23 09:30:18,610 - info_doctor - INFO - 1151 - Doctor details updated successfully
+2024-10-24 06:19:14,905 - info_doctor - INFO - 179 - OTP generated for mobile number 9087654321: 189621
+2024-10-24 06:19:21,695 - info_doctor - INFO - 193 - Mobile number: 9087654321, OTP: 
+2024-10-24 06:20:21,593 - info_doctor - INFO - 193 - Mobile number: 9087654321, OTP: 
+2024-10-24 06:20:22,081 - info_doctor - INFO - 179 - OTP generated for mobile number 9087654321: 501752
+2024-10-24 07:35:58,294 - info_doctor - INFO - 507 - OTP generated successfully 147487
+2024-10-24 07:36:17,511 - info_doctor - INFO - 556 - Login successful for mobile number: 9695404525
+2024-10-24 07:39:45,981 - info_doctor - INFO - 507 - OTP generated successfully 004941
+2024-10-24 07:40:11,705 - info_doctor - INFO - 556 - Login successful for mobile number: 9236398122
+2024-10-24 07:41:26,762 - info_doctor - INFO - 507 - OTP generated successfully 879500
+2024-10-24 07:41:44,529 - info_doctor - INFO - 556 - Login successful for mobile number: 9695404525
+2024-10-24 07:52:24,301 - info_doctor - INFO - 507 - OTP generated successfully 976190
+2024-10-24 07:52:39,241 - info_doctor - INFO - 556 - Login successful for mobile number: 6386326186

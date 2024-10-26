@@ -92,6 +92,7 @@ class PatientVarryDetails(models.Model):
     gender = models.CharField(max_length=6, choices=(('male', 'Male'), ('female', 'Female'), ('others', 'Others')))
     blood_group = models.CharField(max_length=5)
     profile_pic= models.FileField(upload_to=save_user_pic, null=True, blank=True)
+    email = models.EmailField(max_length=254, null=True, blank=True)
     appointment=models.ForeignKey('doctorappointment.Appointmentslots', on_delete=models.CASCADE, null=True, blank=True)
     
 
@@ -112,23 +113,23 @@ class PatientDocumentById(models.Model):
 
 
 
-class Time(models.Model):
-    time = models.CharField(max_length=50, choices=[('morning', 'Morning'),
-                                                    ('afternoon', 'Afternoon'),
-                                                    ('evening', 'Evening'),
-                                                    ('night', 'Night')])
-    is_selected = models.BooleanField(default=False)
-    appointment = models.ForeignKey('doctorappointment.Appointmentslots', on_delete=models.CASCADE)
-    
-
-    
-    
 class PatientPrescription(models.Model):
     patient = models.ForeignKey(PatientVarryDetails, on_delete=models.CASCADE)
     medicine_name = models.CharField(max_length=100)
     comment = models.CharField(max_length=500)
+    time = models.CharField(max_length=100, choices=[('morning', 'Morning'),
+                                                    ('morning-afternoon', 'Morning-Afternoon'),
+                                                    ('morning-evening','Morning-Evening'),
+                                                    ('morning-afternoon-evening','Morning-Afternoon-Evening'),
+                                                    ('morning-afternoon-evening-night', 'Morning-Afternoon-Evening-Night'),
+                                                    ('afternoon', 'Afternoon'),
+                                                    ('evening', 'Evening'),
+                                                    ('night', 'Night'),
+
+                                                    ])
     description = models.CharField(max_length=500)
     appointment = models.ForeignKey('doctorappointment.Appointmentslots', on_delete=models.CASCADE)
+
     
     
 class PatientRecord(models.Model):
@@ -141,7 +142,7 @@ class PatientRecord(models.Model):
     oxygen_level = models.FloatField(null=True, blank=True)
     weight = models.FloatField(null=True, blank=True)
     height = models.FloatField(null=True, blank=True)
-    record_date=models.DateField()
+    bmi = models.FloatField(null=True, blank=True)
     appointment = models.ForeignKey('doctorappointment.Appointmentslots', on_delete=models.CASCADE, null=True, blank=True)
     
     

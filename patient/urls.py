@@ -1,7 +1,7 @@
 from django.urls import path
 
 
-from .views import  ForgetPassword, PatientVerification,GetPatientDetailsUsingID, PatientCity, PatientDetailByDoctor, PatientDetailsAPIView, PatientDocumentSearch, PatientDocumentUsingAppointmentID, PatientLoginApiView, PatientNameByID,  PatientRecordView, PrintPatientReport, SearchMyAppointments ,PatientDocumentUpload, PatientFeedbackApi, PatientLoginApi, PatientPrescriptionApi, PatientRegisterApi, PatientDetailApi, TimeView,  UploadPrescriptionFile, UploadPrescriptionFileView, ViewDocument, ViewDocumentByAppointmentId
+from .views import  ForgetPassword, PatientVerification,GetPatientDetailsUsingID, PatientCity, PatientDetailByDoctor, PatientDetailsAPIView, PatientDocumentSearch, PatientDocumentUsingAppointmentID, PatientLoginApiView, PatientNameByID,  PatientRecordView, PrintPatientReport, SearchMyAppointments ,PatientDocumentUpload, PatientFeedbackApi, PatientLoginApi, PatientPrescriptionApi, PatientRegisterApi, PatientDetailApi,  UploadPrescriptionFile, UploadPrescriptionFileView, ViewDocument, ViewDocumentByAppointmentId
 
 
 
@@ -18,7 +18,7 @@ urlpatterns = [
     path("patientpriscription/",PatientPrescriptionApi.as_view()),
     path("feedback/", PatientFeedbackApi.as_view()),
     path("patientdetailbydoctor/",PatientDetailByDoctor.as_view()),
-    path("patientcheckup/",PatientRecordView.as_view()),
+    path("vital/",PatientRecordView.as_view()),
     path("viewdocument/",ViewDocument.as_view()),
     path("patientname/",PatientNameByID.as_view()),
     path("patient/",PatientDetailsAPIView.as_view()),
@@ -26,7 +26,6 @@ urlpatterns = [
     path("viewdocumentbyid/",ViewDocumentByAppointmentId.as_view()),
     path("patientprescriptonfile/",UploadPrescriptionFile.as_view()),
     path("patientprescriptonfileView/",UploadPrescriptionFileView.as_view()),
-    path("time/", TimeView.as_view()),
     path("forget/", ForgetPassword.as_view()),
     path('printrepport/', PrintPatientReport.as_view()),
 ]

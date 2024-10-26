@@ -3,7 +3,7 @@ from django.urls import path
 from django.conf.urls.static import static
 
 
-from .views import   Accessibility, ChangePassword, DoctorDetailSummary, OpdDaysView, OpdTimeView,PersonalDoctorDetail,DoctorAddress, CountDoctors, DoctorLoginApi, DoctorDetailApi, DoctorFeedbackApi, DoctorLoginThroughPassword, DoctorName, DoctorRegisterApi,  DoctordetailsUsingID, ForgetPassword, SearchDoctor, SelectQualification, SymptomsDetailView, SymptomsSearch,  GetHospitalName, DoctorBook, UserVerification, ViewDoctorDocument
+from .views import   Accessibility, ChangePassword, DoctorDetailSummary, DoctorListBySpecialization, OpdDays,  OpdTimeView,PersonalDoctorDetail,DoctorAddress, CountDoctors, DoctorLoginApi, DoctorDetailApi, DoctorFeedbackApi, DoctorLoginThroughPassword, DoctorName, DoctorRegisterApi,  DoctordetailsUsingID, ForgetPassword, SearchDoctor, SelectQualification, SymptomsDetailView, SymptomsSearch,  GetHospitalName, DoctorBook, UserVerification, ViewDoctorDocument
 
 
 
@@ -26,13 +26,15 @@ urlpatterns = [
     path('doctorbook/', DoctorBook.as_view()),
     path('symptomssearch/', SymptomsSearch.as_view()),
     path('symptomsdetail/', SymptomsDetailView.as_view()),
-    path('opddays/',OpdDaysView.as_view()),
+    path('opddays/',OpdDays.as_view()),
     path('doctorsummary/', DoctorDetailSummary.as_view()),
     path('doctordetail/', PersonalDoctorDetail.as_view()),
     path('doctoraddres/', DoctorAddress.as_view()),
     path('timeopd/', OpdTimeView.as_view()),
     path('viewdoc/', ViewDoctorDocument.as_view()),
     path('accessibility/', Accessibility.as_view()),
+    path('specialization/', DoctorListBySpecialization.as_view()),
+ 
 ]
 
 if settings.DEBUG:

@@ -21,13 +21,13 @@ import urllib3
 from digiquest import settings
 from clinic.models import ClinicDetails
 from digiadmin.models import hash_value
-from doctor.models import DoctorDetail, SymptomsDetail
+from doctor.models import DoctorDetail, PersonalsDetails, SymptomsDetail
 from reception.models import ReceptionDetails
 from doctorappointment.serializers import BookedAppointmentSerializer
 from doctorappointment.models import Appointmentslots
 from .utils import generate_otp,  login_otp_to_patient,  register_otp_to_patient, send_login_otp_to_patient, send_register_otp_to_patient
-from .serializers import  PatientDetailSerializer, MyAppointmentSerializer, PatientDetailSerializerPost, PatientDocumentByIdSerializer, PatientDocumentSearchSerializer ,PatientDocumentSerializer, PatientDocumentSerializermobile, PatientFeedbackSerializer, PatientPrescriptionFileSerializer, PatientPrescriptionSerializer, PatientRecordSerializer, PatientRegisterSerializer, PatientVarryDetailsSerializer, PatientViewDocument, TimeSerializer
-from .models import PatientDetails, PatientDocument, PatientDocumentById, PatientPrescription, PatientPrescriptionFile,  PatientRecord, PatientRegister, PatientVarryDetails, Time
+from .serializers import  PatientDetailSerializer, MyAppointmentSerializer, PatientDetailSerializerPost, PatientDocumentByIdSerializer, PatientDocumentSearchSerializer ,PatientDocumentSerializer, PatientDocumentSerializermobile, PatientFeedbackSerializer, PatientPrescriptionFileSerializer, PatientPrescriptionSerializer, PatientRecordSerializer, PatientRegisterSerializer, PatientVarryDetailsSerializer, PatientViewDocument
+from .models import PatientDetails, PatientDocument, PatientDocumentById, PatientPrescription, PatientPrescriptionFile,  PatientRecord, PatientRegister, PatientVarryDetails
 from rest_framework import status
 import re
 import ipinfo
@@ -54,12 +54,14 @@ class PatientVerification(APIView):
             try:
                 cache.set("Patient" + str(mobile_number),mobile_number, timeout=60)
     
-                otp = ''.join(random.choices('0123456789', k=6))
+                otp = generate_otp()
+                register_otp_to_patient(mobile_number, otp)
+                send_register_otp_to_patient(mobile_number, otp)
                 cache.set(mobile_number, otp, timeout=300)
             except Exception as e:
                 return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
-            return Response({"success": "OTP generated successfully", "otp": otp}, status=status.HTTP_200_OK)
+            return Response({"success": "OTP generated successfully"}, status=status.HTTP_200_OK)
         else:
             return Response({"error": "Mobile number is not registered"}, status=status.HTTP_400_BAD_REQUEST)
     
@@ -258,7 +260,7 @@ class PatientLoginApi(APIView):
             cache.set(mobile_number, otp, timeout=300)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        return Response({"success": "OTP generated successfully", "otp": otp}, status=status.HTTP_200_OK)
+        return Response({"success": "OTP generated successfully"}, status=status.HTTP_200_OK)
 
 
     def post(self, request, format=None):
@@ -326,13 +328,13 @@ class PatientDetailApi(APIView):
             patient_register = PatientRegister.objects.get(mobile_number=mobile_number)
             mutable_data = request.data.copy()
             mutable_data["patient"] = patient_register.pk
-            patient_serializer = PatientDetailSerializer(data=mutable_data)
+            patient_serializer = PatientDetailSerializerPost(data=mutable_data)
             if patient_serializer.is_valid():
                 patient_serializer.save()
                 return Response(patient_serializer.data, status=status.HTTP_201_CREATED)
             return Response(patient_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
-            return Response({"error": "You are not registered"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"error": str(e)}, status=status.HTTP_404_NOT_FOUND)
 
     def put(self, request, format=None):
         mobile_number = request.data.get('mobile_number')  
@@ -570,8 +572,8 @@ class PatientDocumentUsingAppointmentID(APIView):
 
             serializer = PatientDocumentSerializer(documents, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
-        
-        
+
+
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -587,18 +589,18 @@ class PatientDocumentUsingAppointmentID(APIView):
                 return Response({"error": "Valid appointment ID is required."}, status=status.HTTP_400_BAD_REQUEST)
 
             if user_type == 'clinic':
-                clinic = get_object_or_404(ClinicDetails, id=user_id)
+                clinic = get_object_or_404(ClinicDetails, clinic_id=user_id)
                 uploaded_by = f"{clinic.name} (clinic)"
             elif user_type == 'doctor':
-                doctor = get_object_or_404(DoctorDetail, doctor_id=user_id)
+                doctor = get_object_or_404(PersonalsDetails, doctor_id=user_id)
                 uploaded_by = f"{doctor.name} (doctor)"
             elif user_type == 'reception':
-                reception = get_object_or_404(ReceptionDetails, id=user_id)
+                reception = get_object_or_404(ReceptionDetails, reception_id=user_id)
                 uploaded_by = f"{reception.name} (reception)"
             else:
                 patient= get_object_or_404(PatientVarryDetails, id=patient_id)
                 uploaded_by = f"{patient.name} (patient)"
-                
+
             document_name = request.data.get('document_name')
             document_file = request.FILES.get('document_file')
             patient_name = request.data.get('patient_name')
@@ -622,14 +624,14 @@ class PatientDocumentUsingAppointmentID(APIView):
 
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
+
 
     def patch(self, request, *args, **kwargs):
         try:
             document_id = request.data.get('document_id')
             if not document_id:
                 return Response({"error": "Document ID is required."}, status=status.HTTP_400_BAD_REQUEST)
-            
+
             # Fetch the document or return a 404 if not found
             document = PatientDocumentById.objects.filter(id=document_id).first()
             if not document:
@@ -664,18 +666,20 @@ class PatientDocumentUsingAppointmentID(APIView):
             document_id = request.data.get('document_id')
             if not document_id:
                 return Response({"error": "Document ID is required."}, status=status.HTTP_400_BAD_REQUEST)
-            
+
             # Fetch the document or return a 404 if not found
             document = PatientDocumentById.objects.filter(id=document_id).first()
             if not document:
                 return Response({"error": "Document not found."}, status=status.HTTP_404_NOT_FOUND)
-            
+
             document.delete()
             return Response({"success": "Document deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
 
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
+        
+        
+        
 class ViewDocumentByAppointmentId(APIView):
     def get(self, request, format=None):
         try:
@@ -810,6 +814,7 @@ class PatientPrescriptionApi(APIView):
 
             for prescription in prescriptions:
                 patient_id = prescription.get('patient_id')
+                time= prescription.get('time')
                 medicine_name = prescription.get('medicine_name')
                 comment = prescription.get('comment')
                 description = prescription.get('description')
@@ -830,6 +835,7 @@ class PatientPrescriptionApi(APIView):
                     "patient_name": patient_details.name,
                     "medicine_name": medicine_name,
                     "description": description,
+                    "time": time,
                     "comment": comment,
                     "appointment": appointment_id
                 }
@@ -916,77 +922,7 @@ class PatientPrescriptionApi(APIView):
         
         
         
-class TimeView(APIView):
-    def get(self, request, format=None):
-        try:
-            appointment_id = request.query_params.get('appointment_id')
-            if not appointment_id:
-                return Response({'error': 'appointment_id parameter is required'}, status=status.HTTP_400_BAD_REQUEST)
- 
-            try:
-                appointment = Appointmentslots.objects.get(id=appointment_id)
-            except Appointmentslots.DoesNotExist:
-                return Response({'error': f'Appointment with id {appointment_id} does not exist'}, status=status.HTTP_404_NOT_FOUND)
- 
-            times = Time.objects.filter(appointment=appointment)
- 
-            if not times.exists():
-                default_times = [
-                    {'time': 'morning', 'is_selected': False},
-                    {'time': 'afternoon', 'is_selected': False},
-                    {'time': 'evening', 'is_selected': False},
-                    {'time': 'night', 'is_selected': False}
-                ]
- 
-                for default_time in default_times:
-                    Time.objects.create(
-                        time=default_time['time'],
-                        is_selected=default_time['is_selected'],
-                        appointment=appointment
-                    )
- 
-            serializer = TimeSerializer(times, many=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
- 
-        except Exception as e:
-            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
- 
-    def put(self, request, format=None):
-        try:
-            appointment_id = request.data.get('appointment_id')
-            if not appointment_id:
-                return Response({'error': 'appointment_id parameter is required'}, status=status.HTTP_400_BAD_REQUEST)
 
-            try:
-                appointment = Appointmentslots.objects.get(id=appointment_id)
-            except Appointmentslots.DoesNotExist:
-                return Response({'error': f'Appointment with id {appointment_id} does not exist'}, status=status.HTTP_404_NOT_FOUND)
-
-            times_data = request.data.get('times', [])
-            if not isinstance(times_data, list):
-                return Response({'error': 'times data must be a list'}, status=status.HTTP_400_BAD_REQUEST)
-
-            updated_times = []
-            for time_data in times_data:
-                time_id = time_data.get('id')
-                is_selected = time_data.get('is_selected', False)
-
-                if not time_id:
-                    return Response({'error': 'Each time data must include an id'}, status=status.HTTP_400_BAD_REQUEST)
-
-                try:
-                    time_slot = Time.objects.get(id=time_id, appointment=appointment)
-                    time_slot.is_selected = is_selected
-                    time_slot.save()
-                    updated_times.append(time_slot)
-                except Time.DoesNotExist:
-                    return Response({'error': f'Time slot with id {time_id} does not exist for appointment {appointment_id}'}, status=status.HTTP_404_NOT_FOUND)
-
-            serializer = TimeSerializer(updated_times, many=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-
-        except Exception as e:
-            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
  
         
 class PatientFeedbackApi(APIView):
@@ -1069,74 +1005,81 @@ class SearchMyAppointments(APIView):
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
 
+
 class PatientRecordView(APIView):
     def get(self, request, format=None):
         try:
             appointment_id = request.query_params.get('appointment_id')
-            record_date = request.query_params.get('record_date')
-
             if not appointment_id:
                 return Response({"error": "Appointment ID parameter is missing"}, status=status.HTTP_400_BAD_REQUEST)
-
-            # Check if the appointment exists
-            appointment = Appointmentslots.objects.filter(id=appointment_id).first()
+ 
+            appointment = Appointmentslots.objects.filter(
+                id=appointment_id).first()
             if not appointment:
-                return Response({"error": "Appointment not found for the given ID"}, status=status.HTTP_404_NOT_FOUND)
-
-            # Filter patient records based on presence of record_date
-            if record_date:
-                patient_records = PatientRecord.objects.filter(appointment_id=appointment, record_date=record_date)
-            else:
-                patient_records = PatientRecord.objects.filter(appointment_id=appointment)
-
+                return Response({"error": "Appointment not found "}, status=status.HTTP_404_NOT_FOUND)
+           
+            patient_records = PatientRecord.objects.filter(
+                appointment=appointment)
             if not patient_records.exists():
-                return Response({"error": "No patient records found for the given appointment ID"}, status=status.HTTP_404_NOT_FOUND)
-
+                return Response({"error": "No patient vital found "}, status=status.HTTP_404_NOT_FOUND)
+ 
             serializer = PatientRecordSerializer(patient_records, many=True)
+ 
             return Response(serializer.data, status=status.HTTP_200_OK)
-
         except Exception as e:
-            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
-        
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
     def post(self, request, format=None):
         try:
             patient_id = request.data.get("patient_id")
             appointment_id = request.data.get("appointment_id")
 
             if not appointment_id or not patient_id:
+                error_patient.error('Appointment ID and patient ID are missing in the request')
                 return Response({'error': 'Appointment ID and patient ID are missing in the request'}, status=status.HTTP_400_BAD_REQUEST)
 
-            patient_register = PatientVarryDetails.objects.filter(patient_id=patient_id,appointment_id=appointment_id).first()
-            if not patient_register:
-                return Response({'error': 'Patient register not found for the given patient ID'}, status=status.HTTP_400_BAD_REQUEST)
+            # Fetch the PatientVarryDetails instance
+            patient_varry_details = PatientVarryDetails.objects.filter(patient_id=patient_id).first()
+            if not patient_varry_details:
+                error_patient.error(f'Patient varry details not found for the given patient ID: {patient_id}')
+                return Response({'error': 'Patient  not found '}, status=status.HTTP_400_BAD_REQUEST)
 
+            appointment = Appointmentslots.objects.filter(id=appointment_id).first()
+            if not appointment:
+                error_patient.error(f'Appointment not found for the given ID: {appointment_id}')
+                return Response({'error': 'Appointment not found '}, status=status.HTTP_400_BAD_REQUEST)
 
-            # existing_record = PatientRecord.objects.filter(patient=patient_register, appointment=appointment_id).exists()
-            # if existing_record:
-            #     return Response({'error': 'Patient record already exists for this patient and appointment'}, status=status.HTTP_400_BAD_REQUEST)
+            existing_record = PatientRecord.objects.filter(patient=patient_varry_details, appointment=appointment)
+            if existing_record.exists():
+                error_patient.error('Patient vital already exists for this patient and appointment')
+                return Response({'error': 'Patient vital already exists '}, status=status.HTTP_400_BAD_REQUEST)
 
             data = {
-                'patient': patient_register.id,
+                'patient': patient_varry_details.id,
                 'appointment': appointment_id,
                 'blood_pressure': request.data.get('blood_pressure'),
                 'body_temperature': request.data.get('body_temperature'),
-                'sugar_level' : request.data.get('sugar_level'),
                 'pulse_rate': request.data.get('pulse_rate'),
                 'heart_rate': request.data.get('heart_rate'),
                 'oxygen_level': request.data.get('oxygen_level'),
-                'sugar_level' : request.data.get('sugar_level'),
+                'sugar_level': request.data.get('sugar_level'),
                 'weight': request.data.get('weight'),
+                'height': request.data.get('height'),
+                'bmi': request.data.get('bmi'),
             }
             serializer = PatientRecordSerializer(data=data)
             if serializer.is_valid():
                 serializer.save()
                 response_data = serializer.data
-                response_data['patient'] = patient_register.id
-                return Response({"success": "Patient record created successfully", "data": response_data}, status=status.HTTP_201_CREATED)
+                response_data['patient'] = patient_varry_details.id
+                info_patient.info('Patient record created successfully', extra=response_data)
+                return Response({"success": "Patient vital created successfully", "data": response_data}, status=status.HTTP_201_CREATED)
             else:
+                error_patient.error('Data is not valid', extra=serializer.errors)
                 return Response({"error": "Data is not valid", "errors": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+
         except Exception as e:
+            error_patient.exception('An error occurred while processing the request', exc_info=e)
             return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
  
 
@@ -1145,150 +1088,47 @@ class PatientRecordView(APIView):
         try:
             patient_id = request.data.get("patient_id")
             appointment_id = request.data.get("appointment_id")
- 
+
             if not patient_id or not appointment_id:
+                error_patient.error('Appointment ID and patient ID are missing in the request')
                 return Response({'error': 'Appointment ID and patient ID are missing in the request'}, status=status.HTTP_400_BAD_REQUEST)
- 
-            patient_register = PatientVarryDetails.objects.filter(
-                patient_id=patient_id).first()
-            if not patient_register:
-                return Response({'error': 'Patient register not found for the given patient ID'}, status=status.HTTP_404_NOT_FOUND)
- 
-            appointment = Appointmentslots.objects.filter(
-                id=appointment_id).first()
+
+            # Fetch the correct instance of PatientVarryDetails
+            patient_varry_details = PatientVarryDetails.objects.filter(id=patient_id).first()
+            if not patient_varry_details:
+                error_patient.error(f'Patient varry details not found for the given patient ID: {patient_id}')
+                return Response({'error': 'Patient register not found '}, status=status.HTTP_404_NOT_FOUND)
+
+            appointment = Appointmentslots.objects.filter(id=appointment_id).first()
             if not appointment:
+                error_patient.error(f'Appointment not found for the given ID: {appointment_id}')
                 return Response({'error': 'Appointment not found for the given ID'}, status=status.HTTP_404_NOT_FOUND)
- 
+
             patient_record = PatientRecord.objects.filter(
-                patient=patient_register, appointment=appointment).first()
- 
+                patient=patient_varry_details, appointment=appointment).first()
+
             if not patient_record:
+                error_patient.error('Patient record not found for the given patient ID and appointment')
                 return Response({'error': 'Patient record not found for the given patient ID and appointment'}, status=status.HTTP_404_NOT_FOUND)
- 
-            serializer = PatientRecordSerializer(
-                patient_record, data=request.data, partial=True)
- 
+
+            serializer = PatientRecordSerializer(patient_record, data=request.data, partial=True)
+
             if serializer.is_valid():
                 serializer.save()
                 response_data = serializer.data
-                response_data['patient'] = patient_register.id
+                response_data['patient'] = patient_varry_details.id
+                info_patient.info('Patient record updated successfully', extra=response_data)
                 return Response({"success": "Patient record updated successfully", "data": response_data}, status=status.HTTP_200_OK)
             else:
+                error_patient.error('Data is not valid', extra=serializer.errors)
                 return Response({"error": "Data is not valid", "errors": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
+            error_patient.exception('An error occurred while updating the patient record', exc_info=e)
             return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
-# class PatientRecordView(APIView):
-#     def get(self, request, format=None):
-#         try:
-#             appointment_id = request.query_params.get('appointment_id')
-#             if not appointment_id:
-#                 return Response({"error": "Appointment ID parameter is missing"}, status=status.HTTP_400_BAD_REQUEST)
- 
-#             appointment = Appointmentslots.objects.filter(
-#                 id=appointment_id).first()
-#             if not appointment:
-#                 return Response({"error": "Appointment not found for the given ID"}, status=status.HTTP_404_NOT_FOUND)
-           
-#             patient_records = PatientRecord.objects.filter(
-#                 appointment=appointment)
-#             if not patient_records.exists():
-#                 return Response({"error": "No patient records found for the given appointment ID"}, status=status.HTTP_404_NOT_FOUND)
- 
-#             serializer = PatientRecordSerializer(patient_records, many=True)
- 
-#             return Response(serializer.data, status=status.HTTP_200_OK)
-#         except Exception as e:
-#             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
-
-#     def post(self, request, format=None):
-#         try:
-#             patient_id = request.data.get("patient_id")
-#             appointment_id = request.data.get("appointment_id")
- 
-#             if not appointment_id or not patient_id:
-#                 return Response({'error': 'Appointment ID and patient ID are missing in the request'}, status=status.HTTP_400_BAD_REQUEST)
- 
-#             patient_register = PatientRegister.objects.filter(
-#                 id=patient_id).first()
-#             if not patient_register:
-#                 return Response({'error': 'Patient register not found for the given patient ID'}, status=status.HTTP_400_BAD_REQUEST)
- 
-#             appointment = Appointmentslots.objects.filter(
-#                 id=appointment_id).first()
-#             if not appointment:
-#                 return Response({'error': 'Appointment not found for the given ID'}, status=status.HTTP_400_BAD_REQUEST)
- 
-#             existing_record = PatientRecord.objects.filter(
-#                 patient=patient_register, appointment=appointment)
-#             if existing_record.exists():
-#                 return Response({'error': 'Patient record already exists for this patient and appointment'}, status=status.HTTP_400_BAD_REQUEST)
- 
-#             data = {
-#                 'patient': patient_register.id,
-#                 'appointment': appointment.id,
-#                 'blood_pressure': request.data.get('blood_pressure'),
-#                 'body_temperature': request.data.get('body_temperature'),
-#                 'hemoglobin': request.data.get('hemoglobin'),
-#                 'pulse_rate': request.data.get('pulse_rate'),
-#                 'heart_rate': request.data.get('heart_rate'),
-#                 'oxygen_level': request.data.get('oxygen_level'),
-#             }
-#             serializer = PatientRecordSerializer(data=data)
-#             if serializer.is_valid():
-#                 serializer.save()
-#                 response_data = serializer.data
-#                 response_data['patient'] = patient_register.id
-#                 return Response({"success": "Patient record created successfully", "data": response_data}, status=status.HTTP_201_CREATED)
-#             else:
-#                 return Response({"error": "Data is not valid", "errors": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
-#         except Exception as e:
-#             return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
- 
-
- 
-#     def put(self, request, format=None):
-#         try:
-#             patient_id = request.data.get("patient_id")
-#             appointment_id = request.data.get("appointment_id")
- 
-#             if not patient_id or not appointment_id:
-#                 return Response({'error': 'Appointment ID and patient ID are missing in the request'}, status=status.HTTP_400_BAD_REQUEST)
- 
-#             patient_register = PatientRegister.objects.filter(
-#                 id=patient_id).first()
-#             if not patient_register:
-#                 return Response({'error': 'Patient register not found for the given patient ID'}, status=status.HTTP_404_NOT_FOUND)
- 
-#             appointment = Appointmentslots.objects.filter(
-#                 id=appointment_id).first()
-#             if not appointment:
-#                 return Response({'error': 'Appointment not found for the given ID'}, status=status.HTTP_404_NOT_FOUND)
- 
-   
-#             patient_record = PatientRecord.objects.filter(
-#                 patient=patient_register, appointment=appointment).first()
- 
-#             if not patient_record:
-#                 return Response({'error': 'Patient record not found for the given patient ID and appointment'}, status=status.HTTP_404_NOT_FOUND)
- 
-#             serializer = PatientRecordSerializer(
-#                 patient_record, data=request.data, partial=True)
- 
-#             if serializer.is_valid():
-#                 serializer.save()
-#                 response_data = serializer.data
-#                 response_data['patient'] = patient_register.id
-#                 return Response({"success": "Patient record updated successfully", "data": response_data}, status=status.HTTP_200_OK)
-#             else:
-#                 return Response({"error": "Data is not valid", "errors": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
-#         except Exception as e:
-#             return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
-
-
     
-        
+
 class PatientNameByID(APIView):
     def get(self, request, format=None):
         try:
@@ -1332,29 +1172,6 @@ class PatientDetailsAPIView(APIView):
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)  
         
         
-    # def get(self, request, format=None):
-    #     patient_id = request.query_params.get('patient_id')
-    #     appointment_id = request.query_params.get('appointment_id')
-
-    #     if not patient_id:
-    #         return Response({'error': 'patient_id query parameter is required'}, status=status.HTTP_400_BAD_REQUEST)
-
-    #     try:
-    #         if appointment_id:
-    #             appointment_detail = PatientVarryDetails.objects.filter(patient_id=patient_id, appointment_id=appointment_id).first()
-
-    #             if not appointment_detail:
-    #                 return Response({'error': 'No appointment found for the given patient with the specified appointment id'}, status=status.HTTP_404_NOT_FOUND)
-
-    #             serializer = PatientVarryDetailsSerializer(appointment_detail)
-    #             return Response(serializer.data, status=status.HTTP_200_OK)
-
-    #         appointment_slots = Appointmentslots.objects.filter(booked_by__patient_id=patient_id)
-    #         serializer = BookedAppointmentSerializer(appointment_slots, many=True)
-    #         return Response(serializer.data, status=status.HTTP_200_OK)
-
-    #     except Exception as e:
-    #         return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
     
 
@@ -1378,6 +1195,7 @@ class PatientDetailsAPIView(APIView):
                 'blood_group': serializer.validated_data['blood_group'],
                 'profile_pic': serializer.validated_data.get('profile_pic'),
                 'appointment': serializer.validated_data.get('appointment'),
+                'email': serializer.validated_data.get('email'),
             }
             patient_details = PatientVarryDetails.objects.create(**patient_details_data)
             patient=PatientVarryDetailsSerializer(patient_details)
@@ -1405,7 +1223,7 @@ class PatientDetailsAPIView(APIView):
             
             if serializer.is_valid():
                 serializer.save()
-                return Response(serializer.data)
+                return Response({'success': 'Patient details update successfully', 'data':serializer.data}, status=status.HTTP_201_CREATED)
             
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
@@ -1464,7 +1282,7 @@ class UploadPrescriptionFile(APIView):
             return Response({'error': 'Prescription file not found'}, status=status.HTTP_404_NOT_FOUND)
         
         prescription_file.delete()
-        return Response({'message': 'Prescription file deleted successfully'}, status=status.HTTP_204_NO_CONTENT)
+        return Response({'success': 'Prescription file deleted successfully'}, status=status.HTTP_200_OK)
     
     
 class UploadPrescriptionFileView(APIView):
@@ -1512,30 +1330,35 @@ class PrintPatientReport(APIView):
             buffer = BytesIO()
             pdf = SimpleDocTemplate(buffer, pagesize=A4,
                                     rightMargin=50, leftMargin=50,
-                                    topMargin=30, bottomMargin=30)
+                                    topMargin=170, bottomMargin=30)
  
             elements = []
             style = getSampleStyleSheet()['Normal']
  
-            # Define custom styles for bold headings and larger font size for patient details
             bold_style = ParagraphStyle(name='Bold', fontSize=14, fontName='Helvetica-Bold')
             normal_style = ParagraphStyle(name='Normal', fontSize=12)
  
-            # Add patient details with bold headings and larger font size
-            elements.append(Paragraph(f"<b>Patient Name:</b> {patient_details.name}", ))
-            elements.append(Spacer(1, 12))
-            elements.append(Paragraph(f"<b>Gender/Age:</b> {patient_details.get_gender_display()}/{patient_details.age}", ))
-            elements.append(Spacer(1, 12))
-            elements.append(Paragraph(f"<b>Contact:</b> {patient_details.mobile_number}", ))
-            elements.append(Spacer(1, 12))
-            elements.append(Paragraph(f"<b>Doctor Name:</b> {doctor_name}", ))
-            elements.append(Spacer(1, 12))
-            elements.append(Paragraph(f"<b>Address:</b> {patient_details.address}", ))
-            elements.append(Spacer(1, 12))  # Add some space before the next section
+    
+            patient_info_data = [
+                ['Patient Name:', patient_details.name, 'Gender/Age:', f'{patient_details.get_gender_display()}/{patient_details.age}'],
+                ['Contact:', patient_details.mobile_number, 'Doctor Name:', doctor_name],
+                ['Address:', patient_details.address, '', '']  
+            ]
  
-            # Vitals section if available
+ 
+            patient_info_table = Table(patient_info_data, colWidths=[2 * inch, 2.5 * inch, 1.5 * inch, 2 * inch])
+            patient_info_table.setStyle(TableStyle([
+                ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+                ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+                ('TEXTCOLOR', (0, 0), (-1, -1), colors.black),
+                ('FONTSIZE', (0, 0), (-1, -1), 12),
+                ('BOTTOMPADDING', (0, 0), (-1, -1), 6),
+            ]))
+            elements.append(patient_info_table)
+            elements.append(Spacer(1, 12))
+ 
+    
             if records.exists():
-                # elements.append(Paragraph("Vitals", style))
                 records_data = [
                     ["Blood Pressure", "Body Temperature", "Sugar Level", "Pulse Rate", "Heart Rate", "Oxygen Level", "Weight", "Height", "BMI"]
                 ] + [[
@@ -1552,7 +1375,6 @@ class PrintPatientReport(APIView):
                 records_column_widths = [8 * inch / 9] * 9  
                 self.add_table_to_pdf(elements, records_data, title="Patient Vitals", column_widths=records_column_widths, wrap_text=True)
  
-            # Symptoms section if available
             if symptoms_details.exists():
                 symptoms_data = [
                     ["Symptoms", "Since", "Severity", "More Options"]
@@ -1564,7 +1386,7 @@ class PrintPatientReport(APIView):
                 ] for symptom in symptoms_details]
                 self.add_table_to_pdf(elements, symptoms_data, title="Symptoms Details", column_widths=[8 * inch / 4] * 4, wrap_text=True)
  
-            # Prescriptions section if available
+    
             if prescriptions.exists():
                 prescriptions_data = [
                     ["Medicine Name", "Comment", "Time", "Description"]
@@ -1588,7 +1410,7 @@ class PrintPatientReport(APIView):
     def add_table_to_pdf(self, elements, data, title, column_widths=None, wrap_text=False):
         elements.append(Spacer(1, 12))
         title_style = getSampleStyleSheet()['Title']
-        title_style.alignment = 0  # Align the title to the left
+        title_style.alignment = 0  
         elements.append(Paragraph(title, title_style))
         elements.append(Spacer(1, 12))
  

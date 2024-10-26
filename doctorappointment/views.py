@@ -11,6 +11,7 @@ from .serializers import AppointmentslotsSerializer, DoctorSlotSerializer
 from doctorappointment.models import Appointmentslots
 from doctorappointment.serializers import BookedAppointmentSerializer
 from django.db.models import Q
+from django.utils import timezone
 from django.core.mail import send_mail
 
 
@@ -130,8 +131,8 @@ class DoctorSlotCreate(APIView):
             return Response({"error": "doctor_id is required"}, status=status.HTTP_400_BAD_REQUEST)
  
         try:
-            doctor = PersonalsDetails.objects.get(id=doctor_id)
-        except DoctorDetail.DoesNotExist:
+            doctor = PersonalsDetails.objects.get(doctor_id=doctor_id)
+        except PersonalsDetails.DoesNotExist:
             return Response({"error": "Doctor not found"}, status=status.HTTP_404_NOT_FOUND)
         try:
             start_date = datetime.strptime(
@@ -198,8 +199,8 @@ class UnblockSlots(APIView):
             return Response({"error": "doctor_id is required"}, status=status.HTTP_400_BAD_REQUEST)
  
         try:
-            doctor = PersonalsDetails.objects.get(id=doctor_id)
-        except DoctorDetail.DoesNotExist:
+            doctor = PersonalsDetails.objects.get(doctor_id=doctor_id)
+        except PersonalsDetails.DoesNotExist:
             return Response({"error": "Doctor not found"}, status=status.HTTP_404_NOT_FOUND)
         try:
             start_date = datetime.strptime(
@@ -259,11 +260,13 @@ class TodayAndAfterTodaySlot(APIView):
             today = datetime.now().date()
 
             slots = Appointmentslots.objects.select_related('doctor', 'booked_by__patient').filter(
-                doctor_id=doctor_id,
+                doctor__doctor_id=doctor_id,
                 appointment_date__gte=today
             ).order_by('appointment_date','appointment_slot')
 
             serialized_slots = DoctorSlotSerializer(slots, many=True)
+            if not serialized_slots.data:
+                return Response({"error": "Not Available any slot"}, status=status.HTTP_400_BAD_REQUEST)
 
             return Response(serialized_slots.data)
 
@@ -377,84 +380,96 @@ class PatientDetailUpdateByDoctor(APIView):
             return Response({"error": str(e)})
 
 
+
+
+
+
 class SlotGetByPatient(APIView):
     def get(self, request):
         try:
             doctor_id = request.query_params.get('doctor_id')
             slot_id = request.query_params.get('slot_id')
             slot_date_str = request.query_params.get('slot_date')
+
             if not doctor_id:
                 return Response({"error": "doctor_id parameter is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Get current time in IST (UTC+5:30)
+            current_datetime = timezone.now() + timedelta(hours=5, minutes=30)
+            current_date = current_datetime.date()
+            current_time = current_datetime.time()
+
             try:
                 if slot_id and slot_date_str:
                     slot_date = datetime.strptime(slot_date_str, '%Y-%m-%d').date()
-                    slot = Appointmentslots.objects.get(pk=slot_id, doctor__doctor_id=doctor_id, is_booked=False,is_blocked=False)
+                    slot = Appointmentslots.objects.get(
+                        pk=slot_id, 
+                        doctor__doctor_id=doctor_id, 
+                        is_booked=False, 
+                        is_blocked=False
+                    )
+
                     if slot.appointment_date != slot_date:
                         return Response({"error": "Slot ID and date do not match"}, status=status.HTTP_400_BAD_REQUEST)
-                    serializer = DoctorSlotSerializer(slot)
-                    return Response(serializer.data, status=status.HTTP_200_OK)
+
+                    if (slot.appointment_date == current_date and slot.appointment_slot >= current_time) or slot.appointment_date > current_date:
+                        serializer = DoctorSlotSerializer(slot)
+                        return Response(serializer.data, status=status.HTTP_200_OK)
+                    else:
+                        return Response({"error": "Slot is in the past"}, status=status.HTTP_400_BAD_REQUEST)
+
                 elif slot_id:
-                    slot = Appointmentslots.objects.get(pk=slot_id, doctor__doctor_id=doctor_id , is_booked=False,is_blocked=False)
-                    serializer = DoctorSlotSerializer(slot)
-                    return Response(serializer.data, status=status.HTTP_200_OK)
+                    slot = Appointmentslots.objects.get(
+                        pk=slot_id, 
+                        doctor__doctor_id=doctor_id, 
+                        is_booked=False, 
+                        is_blocked=False
+                    )
+
+                    if (slot.appointment_date == current_date and slot.appointment_slot >= current_time) or slot.appointment_date > current_date:
+                        serializer = DoctorSlotSerializer(slot)
+                        return Response(serializer.data, status=status.HTTP_200_OK)
+                    else:
+                        return Response({"error": "Slot is in the past"}, status=status.HTTP_400_BAD_REQUEST)
+
                 elif slot_date_str:
                     slot_date = datetime.strptime(slot_date_str, '%Y-%m-%d').date()
-                    slots = Appointmentslots.objects.filter(doctor__doctor_id=doctor_id, appointment_date=slot_date, is_booked=False,is_blocked=False)
+                    slots = Appointmentslots.objects.filter(
+                        doctor__doctor_id=doctor_id,
+                        appointment_date=slot_date,
+                        is_booked=False,
+                        is_blocked=False
+                    ).filter(
+                        Q(appointment_date__gt=current_date) |
+                        (Q(appointment_date=current_date) & Q(appointment_slot__gte=current_time))
+                    )
                     serializer = DoctorSlotSerializer(slots, many=True)
                     return Response(serializer.data, status=status.HTTP_200_OK)
+
                 else:
-                    slots = Appointmentslots.objects.filter(doctor__doctor_id=doctor_id, is_booked=False, is_blocked=False)
+                    slots = Appointmentslots.objects.filter(
+                        doctor__doctor_id=doctor_id,
+                        is_booked=False,
+                        is_blocked=False
+                    ).filter(
+                        Q(appointment_date__gt=current_date) |
+                        (Q(appointment_date=current_date) & Q(appointment_slot__gte=current_time))
+                    )
                     serializer = DoctorSlotSerializer(slots, many=True)
                     return Response(serializer.data, status=status.HTTP_200_OK)
+
             except Appointmentslots.DoesNotExist:
                 return Response({"error": "Slot not found"}, status=status.HTTP_404_NOT_FOUND)
             except ValueError:
                 return Response({"error": "Invalid date format. Please provide slot_date in 'YYYY-MM-DD' format"}, status=status.HTTP_400_BAD_REQUEST)
+
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    
-    
-    # def get(self, request):
-    #     try:
-    #         doctor_id = request.query_params.get('doctor_id')
-    #         slot_id = request.query_params.get('slot_id')
-    #         slot_date_str = request.query_params.get('slot_date')
-    #         if not doctor_id:
-    #             return Response({"error": "doctor_id parameter is required"}, status=status.HTTP_400_BAD_REQUEST)
-            
-    #         try:
-    #             if slot_id and slot_date_str:
-    #                 slot_date = datetime.strptime(slot_date_str, '%Y-%m-%d').date()
-    #                 slot = Appointmentslots.objects.get(pk=slot_id, doctor__doctor_id=doctor_id, is_booked=False, is_blocked=False)
-    #                 if slot.appointment_date != slot_date:
-    #                     return Response({"error": "Slot ID and date do not match"}, status=status.HTTP_400_BAD_REQUEST)
-    #                 serializer = DoctorSlotSerializer(slot)
-    #                 return Response(serializer.data, status=status.HTTP_200_OK)
-    #             elif slot_id:
-    #                 slot = Appointmentslots.objects.get(pk=slot_id, doctor__doctor_id=doctor_id, is_booked=False, is_blocked=False)
-    #                 serializer = DoctorSlotSerializer(slot)
-    #                 return Response(serializer.data, status=status.HTTP_200_OK)
-    #             elif slot_date_str:
-    #                 slot_date = datetime.strptime(slot_date_str, '%Y-%m-%d').date()
-    #                 slots = Appointmentslots.objects.filter(doctor__doctor_id=doctor_id, appointment_date=slot_date, is_booked=False, is_blocked=False)
-    #                 if slots.exists():
-    #                     serializer = DoctorSlotSerializer(slots, many=True)
-    #                     return Response(serializer.data, status=status.HTTP_200_OK)
-    #                 else:
-    #                     return Response({"message": "No available slots for this date"}, status=status.HTTP_400_BAD_REQUEST)
-    #             else:
-    #                 slots = Appointmentslots.objects.filter(doctor__doctor_id=doctor_id, is_booked=False, is_blocked=False)
-    #                 if slots.exists():
-    #                     serializer = DoctorSlotSerializer(slots, many=True)
-    #                     return Response(serializer.data, status=status.HTTP_200_OK)
-    #                 else:
-    #                     return Response({"message": "No available slots"}, status=status.HTTP_400_BAD_REQUEST)
-    #         except Appointmentslots.DoesNotExist:
-    #             return Response({"error": "Slot not found"}, status=status.HTTP_400_BAD_REQUEST)
-    #         except ValueError:
-    #             return Response({"error": "Invalid date format. Please provide slot_date in 'YYYY-MM-DD' format"}, status=status.HTTP_400_BAD_REQUEST)
-    #     except Exception as e:
-    #         return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+   
+   
+     
+ 
         
 
         

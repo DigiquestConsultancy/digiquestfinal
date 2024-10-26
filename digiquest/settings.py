@@ -18,7 +18,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["dc4f-2405-201-6001-c9b3-e502-40c2-b97f-8ed2.ngrok-free.app","192.168.82.120",'127.0.0.1','localhost','192.168.29.222','192.168.29.221','0.0.0.0','192.168.29.157','192.168.82.120','192.168.29.121', '192.168.29.82','192.168.29.72','192.168.29.242','localhost']
+ALLOWED_HOSTS = ["dc4f-2405-201-6001-c9b3-e502-40c2-b97f-8ed2.ngrok-free.app","192.168.82.120",'127.0.0.1','localhost','192.168.29.222','192.168.29.221','0.0.0.0','192.168.29.157','192.168.82.120','192.168.29.121', '192.168.29.82','192.168.29.72','192.168.29.242','localhost','192.168.29.252','192.168.29.103']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -109,11 +109,15 @@ WSGI_APPLICATION = 'digiquest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'digiquestazure',
+        'USER': 'Digiquestuser@digiquestserver',
+        'PASSWORD': 'Digiquest!123@45456',
+        'HOST': 'digiquestserver.postgres.database.azure.com',
+        'PORT': '5432',
+        'OPTIONS': {'sslmode': 'require'},
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

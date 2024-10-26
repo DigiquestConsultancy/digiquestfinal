@@ -10,7 +10,7 @@ def notify_if_reception_register(sender, instance, created, **kwargs):
     if created:
         strong_password = generate_strong_password()
         password_encrypt= hash_value(strong_password)
-        instance.password = strong_password
+        instance.password = password_encrypt
         instance.save(update_fields=['password'])
         reception_mobile_number = instance.mobile_number
         

@@ -15,8 +15,8 @@ from doctorappointment.serializers import DoctorSlotSerializer
 from patient.models import PatientVarryDetails
 from reception.models import ReceptionRegister
 from .utils import generate_otp,  login_otp_to_doctor, register_otp_for_doctor,  send_login_otp_to_doctor, send_register_otp_to_doctor
-from .serializers import   AddressSerializer, DetailSerializer, DoctorDetailSerializer, DoctorFeedbackSerializer, DoctorNameSpecializationSerializer, DoctorRegisterSerializer, DoctornameSerializer, OpdDaysSerializer, OpdDaysSerializers, OpdTimeSerializer, PersonalsDetailsSerializer, QualificationSerializer, SearchDetailsSerializer, SymptomsDetailSerializer, SymptomsSerializer
-from .models import    Address, DoctorRegister, DoctorDetail, Opd, OpdDays, OpdTime, PersonalsDetails, Qualification, Symptoms, SymptomsDetail
+from .serializers import   AddressSerializer, DetailSerializer, DoctorDetailSerializer, DoctorFeedbackSerializer, DoctorNameSpecializationSerializer, DoctorRegisterSerializer, DoctornameSerializer, OpdDaysSerializers, OpdTimeSerializer, PersonalsDetailsSerializer, QualificationSerializer, SearchDetailsSerializer, SymptomsDetailSerializer, SymptomsSerializer
+from .models import    Address, DoctorRegister, DoctorDetail, Opd, OpdTime, PersonalsDetails, Qualification, Symptoms, SymptomsDetail
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.db.models import Q
@@ -63,7 +63,10 @@ class UserVerification(APIView):
                 cache.set(user_type.capitalize() + str(mobile_number), mobile_number, timeout=300)  # Increased timeout to 300 seconds
 
                 # Generate and cache the OTP
-                otp = ''.join(random.choices('0123456789', k=6))
+                otp = generate_otp()
+            
+                register_otp_for_doctor(mobile_number, otp)
+                send_register_otp_to_doctor(mobile_number, otp)
                 cache.set(mobile_number, otp, timeout=300)
                 logging.info(f"OTP {otp} generated and cached for mobile number {mobile_number}")
 
@@ -72,8 +75,7 @@ class UserVerification(APIView):
                 return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
             return Response({
-                "success": "OTP generated successfully", 
-                "otp": otp, 
+                "success": "OTP generated successfully",  
                 "user_type": user_type
             }, status=status.HTTP_200_OK)
 
@@ -313,6 +315,7 @@ class DoctorLoginThroughPassword(APIView):
         refresh = RefreshToken()
         refresh[user_type + '_id'] = user_id
         refresh['mobile_number'] = mobile_number
+        refresh['user_type'] = user_type
 
         try:
             if user_type == 'doctor':
@@ -337,20 +340,43 @@ class DoctorLoginThroughPassword(APIView):
         }
 
 
+
+
 class ChangePassword(APIView):
+    def validate_password(self, password):
+        if len(password) < 8:
+            return "Password must be at least 8 characters long."
+        if not re.search(r'[A-Z]', password):  # At least one uppercase letter
+            return "Password must include at least one uppercase letter."
+        if not re.search(r'[a-z]', password):  # At least one lowercase letter
+            return "Password must include at least one lowercase letter."
+        if not re.search(r'[0-9]', password):  # At least one digit
+            return "Password must include at least one digit."
+        if not re.search(r'[!@#$%^&*(),.?":{}|<>]', password):  # At least one special character
+            return "Password must include at least one special character."
+        return None  # Valid password
+
     def post(self, request, format=None):
         try:
             mobile_number = request.data.get("mobile_number")
             new_password = request.data.get("new_password")
             confirm_password = request.data.get("confirm_password")
 
-            if new_password != confirm_password:
-                return Response({"error":"password not matched"}, status=status.HTTP_400_BAD_REQUEST)
-            
-            if mobile_number is None or confirm_password is None or new_password is None:
-                return Response({"error": "Mobile number, confirm_password, and new password are required"},
+            # Check for missing fields
+            if not mobile_number or not new_password or not confirm_password:
+                return Response({"error": "Mobile number, new password, and confirm password are required"},
                                 status=status.HTTP_400_BAD_REQUEST)
 
+            # Check for password match
+            if new_password != confirm_password:
+                return Response({"error": "Passwords do not match"}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Validate password strength
+            password_error = self.validate_password(new_password)
+            if password_error:
+                return Response({"error": password_error}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Try to find the user in both models
             user = None
             user_type = None
 
@@ -358,18 +384,15 @@ class ChangePassword(APIView):
                 user = ClinicRegister.objects.get(mobile_number=mobile_number)
                 user_type = 'clinic'
             except ClinicRegister.DoesNotExist:
-                # Check for Reception
                 try:
                     user = ReceptionRegister.objects.get(mobile_number=mobile_number)
                     user_type = 'reception'
                 except ReceptionRegister.DoesNotExist:
                     return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
 
-            if user is None:
-                return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
-
-            user.password = hash_value(new_password) # Hash the new password before saving
-            user.is_reset=True
+            # Update the user's password
+            user.password = hash_value(new_password)  # Hash the new password before saving
+            user.is_reset = True
             user.save()
 
             return Response({"success": "Password changed successfully"}, status=status.HTTP_200_OK)
@@ -377,6 +400,9 @@ class ChangePassword(APIView):
         except Exception as e:
             error_message = f"Internal Server Error: {str(e)}"
             return Response({"error": error_message}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+
 
 
 
@@ -1026,80 +1052,10 @@ class SymptomsDetailView(APIView):
  
    
             symptoms_details.delete()
-            return Response({"success": "SymptomsDetail deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
+            return Response({"success": "SymptomsDetail deleted successfully."}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
-class OpdDaysView(APIView):
-    def get(self, request, format=None):
-        doctor_id = request.query_params.get('doctor_id')
-        if not doctor_id:
-            return Response({"error": "doctor_id is required"}, status=status.HTTP_400_BAD_REQUEST)
  
-        try:
-            doctor = DoctorRegister.objects.get(id=doctor_id)
-        except DoctorRegister.DoesNotExist:
-            return Response({"error": "Doctor not found."}, status=status.HTTP_404_NOT_FOUND)
- 
-        opddays = Opd.objects.filter(doctor=doctor)
-        if not opddays.exists():
-            return Response({"success": "Kindly update your details."}, status=status.HTTP_200_OK)
-        serializer = OpdDaysSerializers(opddays, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
- 
-    def post(self, request):
-        doctor_id = request.data.get("doctor_id")
- 
-        if not doctor_id:
-            return Response({"error": "The 'doctor_id' field is required."}, status=status.HTTP_400_BAD_REQUEST)
- 
-        try:
-            doctor = DoctorRegister.objects.get(id=doctor_id)
-        except DoctorRegister.DoesNotExist:
-            return Response({"error": "Doctor not found."}, status=status.HTTP_404_NOT_FOUND)
-        existing_doctor_detail = Opd.objects.filter(
-            doctor=doctor).first()
-        if existing_doctor_detail:
-            return Response({"error": "Opd deatils already exist "}, status=status.HTTP_400_BAD_REQUEST)
- 
-        data = request.data.copy()
-        data['doctor'] = doctor.id
- 
-        serializer = OpdDaysSerializers(data=data)
- 
-        if serializer.is_valid():
-            serializer.save(is_update=True)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
- 
-   
- 
-    def put(self, request, format=None):
-        doctor_id = request.data.get("doctor_id")
- 
-        if not doctor_id:
-            return Response({"error": "The 'doctor_id' field is required."}, status=status.HTTP_400_BAD_REQUEST)
- 
-        try:
-            doctor = DoctorRegister.objects.get(id=doctor_id)
-        except DoctorRegister.DoesNotExist:
-            return Response({"error": "Doctor not found."}, status=status.HTTP_404_NOT_FOUND)
- 
-        try:
-            # Retrieve the existing OPD day entry for this doctor
-            opdday = Opd.objects.get(doctor=doctor)
-        except Opd.DoesNotExist:
-            return Response({"error": "OPD Day entry not found for the provided doctor."}, status=status.HTTP_404_NOT_FOUND)
- 
-        # Partial update data: merge existing OPD entry with new incoming data
-        serializer = OpdDaysSerializers(opdday, data=request.data, partial=True)
-       
-        if serializer.is_valid():
-            serializer.save(is_update=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-       
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
 class PersonalDoctorDetail(APIView):
     def get(self, request, format=None):
@@ -1261,6 +1217,94 @@ class DoctorAddress(APIView):
             serializer.save(is_update=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class OpdDays(APIView):
+    def get(self, request, format=None):
+        doctor_id = request.query_params.get('doctor_id')
+        if not doctor_id:
+            return Response({"error": "doctor_id is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            doctor = DoctorRegister.objects.get(id=doctor_id)
+        except DoctorRegister.DoesNotExist:
+            return Response({"error": "Doctor not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        opddays = Opd.objects.filter(doctor=doctor)
+        if not opddays.exists():
+            return Response({"success": "Kindly update your details."}, status=status.HTTP_200_OK)
+        serializer = OpdDaysSerializers(opddays, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request):
+        doctor_id = request.data.get("doctor_id")
+
+        if not doctor_id:
+            return Response({"error": "The 'doctor_id' field is required."}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            doctor = DoctorRegister.objects.get(id=doctor_id)
+        except DoctorRegister.DoesNotExist:
+            return Response({"error": "Doctor not found."}, status=status.HTTP_404_NOT_FOUND)
+        existing_doctor_detail = Opd.objects.filter(
+            doctor=doctor).first()
+        if existing_doctor_detail:
+            return Response({"error": "Opd deatils already exist "}, status=status.HTTP_400_BAD_REQUEST)
+
+        data = request.data.copy()
+        data['doctor'] = doctor.id
+
+        serializer = OpdDaysSerializers(data=data)
+
+        if serializer.is_valid():
+            serializer.save(is_update=True)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    
+
+    def put(self, request, format=None):
+        doctor_id = request.data.get("doctor_id")
+
+        if not doctor_id:
+            return Response({"error": "The 'doctor_id' field is required."}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            doctor = DoctorRegister.objects.get(id=doctor_id)
+        except DoctorRegister.DoesNotExist:
+            return Response({"error": "Doctor not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        opdday = Opd.objects.filter(doctor=doctor)
+
+        if not opdday.exists():
+            return Response({"error": "OPD Day entry not found for the provided doctor."}, status=status.HTTP_404_NOT_FOUND)
+
+        data = request.data.copy()
+        data['doctor'] = doctor.id
+
+        updated_entries = []
+        for opd_instance in opdday:
+            serializer = OpdDaysSerializers(opd_instance, data=data, partial=True)
+            if serializer.is_valid():
+                serializer.save(is_update=True)
+                updated_entries.append(serializer.data)
+            else:
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response(updated_entries, status=status.HTTP_200_OK)
+
+    def delete(self, request):
+        doctor = request.query_params.get("doctor_id")
+
+        if not doctor:
+            return Response({"error": " 'doctor_id' is required."}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            opd = Opd.objects.get( doctor_id=doctor)
+            opd.delete()
+            return Response({"success": "OPD record deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
+        except OpdDays.DoesNotExist:
+            return Response({"error": "OPD record not found for the given doctor ID and OPD ID"}, status=status.HTTP_404_NOT_FOUND)
  
  
 class OpdTimeView(APIView):
@@ -1413,20 +1457,6 @@ class ViewDoctorDocument(APIView):
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
 class Accessibility(APIView):
-    # def get(self, request, format=None):
-    #     doctor_id= request.query_params.get('doctor_id')
-    #     if not doctor_id:
-    #         return Response({"error": "Doctor ID is required"}, status=status.HTTP_400_BAD_REQUEST)
-        
-    #     doctor = DoctorRegister.objects.filter(id=doctor_id).first()
-    #     if not doctor:
-    #         return Response({"error": "Doctor with this ID does not exist"}, status=status.HTTP_404_NOT_FOUND)
-        
-    #     personal_details = PersonalsDetails.objects.filter(doctor=doctor).first()
- 
-    #     status_response= {"is_verified": doctor.is_verified, "is_active": doctor.is_active}
-    #     return Response(status_response, status=status.HTTP_200_OK)
-    
     def get(self, request, format=None):
         doctor_id = request.query_params.get('doctor_id')
         if not doctor_id:
@@ -1454,3 +1484,18 @@ class Accessibility(APIView):
         status_response = {"is_verified": doctor.is_verified, "is_active": doctor.is_active}
         return Response(status_response, status=status.HTTP_200_OK)
  
+ 
+class DoctorListBySpecialization(APIView):
+        def get(self, request):
+            specialization = request.query_params.get('specialization', None)
+        
+            if specialization:
+                doctors = PersonalsDetails.objects.filter(specialization__icontains=specialization)
+            else:
+                doctors = PersonalsDetails.objects.all()
+    
+            serializer = SearchDetailsSerializer(doctors, many=True)
+            if not serializer.data:
+                return Response({"error": "not found any doctor"}, status=status.HTTP_400_BAD_REQUEST)
+    
+            return Response(serializer.data, status=status.HTTP_200_OK)

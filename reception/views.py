@@ -50,10 +50,10 @@ class ReceptionRegisters(APIView):
                 cache.set("Reception" + str(mobile_number), mobile_number, timeout=300)
             except Exception as e:
                 return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-            otp = ''.join(random.choices('0123456789', k=6))
-            # otp=generate_otp()
-            # register_otp_for_reception(mobile_number, otp)
-            # send_register_otp_to_reception(mobile_number, otp)
+            # otp = ''.join(random.choices('0123456789', k=6))
+            otp=generate_otp()
+            register_otp_for_reception(mobile_number, otp)
+            send_register_otp_to_reception(mobile_number, otp)
             print(otp)
             info_reception.info("OTP generated for mobile number %s: %s", mobile_number, otp)
             cache.set(mobile_number, otp, timeout=300)
@@ -259,18 +259,20 @@ class ReceptionDetailsByDoctorId(APIView):
             
             if reception_with_details.exists():
                 response_data.extend(serializer.data)
-            else :
-                return Response({"error": "you are not registered any reception"}, status=status.HTTP_404_NOT_FOUND)
+
             for reception in registered_reception:
                 if reception.mobile_number not in reception_numbers_with_details:
                     response_data.append({
                         "reception_id": reception.id,  
                         "mobile_number": reception.mobile_number,
                     })
+                    
+            if not response_data:
+                    return Response({"error":"you are not register any reception"}, status=status.HTTP_404_NOT_FOUND)
             
             return Response(response_data, status=status.HTTP_200_OK)
         
-        except ClinicRegister.DoesNotExist:
+        except ReceptionRegister.DoesNotExist:
             return Response({"error": f"Doctor with id {doctor_id} does not exist"}, status=status.HTTP_404_NOT_FOUND)
 
 class AppointmentDetailsByReceptionID(APIView):
@@ -476,7 +478,7 @@ class AvailableWalkInSlotsCount(APIView):
  
             try:
                 doctor = PersonalsDetails.objects.get(doctor_id=doctor_id)
-            except DoctorDetail.DoesNotExist:
+            except PersonalsDetails.DoesNotExist:
                 return Response({"error": "Doctor not found."}, status=status.HTTP_404_NOT_FOUND)
  
             available_walk_in_slots = Appointmentslots.objects.filter(
@@ -492,7 +494,7 @@ class AvailableWalkInSlotsCount(APIView):
             )
             available_follow_up_slots = Appointmentslots.objects.filter(
                 doctor_id=doctor.id,
-                appointment_date__in=appointment_dates,
+                # appointment_date__in=appointment_dates,
                 appointment_type='follow-up'
             )
  

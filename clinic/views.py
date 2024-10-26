@@ -1,6 +1,8 @@
 from datetime import datetime
 from django.shortcuts import get_object_or_404, render
 import logging
+
+import pytz
 from clinic.models import ClinicDetails, ClinicRegister
 from clinic.utils import generate_otp, register_otp_for_clinic, send_register_otp_to_clinic
 from patient.models import PatientDetails, PatientRegister, PatientVarryDetails
@@ -323,6 +325,9 @@ class ClinicByDoctorId(APIView):
                         "clinic_id": clinic.id,  
                         "mobile_number": clinic.mobile_number,
                     })
+                    
+                if not response_data:
+                    return Response({"error":"you are not register any clinic"}, status=status.HTTP_404_NOT_FOUND)
             
             return Response(response_data, status=status.HTTP_200_OK)
         
@@ -474,24 +479,39 @@ class CountAvailableSlots(APIView):
            
             if not doctor_id or not dates_str:
                 return Response({"error": "Doctor ID and dates are required."}, status=status.HTTP_400_BAD_REQUEST)
- 
+
             available_slots_count = []  
+            ist = pytz.timezone('Asia/Kolkata')  # Set timezone to IST
+            current_time = datetime.now(ist).time()  # Get current time in IST
+            today_date = datetime.now(ist).date()  # Get today's date
+
             for date_str in dates_str:
                 try:
-                    date = datetime.strptime(date_str, '%Y-%m-%d')
-                    count = Appointmentslots.objects.filter(
-                        doctor__doctor_id=doctor_id,
-                        appointment_date=date,
-                        is_booked=False,
-                        is_blocked=False
-                    ).count()
+                    date = datetime.strptime(date_str, '%Y-%m-%d').date()
+                    
+                    if date == today_date:
+                        # Count only slots after the current time for today
+                        count = Appointmentslots.objects.filter(
+                            doctor__doctor_id=doctor_id,
+                            appointment_date=date,
+                            appointment_slot__gt=current_time,
+                            is_booked=False,
+                            is_blocked=False
+                        ).count()
+                    else:
+                        # Count all slots for tomorrow and the day after tomorrow
+                        count = Appointmentslots.objects.filter(
+                            doctor__doctor_id=doctor_id,
+                            appointment_date=date,
+                            is_booked=False,
+                            is_blocked=False
+                        ).count()
                    
                     available_slots_count.append({"date": date_str, "count": count})
                 except ValueError:
                     return Response({"error": f"Incorrect date format for {date_str}. Please provide date in YYYY-MM-DD format."}, status=status.HTTP_400_BAD_REQUEST)
- 
-            return Response(available_slots_count
-            , status=status.HTTP_200_OK)
+
+            return Response(available_slots_count, status=status.HTTP_200_OK)
        
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

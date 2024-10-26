@@ -458,3 +458,23 @@
 2024-10-01 13:16:39,640 - info_clinic - INFO - 50 - Mobile number: 9161583418
 2024-10-01 13:16:40,516 - info_clinic - INFO - 56 - OTP generated for mobile number 9161583418: 105149
 2024-10-01 13:16:52,385 - info_clinic - INFO - 110 - User with mobile number 9161583418 successfully registered.
+2024-10-19 10:58:27,370 - info_clinic - INFO - 50 - Mobile number: 9161583418
+2024-10-19 10:58:27,876 - info_clinic - INFO - 56 - OTP generated for mobile number 9161583418: 979138
+2024-10-19 10:58:56,880 - info_clinic - INFO - 110 - User with mobile number 9161583418 successfully registered.
+2024-10-19 11:15:16,214 - info_clinic - INFO - 154 - Doctor details saved successfully
+2024-10-23 10:20:12,780 - info_clinic - INFO - 52 - Mobile number: 9236398121
+2024-10-23 10:20:13,222 - info_clinic - INFO - 58 - OTP generated for mobile number 9236398121: 687524
+2024-10-23 10:23:03,383 - info_clinic - INFO - 52 - Mobile number: 9236398122
+2024-10-23 10:23:03,798 - info_clinic - INFO - 58 - OTP generated for mobile number 9236398122: 800663
+2024-10-23 10:23:23,117 - info_clinic - INFO - 112 - User with mobile number 9236398122 successfully registered.
+2024-10-23 12:04:20,607 - info_clinic - INFO - 156 - Doctor details saved successfully
+2024-10-24 07:21:21,633 - info_clinic - INFO - 52 - Mobile number: 9236398122
+2024-10-24 07:21:25,464 - info_clinic - INFO - 58 - OTP generated for mobile number 9236398122: 371414
+2024-10-24 07:21:37,452 - info_clinic - INFO - 112 - User with mobile number 9236398122 successfully registered.
+2024-10-24 07:21:53,214 - info_clinic - INFO - 156 - Doctor details saved successfully
+2024-10-24 07:28:10,405 - info_clinic - INFO - 52 - Mobile number: 9695404225
+2024-10-24 07:28:10,886 - info_clinic - INFO - 58 - OTP generated for mobile number 9695404225: 777466
+2024-10-24 07:28:56,196 - info_clinic - INFO - 52 - Mobile number: 9695404525
+2024-10-24 07:28:56,722 - info_clinic - INFO - 58 - OTP generated for mobile number 9695404525: 059187
+2024-10-24 07:29:20,073 - info_clinic - INFO - 112 - User with mobile number 9695404525 successfully registered.
+2024-10-24 07:29:51,664 - info_clinic - INFO - 156 - Doctor details saved successfully

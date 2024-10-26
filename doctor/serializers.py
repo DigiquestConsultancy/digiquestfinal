@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 
-from .models import   Address, DoctorFeedback, DoctorRegister, DoctorDetail, Opd, OpdDays, OpdTime, PersonalsDetails, Qualification, Symptoms, SymptomsDetail
+from .models import   Address, DoctorFeedback, DoctorRegister, DoctorDetail, Opd,  OpdTime, PersonalsDetails, Qualification, Symptoms, SymptomsDetail
 
 class DoctorRegisterSerializer(serializers.ModelSerializer):
     class Meta:
@@ -81,12 +81,7 @@ class SymptomsDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = SymptomsDetail
         fields = "__all__"
-        
-class OpdDaysSerializer(serializers.ModelSerializer):
-    
-    class Meta:
-        model = OpdDays
-        fields = '__all__'
+
         
 class PersonalsDetailsSerializer(serializers.ModelSerializer):
     mobile_number = serializers.IntegerField(source="doctor.mobile_number")
@@ -127,8 +122,23 @@ class OpdTimeSerializer(serializers.ModelSerializer):
         fields = '__all__'
         
         
+# class SearchDetailsSerializer(serializers.ModelSerializer):
+#     address = AddressSerializer(many=True, read_only=True)
+#     mobile_number = serializers.IntegerField(source="doctor.mobile_number")
+#     qualifications = QualificationSerializer(
+#         source='doctor.qualifications', many=True)
+ 
+#     class Meta:
+#         model = PersonalsDetails
+#         fields = [
+#             'doctor', 'name', 'date_of_birth', 'gender', 'registration_no',
+#             'specialization', 'experience', 'profile_pic', 'email',
+#             'languages_spoken', 'address',"mobile_number",'doctor','qualifications',
+#         ]
+
 class SearchDetailsSerializer(serializers.ModelSerializer):
-    address = AddressSerializer(many=True, read_only=True)
+    address = AddressSerializer(source='doctor.address_set', many=True, read_only=True)
+    consultation_fee = serializers.SerializerMethodField()
     mobile_number = serializers.IntegerField(source="doctor.mobile_number")
     qualifications = QualificationSerializer(
         source='doctor.qualifications', many=True)
@@ -138,5 +148,12 @@ class SearchDetailsSerializer(serializers.ModelSerializer):
         fields = [
             'doctor', 'name', 'date_of_birth', 'gender', 'registration_no',
             'specialization', 'experience', 'profile_pic', 'email',
-            'languages_spoken', 'address',"mobile_number",'doctor','qualifications',
+            'languages_spoken', 'address',"mobile_number",'doctor','qualifications',"consultation_fee",
         ]
+ 
+    def get_consultation_fee(self, obj):
+        doctor = obj.doctor  
+        opd = Opd.objects.filter(doctor=doctor).first()
+        if opd:
+            return opd.consultation_fee
+        return None

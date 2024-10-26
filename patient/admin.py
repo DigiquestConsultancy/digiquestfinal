@@ -7,7 +7,9 @@ admin.site.register(PatientDetails)
 class PatientRegisterAdmin(admin.ModelAdmin):
     list_display = ('id','mobile_number')
 admin.site.register(PatientPrescription)
-admin.site.register(PatientVarryDetails)
+@admin.register(PatientVarryDetails)
+class PatientVarryDetails(admin.ModelAdmin):
+    list_display = ('id','mobile_number','name')
 admin.site.register(PatientDocumentById)
 admin.site.register(PatientRecord)
 admin.site.register(PatientPrescriptionFile)
