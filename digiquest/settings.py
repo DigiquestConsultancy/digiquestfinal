@@ -119,10 +119,6 @@ DATABASES = {
     }
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 365bfc3cc036b4a7dedd487fd907ccc1cfe0a592
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
