@@ -40,9 +40,9 @@ def clinic_register_msg91(clinic_mobile_number,strong_password):
     conn = http.client.HTTPSConnection("control.msg91.com")
     
     mobile_no = str(clinic_mobile_number)  # Ensure mobile_no is a string    
-    password = str(strong_password)              # Ensure otp is a string
+    password = str(strong_password)              
     full_mobile_number = f"91{mobile_no}"
-    
+
     payload = {
         "template_id": "670cb87dd6fc0561243730b3",  
         "short_url": "0",  

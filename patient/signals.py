@@ -18,7 +18,7 @@ def notify_if_patient_register(sender, instance, created, **kwargs):
             print("WhatsApp message sent successfully!")
         else:
             print("Failed to send WhatsApp message.")
-        
+       
         if response_msg91:
             print("msg91 message sent successfully!")
         else:

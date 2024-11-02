@@ -68,3 +68,8 @@ ValueError: Cannot query "PatientRegister object (19)": Must be "PatientVarryDet
 2024-10-24 06:27:13,472 - error_patient - ERROR - 1054 - Patient vital already exists for this patient and appointment
 2024-10-24 11:16:15,045 - error_patient - ERROR - 1078 - Data is not valid
 2024-10-24 11:16:29,592 - error_patient - ERROR - 1078 - Data is not valid
+2024-11-02 06:56:29,202 - error_patient - ERROR - 1099 - Patient varry details not found for the given patient ID: 6
+2024-11-02 06:56:35,662 - error_patient - ERROR - 1099 - Patient varry details not found for the given patient ID: 6
+2024-11-02 07:15:18,889 - error_patient - ERROR - 802 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-02 07:15:21,447 - error_patient - ERROR - 802 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-02 07:27:32,481 - error_patient - ERROR - 802 - Error occurred in get request: PatientVarryDetails matching query does not exist.

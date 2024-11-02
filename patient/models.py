@@ -4,8 +4,10 @@ from django.db import models
 from doctorappointment.models import Appointmentslots
 
 class PatientRegister(models.Model):
-    mobile_number=models.IntegerField()
+    mobile_number=models.CharField(max_length=15)
     password=models.CharField(max_length=225)
+
+
 
 def save_document(instance,filename):
     return f'static/document'
