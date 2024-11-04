@@ -836,21 +836,27 @@ class DoctordetailsUsingID(APIView):
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
+
+
 class SearchDoctor(APIView):
     def get(self, request):
         query = request.query_params.get("query", None)
         if query:
             filter_by_name = Q(name__icontains=query)
             filter_by_specializations = Q(specialization__icontains=query)
+
+            # Pehle is_verified filter lagana
             doctors = PersonalsDetails.objects.filter(
-                filter_by_name | filter_by_specializations
+                (filter_by_name | filter_by_specializations) & Q(is_verified=True)
             )
+
             if not doctors.exists():
-                return Response({"error": "No doctors found matching the query."},status=status.HTTP_404_NOT_FOUND )
+                return Response({"error": "No doctors found matching the query."}, status=status.HTTP_404_NOT_FOUND)
+
             serializer = SearchDetailsSerializer(doctors, many=True)
             return Response(serializer.data)
         else:
-            return Response({"error": "Please enter a query to search for doctors."},status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Please enter a query to search for doctors."}, status=status.HTTP_400_BAD_REQUEST)
 
 class DoctorFeedbackApi(APIView):
     def post(self, request, format=None):
@@ -1485,17 +1491,24 @@ class Accessibility(APIView):
         return Response(status_response, status=status.HTTP_200_OK)
  
  
+
 class DoctorListBySpecialization(APIView):
-        def get(self, request):
-            specialization = request.query_params.get('specialization', None)
+    def get(self, request):
+        specialization = request.query_params.get('specialization', None)
         
-            if specialization:
-                doctors = PersonalsDetails.objects.filter(specialization__icontains=specialization)
-            else:
-                doctors = PersonalsDetails.objects.all()
-    
-            serializer = SearchDetailsSerializer(doctors, many=True)
-            if not serializer.data:
-                return Response({"error": "not found any doctor"}, status=status.HTTP_400_BAD_REQUEST)
-    
-            return Response(serializer.data, status=status.HTTP_200_OK)
+        if specialization:
+            # Filtering for verified doctors only
+            doctors = PersonalsDetails.objects.filter(
+                specialization__icontains=specialization,
+                is_verified=True
+            )
+        else:
+            # All verified doctors if no specialization is provided
+            doctors = PersonalsDetails.objects.filter(is_verified=True)
+
+        serializer = SearchDetailsSerializer(doctors, many=True)
+        
+        if not serializer.data:
+            return Response({"error": "No doctors found."}, status=status.HTTP_404_NOT_FOUND)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
