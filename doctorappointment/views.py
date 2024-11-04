@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from django.conf import settings
 from patient.serializers import PatientDetailSerializer
 from patient.models import PatientDetails
-from doctor.models import DoctorDetail, PersonalsDetails
+from doctor.models import DoctorDetail, OpdTime, PersonalsDetails
 from .serializers import AppointmentslotsSerializer, DoctorSlotSerializer
 from doctorappointment.models import Appointmentslots
 from doctorappointment.serializers import BookedAppointmentSerializer
@@ -65,6 +65,70 @@ class DoctorSlotCreate(APIView):
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR) 
          
+    # def post(self, request):
+    #     try:
+    #         doctor_id = request.data.get("doctor_id")
+    #         start_date_str = request.data.get('start_date')
+    #         start_time_str = request.data.get('start_time')
+    #         end_date_str = request.data.get('end_date')
+    #         end_time_str = request.data.get('end_time')
+    #         interval_minutes = int(request.data.get('interval_minutes'))
+    #         leave_days = request.data.get('leave_days', [])
+
+    #         # Check for required fields
+    #         if not all([doctor_id, start_date_str, start_time_str, end_date_str, end_time_str, interval_minutes]):
+    #             return Response({"error": "doctor_id, start_date, start_time, end_date, interval_minutes, and end_time are required"}, status=status.HTTP_400_BAD_REQUEST)
+
+    #         existing_doctor_detail = PersonalsDetails.objects.filter(doctor_id=doctor_id).first()
+    #         if not existing_doctor_detail:
+    #             return Response({"error": f"Doctor details not found for ID: {doctor_id}"}, status=status.HTTP_404_NOT_FOUND)
+
+    #         # Parse dates and times
+    #         start_date = datetime.strptime(start_date_str, '%Y-%m-%d')
+    #         end_date = datetime.strptime(end_date_str, '%Y-%m-%d')
+    #         start_time = datetime.strptime(start_time_str, '%H:%M').time()
+    #         end_time = datetime.strptime(end_time_str, '%H:%M').time()
+
+    #         # Validate end date and time
+    #         if end_date < start_date or (end_date == start_date and end_time <= start_time):
+    #             return Response({"error": "End datetime must be after start datetime"}, status=status.HTTP_400_BAD_REQUEST)
+
+    #         # Convert leave_days to a set of weekday numbers (0=Monday, 6=Sunday)
+    #         leave_days_set = set(leave_days)
+
+    #         current_date = start_date
+    #         while current_date <= end_date:
+    #             if current_date.weekday() not in leave_days_set:  # Skip leave days
+    #                 current_time = datetime.combine(current_date, start_time)
+    #                 end_slot_datetime = datetime.combine(current_date, end_time)
+    #                 while current_time < end_slot_datetime:
+    #                     if Appointmentslots.objects.filter(
+    #                         doctor=existing_doctor_detail,
+    #                         appointment_date=current_time.date(),
+    #                         appointment_slot=current_time.time()
+    #                     ).exists():
+    #                         return Response({"error": "Slot already created for the given datetime range"}, status=status.HTTP_400_BAD_REQUEST)
+                        
+    #                     # Create the appointment slot
+    #                     Appointmentslots.objects.create(
+    #                         doctor=existing_doctor_detail,
+    #                         appointment_date=current_time.date(),
+    #                         appointment_slot=current_time.time(),
+    #                         is_booked=False
+    #                     )
+    #                     current_time += timedelta(minutes=interval_minutes)
+
+    #             current_date += timedelta(days=1)
+
+    #         return Response({"success": "Doctor slots created successfully"}, status=status.HTTP_201_CREATED)
+
+    #     except ValueError as e:
+    #         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+    #     except Exception as e:
+    #         return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+    
     def post(self, request):
         try:
             doctor_id = request.data.get("doctor_id")
@@ -73,52 +137,73 @@ class DoctorSlotCreate(APIView):
             end_date_str = request.data.get('end_date')
             end_time_str = request.data.get('end_time')
             interval_minutes = int(request.data.get('interval_minutes'))
-            leave_dates = request.data.get('leave_dates', [])
-            
+            leave_days = request.data.get('leave_days', [])
+
             if not all([doctor_id, start_date_str, start_time_str, end_date_str, end_time_str, interval_minutes]):
-                return Response({"error": "doctor_id, start_date, start_time, end_date, interval_minutes, and end_time are required"}, status=status.HTTP_400_BAD_REQUEST)
-            
+                return Response({"error": "doctor_id, start_date, start_time, end_date, end_time, interval_minutes are required"}, status=status.HTTP_400_BAD_REQUEST)
+
             existing_doctor_detail = PersonalsDetails.objects.filter(doctor_id=doctor_id).first()
             if not existing_doctor_detail:
                 return Response({"error": f"Doctor details not found for ID: {doctor_id}"}, status=status.HTTP_404_NOT_FOUND)
-            
+
+            opd_times = OpdTime.objects.filter(time__doctor=doctor_id)
+
+            if not opd_times.exists():
+                return Response({"error": "No OPD found for the doctor"}, status=status.HTTP_404_NOT_FOUND)
+
             start_date = datetime.strptime(start_date_str, '%Y-%m-%d')
             end_date = datetime.strptime(end_date_str, '%Y-%m-%d')
             start_time = datetime.strptime(start_time_str, '%H:%M').time()
             end_time = datetime.strptime(end_time_str, '%H:%M').time()
-            
+
             if end_date < start_date or (end_date == start_date and end_time <= start_time):
                 return Response({"error": "End datetime must be after start datetime"}, status=status.HTTP_400_BAD_REQUEST)
-            
+
+            # Convert leave_days to a set of weekday numbers (0=Monday, 6=Sunday)
+            leave_days_set = set(leave_days)
+
             current_date = start_date
             while current_date <= end_date:
-                if str(current_date.date()) not in leave_dates:
-                    current_time = datetime.combine(current_date, start_time)
-                    end_slot_datetime = datetime.combine(current_date, end_time)
-                    while current_time < end_slot_datetime:
-                        if Appointmentslots.objects.filter(
-                            doctor=existing_doctor_detail,
-                            appointment_date=current_time.date(),
-                            appointment_slot=current_time.time()
-                        ).exists():
-                            return Response({"error": "Slot already created for the given datetime range"}, status=status.HTTP_400_BAD_REQUEST)
-                        Appointmentslots.objects.create(
-                            doctor=existing_doctor_detail,  
-                            appointment_date=current_time.date(),
-                            appointment_slot=current_time.time(),
-                            is_booked=False
-                        )
-                        current_time += timedelta(minutes=interval_minutes)
-                
+                if current_date.weekday() not in leave_days_set:  # Skip leave days
+                    for opd_time in opd_times:  
+                        opd_start_time = opd_time.start_time
+                        opd_end_time = opd_time.end_time
+
+                        if not (opd_end_time < start_time or opd_start_time > end_time):
+                            current_time = datetime.combine(current_date, max(start_time, opd_start_time))
+                            end_slot_datetime = datetime.combine(current_date, min(end_time, opd_end_time))
+
+                            while current_time < end_slot_datetime:
+                                if Appointmentslots.objects.filter(
+                                    doctor=existing_doctor_detail,
+                                    appointment_date=current_time.date(),
+                                    appointment_slot=current_time.time()
+                                ).exists():
+                                    return Response({"error": "Slot already created for the given datetime range"}, status=status.HTTP_400_BAD_REQUEST)
+                                
+                                Appointmentslots.objects.create(
+                                    doctor=existing_doctor_detail,
+                                    appointment_date=current_time.date(),
+                                    appointment_slot=current_time.time(),
+                                    is_booked=False
+                                )
+                                current_time += timedelta(minutes=interval_minutes)
+
                 current_date += timedelta(days=1)
-            
+
             return Response({"success": "Doctor slots created successfully"}, status=status.HTTP_201_CREATED)
-        
+
         except ValueError as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
-        
+
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    
+    
+    
+    
+    
    
     def patch(self, request):
         doctor_id = request.data.get("doctor_id")

@@ -1486,16 +1486,23 @@ class Accessibility(APIView):
  
  
 class DoctorListBySpecialization(APIView):
-        def get(self, request):
-            specialization = request.query_params.get('specialization', None)
+    def get(self, request):
+        specialization = request.query_params.get('specialization', None)
         
-            if specialization:
-                doctors = PersonalsDetails.objects.filter(specialization__icontains=specialization)
-            else:
-                doctors = PersonalsDetails.objects.all()
-    
-            serializer = SearchDetailsSerializer(doctors, many=True)
-            if not serializer.data:
-                return Response({"error": "not found any doctor"}, status=status.HTTP_400_BAD_REQUEST)
-    
-            return Response(serializer.data, status=status.HTTP_200_OK)
+        if specialization and len(specialization) >= 6:  
+            first_two = specialization[:2]
+            last_three = specialization[-3:]
+            last_four = specialization[-4:]
+ 
+            doctors = PersonalsDetails.objects.filter(
+                Q(specialization__istartswith=first_two) &
+                (Q(specialization__iendswith=last_three) | Q(specialization__iendswith=last_four))
+            )
+        else:
+            doctors = PersonalsDetails.objects.all()
+ 
+        serializer = SearchDetailsSerializer(doctors, many=True)
+        if not serializer.data:
+            return Response({"error": "No doctors found"}, status=status.HTTP_404_NOT_FOUND)
+ 
+        return Response(serializer.data, status=status.HTTP_200_OK)

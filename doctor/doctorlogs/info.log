@@ -6199,3 +6199,24 @@ AttributeError: 'QuerySet' object has no attribute 'mobile_number'
 2024-10-24 07:41:44,529 - info_doctor - INFO - 556 - Login successful for mobile number: 9695404525
 2024-10-24 07:52:24,301 - info_doctor - INFO - 507 - OTP generated successfully 976190
 2024-10-24 07:52:39,241 - info_doctor - INFO - 556 - Login successful for mobile number: 6386326186
+2024-10-29 06:32:54,423 - info_doctor - INFO - 507 - OTP generated successfully 667284
+2024-10-29 06:33:24,335 - info_doctor - INFO - 556 - Login successful for mobile number: 6386326186
+2024-10-29 06:54:08,206 - info_doctor - INFO - 179 - OTP generated for mobile number 8182820987: 016646
+2024-10-29 06:54:21,697 - info_doctor - INFO - 193 - Mobile number: 8182820987, OTP: 016646
+2024-10-29 06:55:09,971 - info_doctor - INFO - 193 - Mobile number: 8182820987, OTP: 
+2024-10-29 06:55:10,458 - info_doctor - INFO - 179 - OTP generated for mobile number 8182820987: 299347
+2024-10-29 06:55:23,240 - info_doctor - INFO - 193 - Mobile number: 8182820987, OTP: 299347
+2024-10-29 06:58:04,880 - info_doctor - INFO - 179 - OTP generated for mobile number 8182820987: 389652
+2024-10-29 06:58:19,839 - info_doctor - INFO - 193 - Mobile number: 8182820987, OTP: 389652
+2024-10-29 11:46:59,097 - info_doctor - INFO - 179 - OTP generated for mobile number 7518868219: 797559
+2024-10-29 11:47:21,310 - info_doctor - INFO - 193 - Mobile number: 7518868219, OTP: 797559
+2024-10-29 11:47:59,742 - info_doctor - INFO - 193 - Mobile number: 7518868219, OTP: 797559
+2024-10-29 11:48:00,591 - info_doctor - INFO - 179 - OTP generated for mobile number 7518868219: 140347
+2024-10-29 11:48:09,931 - info_doctor - INFO - 193 - Mobile number: 7518868219, OTP: 140347
+2024-10-29 11:49:26,426 - info_doctor - INFO - 179 - OTP generated for mobile number 7518868219: 622383
+2024-10-29 11:49:33,467 - info_doctor - INFO - 193 - Mobile number: 7518868219, OTP: 622383
+2024-10-29 11:50:33,722 - info_doctor - INFO - 179 - OTP generated for mobile number 7518868219: 230206
+2024-10-29 11:50:42,908 - info_doctor - INFO - 193 - Mobile number: 7518868219, OTP: 230206
+2024-11-02 11:47:53,511 - info_doctor - INFO - 507 - OTP generated successfully 808420
+2024-11-02 11:48:10,518 - info_doctor - INFO - 556 - Login successful for mobile number: 7518868219
+2024-11-04 06:25:07,650 - info_doctor - INFO - 507 - OTP generated successfully 118883

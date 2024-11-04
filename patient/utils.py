@@ -1,5 +1,7 @@
 import http
 import json
+import secrets
+import string
 import requests
 from twilio.rest import Client
 from django.core.cache import cache
@@ -284,3 +286,90 @@ def congratulation_msg_when_patient_register_aisensy(patient_mobile_number):
     
     except requests.exceptions.ConnectionError as err:
         return {'error': 'Connection error occurred', 'details': str(err)}
+    
+    
+    
+    
+    
+    
+    
+#=======================================Congratulation Message with password When Patient Register======================================================
+
+
+def generate_strong_password_patient(length=8):
+    lowercase = string.ascii_lowercase
+    uppercase = string.ascii_uppercase
+    digits = '123456789'
+    special = '@!#'
+    
+    password = [
+        secrets.choice(uppercase),
+        secrets.choice(lowercase), 
+        secrets.choice(digits),    
+        secrets.choice(special)    
+    ]
+    
+    allowed_characters = lowercase + uppercase + digits + special
+    password += [secrets.choice(allowed_characters) for _ in range(length - 4)]
+    
+    secrets.SystemRandom().shuffle(password)
+    
+    return ''.join(password)
+
+
+
+
+
+
+
+
+
+
+
+
+def congratulation_msg_when_patient_register_msg91(patient_mobile_number, strong_password):
+    conn = http.client.HTTPSConnection("control.msg91.com")
+    
+    mobile_no = str(patient_mobile_number) 
+    full_mobile_number = f"91{mobile_no}"
+    
+    payload = {
+        "template_id": "670cccbed6fc0518c67e0633",  
+        "short_url": "0",  
+        "realTimeResponse": "1",  
+        "recipients": [
+            {
+                "mobiles": full_mobile_number,
+                "var1": mobile_no,
+                "var2": strong_password
+            }
+        ]
+    }
+
+    auth_key = os.environ.get('AUTH_KEY')
+    if auth_key is None:
+        raise ValueError("AUTH_KEY environment variable is not set")
+
+    headers = {
+        'authkey': auth_key,  
+        'accept': "application/json",
+        'content-type': "application/json"
+    }
+
+    json_payload = json.dumps(payload)
+    print(json_payload)  # Debugging line
+
+    try:
+        conn.request("POST", "/api/v5/flow", json_payload, headers)
+        res = conn.getresponse()
+        data = res.read()
+        
+        if isinstance(data, bytes):
+            return data.decode("utf-8")
+        else:
+            print("Unexpected response type")
+            return None
+    except Exception as e:
+        print(f"Error sending text message: {e}")
+        return None
+    
