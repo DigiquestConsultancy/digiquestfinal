@@ -5,7 +5,7 @@ from django.db import models
 from django.db import models
 
 class ReceptionRegister(models.Model):
-    mobile_number=models.CharField(max_length=15)
+    mobile_number=models.IntegerField()
     is_doctor=models.BooleanField(default=False, null=True, blank=True)
     doctor=models.ForeignKey("doctor.DoctorRegister", on_delete=models.CASCADE)
     password=models.CharField(max_length=225, null=True, blank=True)

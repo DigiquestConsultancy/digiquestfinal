@@ -21,7 +21,7 @@ import urllib3
 from digiquest import settings
 from clinic.models import ClinicDetails
 from digiadmin.models import hash_value
-from doctor.models import Address, DoctorDetail, DoctorRegister, PersonalsDetails, Qualification, SymptomsDetail
+from doctor.models import DoctorDetail, PersonalsDetails, SymptomsDetail
 from reception.models import ReceptionDetails
 from doctorappointment.serializers import BookedAppointmentSerializer
 from doctorappointment.models import Appointmentslots
@@ -377,121 +377,30 @@ class GetPatientDetailsUsingID(APIView):
         
 
 
-# class PatientCity(APIView):
-#     def get(self, request, format=None):
-#         try:
-#             ipv6_address = request.META.get('HTTP_X_FORWARDED_FOR', None)
-#             if ipv6_address:
-#                 for address in ipv6_address.split(','):
-#                     if ':' in address:
-#                         ipv6_address = address.strip()
-#                         break
-#             if not ipv6_address:
-#                 s = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
-#                 s.connect(("ipv6.google.com", 80)) 
-#                 ipv6_address = s.getsockname()[0]
-#                 s.close()
-#             access_token = '8406af336a5de0'  
-#             handler = ipinfo.getHandler(access_token)
-#             details = handler.getDetails(ipv6_address)
-#             city = details.city
-#             country = details.country_name
-#             time_zone = details.timezone
-#             state = details.region
-#             return Response({'city': city, 'state': state, 'country': country, 'time_zone': time_zone})
-#         except Exception as e:
-#             return Response({"error": str(e)})
-
-
-
 class PatientCity(APIView):
     def get(self, request, format=None):
         try:
-            # Get the client's IPv6 address
             ipv6_address = request.META.get('HTTP_X_FORWARDED_FOR', None)
             if ipv6_address:
                 for address in ipv6_address.split(','):
                     if ':' in address:
                         ipv6_address = address.strip()
                         break
-
             if not ipv6_address:
                 s = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
-                s.connect(("ipv6.google.com", 80))
+                s.connect(("ipv6.google.com", 80)) 
                 ipv6_address = s.getsockname()[0]
                 s.close()
-
-            access_token = '8406af336a5de0'
+            access_token = '8406af336a5de0'  
             handler = ipinfo.getHandler(access_token)
             details = handler.getDetails(ipv6_address)
-
-            # Extract location details
             city = details.city
             country = details.country_name
-            state = details.region
             time_zone = details.timezone
-
-
-
-            addresses = Address.objects.filter(
-                (Q(city=city) & Q(state=state)) |
-                (Q(city=city) & Q(country=country)) |
-                (Q(state=state) & Q(country=country))
-            )
-
-            doctors = DoctorRegister.objects.filter(address__in=addresses)
-
-            doctor_list = []
-
-            for doctor in doctors:
-                personal_details = PersonalsDetails.objects.filter(doctor=doctor).first()
-                qualifications = Qualification.objects.filter(doctor=doctor, is_selected=True).values_list('qualification', flat=True)
-
-                if personal_details:
-                    doctor_info = {
-                        'name': personal_details.name,
-                        'specialization': personal_details.specialization,
-                        'email': personal_details.email,
-                        'profile_pic': personal_details.profile_pic.url if personal_details.profile_pic else None,
-                        'experience': personal_details.experience,
-                        'qualifications': list(qualifications),
-                    }
-                    doctor_list.append(doctor_info)
-
-            limited_doctor_list = doctor_list[:5]
-
-            return Response({
-                'city': city,
-                'state': state,
-                'country': country,
-                'time_zone': time_zone,
-                'doctors': limited_doctor_list
-            })
+            state = details.region
+            return Response({'city': city, 'state': state, 'country': country, 'time_zone': time_zone})
         except Exception as e:
-            return Response({"error": str(e)}, status=500)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            return Response({"error": str(e)})
 
 
 

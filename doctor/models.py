@@ -3,7 +3,7 @@ from django.db import models
 
 
 class DoctorRegister(models.Model):
-    mobile_number=models.CharField(max_length=15)
+    mobile_number=models.IntegerField()
     is_doctor=models.BooleanField(default=True, null=True, blank=True)
     password=models.CharField(max_length=225)
     is_verified = models.BooleanField(default=False, null=True, blank=True)

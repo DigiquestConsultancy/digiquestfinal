@@ -13,4 +13,4 @@ class Appointmentslots(models.Model):
     is_canceled = models.BooleanField(default=False)
     is_patient= models.BooleanField(default=False)
     reminder_sent = models.BooleanField(default=False , null=True, blank=True)  
-    consultation_type = models.CharField(max_length=20, choices=[('walk-in', 'Walk-In'), ('online', 'Online')], default='walk-in', null=True, blank=True)
+    consultation_type = models.CharField(max_length=20, choices=[('walk-in', 'Walk-In'), ('online', 'Online')], default='walk-in')

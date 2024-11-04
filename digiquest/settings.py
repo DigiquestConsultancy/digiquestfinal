@@ -109,12 +109,13 @@ WSGI_APPLICATION = 'digiquest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',  # Use MySQL as the backend
-        'NAME': 'production',           # Replace with your database name
-        'USER': 'poweruser',                 # Replace with your MySQL username
-        'PASSWORD': 'Sundram@123',             # Replace with your MySQL password
-        'HOST': 'localhost',                     # Set to 'localhost' or your MySQL server IP
-        'PORT': '3306',                          # Default MySQL port
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'digiquestazure',
+        'USER': 'Digiquestuser@digiquestserver',
+        'PASSWORD': 'Digiquest!123@45456',
+        'HOST': 'digiquestserver.postgres.database.azure.com',
+        'PORT': '5432',
+        'OPTIONS': {'sslmode': 'require'},
     }
 }
 

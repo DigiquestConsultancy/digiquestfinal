@@ -894,5 +894,3 @@
 2024-10-24 06:20:21,593 - error_doctor - ERROR - 197 - Mobile number, OTP, and password are required
 2024-10-24 06:21:17,044 - error_doctor - ERROR - 1154 - Invalid data: {'date_of_birth': [ErrorDetail(string='Date has wrong format. Use one of these formats instead: YYYY-MM-DD.', code='invalid')]}
 2024-10-24 07:51:32,533 - error_doctor - ERROR - 493 - Mobile number 6666666666 is not registered. Please register first.
-2024-10-29 06:55:09,971 - error_doctor - ERROR - 197 - Mobile number, OTP, and password are required
-2024-10-29 11:46:46,861 - error_doctor - ERROR - 493 - Mobile number 7518868219 is not registered. Please register first.

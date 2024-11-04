@@ -56,8 +56,8 @@ class BookSlotListView(APIView):
         doctor_id = request.data.get("doctor")
         appointment_slot_id = request.data.get("appointment_slot")
         consultation_type=request.data.get("consultation_type")
-        if not patient_id or not doctor_id or not appointment_slot_id:
-            return Response({"error": "Patient ID, doctor ID, and appointment slot ID  are required."}, status=status.HTTP_400_BAD_REQUEST)
+        if not patient_id or not doctor_id or not appointment_slot_id or not consultation_type:
+            return Response({"error": "Patient ID, doctor ID, and appointment slot ID  and consultation_type are required."}, status=status.HTTP_400_BAD_REQUEST)
         try:
             patient = PatientVarryDetails.objects.get(id=patient_id)
         except PatientVarryDetails.DoesNotExist:
