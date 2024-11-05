@@ -4,7 +4,7 @@ from django.db import models
 from doctorappointment.models import Appointmentslots
 
 class PatientRegister(models.Model):
-    mobile_number=models.IntegerField()
+    mobile_number=models.CharField(max_length=15)
     password=models.CharField(max_length=225)
 
 def save_document(instance,filename):
@@ -48,10 +48,10 @@ class PatientDetails(models.Model):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     email = models.EmailField(max_length=254, null=True, blank=True)
-    date_of_birth = models.DateField()
+    date_of_birth = models.DateField(null=True, blank=True)
     age=models.IntegerField(null=True, blank=True)
     gender = models.CharField(max_length=6, choices=(('male', 'Male'), ('female', 'Female'), ('others', 'Others')))
-    blood_group = models.CharField(max_length=5)
+    blood_group = models.CharField(max_length=5, null=True, blank=True)
     
     profile_pic= models.FileField(upload_to=save_user_pic, null=True, blank=True)
     
@@ -83,21 +83,22 @@ class PatientFeedback(models.Model):
     
 class PatientVarryDetails(models.Model):
     patient =models.ForeignKey(PatientRegister, on_delete=models.CASCADE)
-   
-    mobile_number=models.IntegerField()
+
+    mobile_number=models.CharField(max_length=15)
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
-    date_of_birth = models.DateField()
+    date_of_birth = models.DateField(null=True, blank=True)
     age=models.IntegerField(null=True, blank=True)
     gender = models.CharField(max_length=6, choices=(('male', 'Male'), ('female', 'Female'), ('others', 'Others')))
-    blood_group = models.CharField(max_length=5)
+    blood_group = models.CharField(max_length=5, null=True, blank=True)
     profile_pic= models.FileField(upload_to=save_user_pic, null=True, blank=True)
     email = models.EmailField(max_length=254, null=True, blank=True)
     appointment=models.ForeignKey('doctorappointment.Appointmentslots', on_delete=models.CASCADE, null=True, blank=True)
-    
+
 
     def __str__(self):
         return self.name
+
 
 
 
@@ -114,7 +115,7 @@ class PatientDocumentById(models.Model):
 
 
 class PatientPrescription(models.Model):
-    patient = models.ForeignKey(PatientVarryDetails, on_delete=models.CASCADE)
+    # patient = models.ForeignKey(PatientVarryDetails, on_delete=models.CASCADE)
     medicine_name = models.CharField(max_length=100)
     comment = models.CharField(max_length=500)
     time = models.CharField(max_length=100, choices=[('morning', 'Morning'),

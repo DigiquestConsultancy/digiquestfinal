@@ -3,7 +3,7 @@ from django.db import models
 
 
 class DoctorRegister(models.Model):
-    mobile_number=models.IntegerField()
+    mobile_number=models.CharField(max_length=15)
     is_doctor=models.BooleanField(default=True, null=True, blank=True)
     password=models.CharField(max_length=225)
     is_verified = models.BooleanField(default=False, null=True, blank=True)
@@ -101,7 +101,6 @@ class SymptomsDetail(models.Model):
     severity = models.CharField(max_length=10, choices=[('mild', 'Mild'), ('moderate', 'Moderate'), ('severe', 'Severe')])
     more_options =  models.TextField(null=True, blank=True)
     appointment = models.ForeignKey('doctorappointment.Appointmentslots', on_delete=models.CASCADE)
-    symptom_date = models.DateField()
   
 class OpdDays(models.Model):
     doctor= models.ForeignKey(DoctorRegister, on_delete=models.CASCADE)

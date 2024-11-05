@@ -68,3 +68,24 @@ ValueError: Cannot query "PatientRegister object (19)": Must be "PatientVarryDet
 2024-10-24 06:27:13,472 - error_patient - ERROR - 1054 - Patient vital already exists for this patient and appointment
 2024-10-24 11:16:15,045 - error_patient - ERROR - 1078 - Data is not valid
 2024-10-24 11:16:29,592 - error_patient - ERROR - 1078 - Data is not valid
+2024-11-04 07:11:38,010 - error_patient - ERROR - 1111 - Patient record not found for the given patient ID and appointment
+2024-11-04 07:13:37,673 - error_patient - ERROR - 1111 - Patient record not found for the given patient ID and appointment
+2024-11-04 07:14:10,437 - error_patient - ERROR - 802 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 07:14:24,325 - error_patient - ERROR - 802 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 07:14:31,260 - error_patient - ERROR - 802 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 07:14:33,625 - error_patient - ERROR - 802 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 07:14:39,926 - error_patient - ERROR - 802 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 07:26:41,292 - error_patient - ERROR - 803 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 07:31:48,178 - error_patient - ERROR - 803 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 07:33:54,406 - error_patient - ERROR - 803 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 07:34:15,736 - error_patient - ERROR - 803 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 07:35:42,228 - error_patient - ERROR - 803 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 07:35:57,170 - error_patient - ERROR - 803 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 07:42:24,353 - error_patient - ERROR - 803 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 09:24:11,558 - error_patient - ERROR - 803 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 10:04:14,108 - error_patient - ERROR - 803 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 10:04:42,896 - error_patient - ERROR - 803 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 11:03:02,496 - error_patient - ERROR - 803 - Error occurred in get request: Cannot resolve keyword 'patient_id' into field. Choices are: appointment, appointment_id, comment, description, id, medicine_name, time
+2024-11-04 11:03:06,529 - error_patient - ERROR - 803 - Error occurred in get request: Cannot resolve keyword 'patient_id' into field. Choices are: appointment, appointment_id, comment, description, id, medicine_name, time
+2024-11-04 11:11:54,829 - error_patient - ERROR - 801 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-04 12:21:31,250 - error_patient - ERROR - 801 - Error occurred in get request: PatientVarryDetails matching query does not exist.

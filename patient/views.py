@@ -328,7 +328,7 @@ class PatientDetailApi(APIView):
             patient_register = PatientRegister.objects.get(mobile_number=mobile_number)
             mutable_data = request.data.copy()
             mutable_data["patient"] = patient_register.pk
-            patient_serializer = PatientDetailSerializerPost(data=mutable_data)
+            patient_serializer = PatientDetailSerializerPost(data=mutable_data, partial=True)
             if patient_serializer.is_valid():
                 patient_serializer.save()
                 return Response(patient_serializer.data, status=status.HTTP_201_CREATED)
@@ -778,21 +778,19 @@ class PatientDocumentSearch(APIView):
     
 class PatientPrescriptionApi(APIView):
     def get(self, request, format=None):
-        patient_id = request.query_params.get('patient_id')
         appointment_id = request.query_params.get('appointment_id')
 
         try:
-            if not patient_id or not appointment_id:
+            if not appointment_id:
                 return Response({'error': 'patient_id and appoinment_id are required'}, status=status.HTTP_400_BAD_REQUEST)
 
-            patient=PatientVarryDetails.objects.get(patient_id__id=patient_id, appointment_id=appointment_id)
+            patient=PatientVarryDetails.objects.get(appointment_id=appointment_id)
             patient_prescriptions = PatientPrescription.objects.filter(
-                patient_id=patient.id,
                 appointment_id=appointment_id
             )
 
             if not patient_prescriptions.exists():
-                return Response({'error': 'No prescriptions found for the given patient_id and appoinment_id'}, status=status.HTTP_404_NOT_FOUND)
+                return Response({'error': 'No prescriptions found '}, status=status.HTTP_404_NOT_FOUND)
 
             serializer = PatientPrescriptionSerializer(
                 patient_prescriptions, many=True)
@@ -801,7 +799,81 @@ class PatientPrescriptionApi(APIView):
         except Exception as e:
             error_patient.error(f"Error occurred in get request: {str(e)}")
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
+
+
+
+    # def post(self, request, format=None):
+    #         try:
+    #             patient_id = request.data.get('patient_id')
+    #             medicine_name = request.data.get('medicine_name')
+    #             comment = request.data.get('comment')
+    #             description = request.data.get('description')
+    #             appointment_id = request.data.get('appointment_id')
+    #             time = request.data.get('time')
+
+    #             if not patient_id or not medicine_name or not appointment_id:
+    #                 return Response(
+    #                     {"error": "patient_id, medicine_name, time, and appointment_id are required fields"},
+    #                     status=status.HTTP_400_BAD_REQUEST
+    #                 )
+
+    #             try:
+    #                 patient_details = PatientVarryDetails.objects.get(
+    #                     patient_id=patient_id, appointment_id=appointment_id)
+    #             except PatientVarryDetails.DoesNotExist:
+    #                 return Response({"error": "Patient details not found"}, status=status.HTTP_404_NOT_FOUND)
+
+
+    #             data = {
+    #             "patient": patient_details.id,
+    #             "patient_name": patient_details.name,
+    #             "medicine_name": medicine_name,
+    #             "description": description if description else None,
+    #             "comment": comment if comment else None,
+    #             "appointment": appointment_id,
+    #             "time": time if time else None
+    #             }
+    #             serializer = PatientPrescriptionSerializer(data = data ,partial = True)
+    #             if serializer.is_valid():
+    #                 serializer.save()
+    #                 return Response({'success': 'prescription details saved successfully.',"data":serializer.data}, status=status.HTTP_201_CREATED)
+    #             else:
+    #                 return Response({"error": "failed prescription details","errors":serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+
+    #         except Exception as e:
+    #             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    # def put(self, request, format=None):
+    #     try:
+    #         patient_id = request.data.get('patient_id')
+    #         prescription_id = request.data.get('prescription_id')
+
+    #         if not prescription_id or not patient_id:
+    #             return Response({"error": "prescription_id and patient_id are required"}, status=status.HTTP_400_BAD_REQUEST)
+
+    #         try:
+    #             prescription = PatientPrescription.objects.get(
+    #                 id=prescription_id, patient_id=patient_id)
+    #         except PatientPrescription.DoesNotExist:
+    #             return Response({"error": "Prescription not found"}, status=status.HTTP_404_NOT_FOUND)
+
+    #         serializer = PatientPrescriptionSerializer(
+    #             prescription, data=request.data, partial=True)
+
+    #         if serializer.is_valid():
+    #             serializer.save()
+    #             info_patient.info("Prescription updated successfully")
+    #             return Response({'success': "Prescription updated successfully","data":serializer.data}, status=status.HTTP_201_CREATED)
+    #         else:
+    #             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    #     except Exception as e:
+    #         error_patient.error(f"Error occurred in put request: {str(e)}")
+    #         return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+
+
     def post(self, request, format=None):
         try:
 
@@ -814,28 +886,27 @@ class PatientPrescriptionApi(APIView):
 
             for prescription in prescriptions:
                 patient_id = prescription.get('patient_id')
-                time= prescription.get('time')
                 medicine_name = prescription.get('medicine_name')
+                time = prescription.get('time')
                 comment = prescription.get('comment')
                 description = prescription.get('description')
                 appointment_id = prescription.get('appointment_id')
 
-                if not patient_id or not medicine_name or not appointment_id:
+                if not medicine_name or not time or not appointment_id:
                     errors.append({"error": "patient_id, medicine_name, time, and appointment_id are required fields"})
                     continue
 
                 try:
-                    patient_details = PatientVarryDetails.objects.get(patient_id=patient_id, appointment_id=appointment_id)
+                    patient_details = PatientVarryDetails.objects.get(appointment_id=appointment_id)
                 except PatientVarryDetails.DoesNotExist:
-                    errors.append({"error": f"Patient details not found for patient_id {patient_id} and appointment_id {appointment_id}"})
+                    errors.append({"error": f"Patient details not appointment_id {appointment_id}"})
                     continue
 
                 prescription_data = {
-                    "patient": patient_details.id,
                     "patient_name": patient_details.name,
                     "medicine_name": medicine_name,
-                    "description": description,
                     "time": time,
+                    "description": description,
                     "comment": comment,
                     "appointment": appointment_id
                 }
@@ -859,7 +930,7 @@ class PatientPrescriptionApi(APIView):
                 status_code = status.HTTP_400_BAD_REQUEST
             else:
                 response_data = {
-                    "success": "All records created successfully"
+                    "success": "Prescription created successfully"
                 }
                 status_code = status.HTTP_201_CREATED
 
@@ -868,57 +939,53 @@ class PatientPrescriptionApi(APIView):
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    
+
+
     def put(self, request, format=None):
         try:
             patient_id = request.data.get('patient_id')
             prescription_id = request.data.get('prescription_id')
- 
-   
-            if not prescription_id or not patient_id:
+            medicine_name = request.data.get('medicine_name')
+            time = request.data.get('time')
+            comment = request.data.get('comment')
+            description = request.data.get('description')
+            if not prescription_id:
                 return Response({"error": "prescription_id and patient_id are required"}, status=status.HTTP_400_BAD_REQUEST)
- 
-            try:
-                prescription = PatientPrescription.objects.get(
-                    id=prescription_id, patient_id=patient_id)
-            except PatientPrescription.DoesNotExist:
+            prescription = PatientPrescription.objects.filter(id=prescription_id).first()
+            if not prescription:
                 return Response({"error": "Prescription not found"}, status=status.HTTP_404_NOT_FOUND)
- 
-     
-            serializer = PatientPrescriptionSerializer(
-                prescription, data=request.data, partial=True)
- 
-         
-            if serializer.is_valid():
-                serializer.save()
-                info_patient.info("Prescription updated successfully")
-                return Response(serializer.data, status=status.HTTP_200_OK)
-            else:
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
- 
+            # if prescription.patient.patient_id != (patient_id):
+            #     return Response({"error": "The provided patient_id does not match the patient associated with the prescription"}, status=status.HTTP_400_BAD_REQUEST)
+            if medicine_name:
+                prescription.medicine_name = medicine_name
+            if time:
+                prescription.time = time
+            if comment:
+                prescription.comment = comment
+            if description:
+                prescription.description = description
+            prescription.save()
+            info_patient.info("Prescription updated successfully")
+            serializer = PatientPrescriptionSerializer(prescription)
+            return Response({'success':'Prescription updated successfully', 'data':serializer.data}, status=status.HTTP_200_OK)
         except Exception as e:
             error_patient.error(f"Error occurred in put request: {str(e)}")
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
+
     def delete(self, request, format=None):
-        try:
-   
-            prescription_id = request.query_params.get('prescription_id')
-            if not prescription_id:
-                return Response({"error": "prescription_id is required"}, status=status.HTTP_400_BAD_REQUEST)
- 
-            try:
-                prescription = PatientPrescription.objects.get(
-                    id=prescription_id)
-            except PatientPrescription.DoesNotExist:
-                return Response({"error": "Prescription not found"}, status=status.HTTP_404_NOT_FOUND)
- 
-            prescription.delete()
-            return Response({"message": "Prescription deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
- 
-        except Exception as e:
-            error_patient.error(f"Error occurred in delete request: {str(e)}")
-            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR) 
+        prescription_id = request.query_params.get('prescription_id')
+
+        if not prescription_id:
+            return Response({"error": "prescription_id is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        prescription = PatientPrescription.objects.filter(id=prescription_id).first()
+
+        if not prescription:
+            return Response({"error": "Prescription not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        prescription.delete()
+        return Response({"success": "Prescription deleted successfully"}, status=status.HTTP_200_OK)
+
         
         
         
@@ -1094,10 +1161,10 @@ class PatientRecordView(APIView):
                 return Response({'error': 'Appointment ID and patient ID are missing in the request'}, status=status.HTTP_400_BAD_REQUEST)
 
             # Fetch the correct instance of PatientVarryDetails
-            patient_varry_details = PatientVarryDetails.objects.filter(id=patient_id).first()
+            patient_varry_details = PatientVarryDetails.objects.filter(patient_id=patient_id).first()
             if not patient_varry_details:
                 error_patient.error(f'Patient varry details not found for the given patient ID: {patient_id}')
-                return Response({'error': 'Patient register not found '}, status=status.HTTP_404_NOT_FOUND)
+                return Response({'error': 'Patient register not found for the given patient ID'}, status=status.HTTP_404_NOT_FOUND)
 
             appointment = Appointmentslots.objects.filter(id=appointment_id).first()
             if not appointment:
@@ -1118,7 +1185,7 @@ class PatientRecordView(APIView):
                 response_data = serializer.data
                 response_data['patient'] = patient_varry_details.id
                 info_patient.info('Patient record updated successfully', extra=response_data)
-                return Response({"success": "Patient record updated successfully", "data": response_data}, status=status.HTTP_200_OK)
+                return Response({"success": "Patient vital updated successfully", "data": response_data}, status=status.HTTP_201_CREATED)
             else:
                 error_patient.error('Data is not valid', extra=serializer.errors)
                 return Response({"error": "Data is not valid", "errors": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)

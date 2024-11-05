@@ -190,3 +190,7 @@
 2024-09-25 12:45:01,813 - error_clinic - ERROR - 39 - Mobile number is already registered: 9935266755
 2024-09-30 10:56:57,075 - error_clinic - ERROR - 39 - Mobile number is already registered: 9625393987
 2024-10-19 10:59:28,992 - error_clinic - ERROR - 159 - Invalid data: {'profile_pic': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+2024-11-04 07:21:27,965 - error_clinic - ERROR - 92 - Mobile number 6392535512 is not registered or OTP session expired. Resend OTP.
+2024-11-04 07:33:58,219 - error_clinic - ERROR - 92 - Mobile number 6392535512 is not registered or OTP session expired. Resend OTP.
+2024-11-04 07:43:25,451 - error_clinic - ERROR - 161 - Invalid data: {'age': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
+2024-11-04 07:57:13,212 - error_clinic - ERROR - 148 - User details already exist for 6392535512 mobile number

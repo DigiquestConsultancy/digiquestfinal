@@ -5,7 +5,7 @@ from .models import PatientDocumentById, PatientPrescriptionFile, PatientRecord,
 admin.site.register(PatientDetails)
 @admin.register(PatientRegister)
 class PatientRegisterAdmin(admin.ModelAdmin):
-    list_display = ('id','mobile_number')
+    list_display = ('id','mobile_number','password')
 admin.site.register(PatientPrescription)
 @admin.register(PatientVarryDetails)
 class PatientVarryDetails(admin.ModelAdmin):

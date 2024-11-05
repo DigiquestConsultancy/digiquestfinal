@@ -977,86 +977,86 @@ class SymptomsSearch(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
  
 class SymptomsDetailView(APIView):
- 
+    
     def get(self, request, *args, **kwargs):
         appointment_id = request.query_params.get("appointment_id")
- 
+
         if not appointment_id:
             return Response({"error": "appointment_id is required."}, status=status.HTTP_400_BAD_REQUEST)
- 
+
         symptom_details = SymptomsDetail.objects.select_related(
             'appointment', 'symptoms').filter(appointment_id=appointment_id)
- 
+
         if not symptom_details.exists():
-            return Response({"error": "No SymptomsDetail found for this appointment_id."}, status=status.HTTP_404_NOT_FOUND)
- 
+            return Response({"error": "No SymptomsDetail found ."}, status=status.HTTP_404_NOT_FOUND)
+
         serializer = SymptomsDetailSerializer(symptom_details, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
- 
+
     def post(self, request, *args, **kwargs):
         symptoms_id = request.data.get("symptoms")
         appointment_id = request.data.get("appointment")
- 
+
         if not symptoms_id or not appointment_id:
             return Response({"error": "symptoms and appointment are required."}, status=status.HTTP_400_BAD_REQUEST)
- 
+
         symptom_detail = SymptomsDetail.objects.filter(
             symptoms_id=symptoms_id, appointment_id=appointment_id).first()
         serializer = SymptomsDetailSerializer(
             symptom_detail, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response({"success": "symptoms details saved successfully"}, status = status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-   
+
     def put(self, request, *args, **kwargs):
         symptoms_id = request.data.get("symptoms_id")
         appointment_id = request.data.get("appointment_id")
         symptoms_name = request.data.get("symptoms_name")
- 
+
         if not symptoms_id:
             return Response({"error": "symptoms_id is required."}, status=status.HTTP_400_BAD_REQUEST)
- 
+
         if not appointment_id:
             return Response({"error": "appointment_id is required."}, status=status.HTTP_400_BAD_REQUEST)
- 
+
         try:
             symptom_detail = SymptomsDetail.objects.get(
                 id=symptoms_id, appointment_id=appointment_id)
- 
+
             if symptoms_name:
                 symptom = symptom_detail.symptoms
                 symptom.symptoms_name = symptoms_name
                 symptom.save()
- 
+
             serializer = SymptomsDetailSerializer(
                 symptom_detail, data=request.data, partial=True)
             if serializer.is_valid():
                 serializer.save()
                 response_data = serializer.data
                 response_data['symptoms_name'] = symptom.symptoms_name
-                return Response(response_data, status=status.HTTP_200_OK)
+                return Response({"success": "symptoms details update successfully"}, status = status.HTTP_201_CREATED )
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
- 
+
         except SymptomsDetail.DoesNotExist:
             return Response({"error": "SymptomsDetail not found."}, status=status.HTTP_404_NOT_FOUND)
- 
+
 
     def delete(self, request, *args, **kwargs):
         symptoms_id = request.data.get("symptoms_id")
         appointment_id = request.data.get("appointment_id")
- 
+
         if not appointment_id:
             return Response({"error": "appointment_id is required."}, status=status.HTTP_400_BAD_REQUEST)
- 
+
         try:
             symptoms_details = SymptomsDetail.objects.filter(symptoms_id=symptoms_id,
                 appointment_id=appointment_id)
             if not symptoms_details.exists():
                 return Response({"error": "SymptomsDetail not found."}, status=status.HTTP_404_NOT_FOUND)
- 
-   
+
+
             symptoms_details.delete()
             return Response({"success": "SymptomsDetail deleted successfully."}, status=status.HTTP_200_OK)
         except Exception as e:

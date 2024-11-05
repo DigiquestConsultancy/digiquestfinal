@@ -27,3 +27,5 @@ def notify_if_clinic_register(sender, instance, created, **kwargs):
             print("Whatsapp message sent successfully!")
         else:
             print("Failed to send Whatsapp message.")
+            
+            

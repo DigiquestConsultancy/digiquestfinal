@@ -1,7 +1,7 @@
 from django.db import models
 
 class SubdoctorRegister(models.Model):
-    mobile_number=models.IntegerField()
+    mobile_number=models.CharField(max_length=15)
     is_doctor=models.BooleanField(default=False, null=True, blank=True)
     doctor=models.ForeignKey("doctor.DoctorRegister", on_delete=models.CASCADE)
 
