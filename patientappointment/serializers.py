@@ -17,7 +17,7 @@ class PatientSlotSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Appointmentslots
-        fields = ['id', 'appointment_date', 'appointment_slot', 'is_booked', 'booked_by','doctor_name','doctor_specialization']
+        fields = ['id', 'appointment_date', 'appointment_slot', 'is_booked', 'booked_by','doctor_name','doctor_specialization','is_canceled','is_complete']
         
         
 class MyAppointmentSerializer(serializers.ModelSerializer):

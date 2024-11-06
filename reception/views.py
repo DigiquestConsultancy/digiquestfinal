@@ -57,7 +57,7 @@ class ReceptionRegisters(APIView):
             print(otp)
             info_reception.info("OTP generated for mobile number %s: %s", mobile_number, otp)
             cache.set(mobile_number, otp, timeout=300)
-            return Response({"success": "OTP generated successfully", "otp": otp}, status=status.HTTP_200_OK)
+            return Response({"success": "OTP generated successfully"}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 

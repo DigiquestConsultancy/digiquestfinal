@@ -843,6 +843,7 @@ class PatientPrescriptionApi(APIView):
     #         except Exception as e:
     #             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+
     # def put(self, request, format=None):
     #     try:
     #         patient_id = request.data.get('patient_id')

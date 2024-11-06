@@ -422,6 +422,9 @@ class ForgetPassword(APIView):
 
             if new_password != confirm_password:
                 return Response({"error": "Passwords do not match"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            if len(new_password) < 8:
+                return Response({"error": "Password must be at least 8 characters long"}, status=status.HTTP_400_BAD_REQUEST)
 
             user = None
             user_type = None
@@ -462,6 +465,7 @@ class ForgetPassword(APIView):
         except Exception as e:
             error_message = f"Internal Server Error: {str(e)}"
             return Response({"error": error_message}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
 
 

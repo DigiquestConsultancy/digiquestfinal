@@ -194,3 +194,12 @@
 2024-11-04 07:33:58,219 - error_clinic - ERROR - 92 - Mobile number 6392535512 is not registered or OTP session expired. Resend OTP.
 2024-11-04 07:43:25,451 - error_clinic - ERROR - 161 - Invalid data: {'age': [ErrorDetail(string='A valid integer is required.', code='invalid')]}
 2024-11-04 07:57:13,212 - error_clinic - ERROR - 148 - User details already exist for 6392535512 mobile number
+2024-11-05 05:57:31,448 - error_clinic - ERROR - 148 - User details already exist for 9580260516 mobile number
+2024-11-05 09:36:55,454 - error_clinic - ERROR - 42 - Mobile number is already registered: 9580260516
+2024-11-06 09:31:56,139 - error_clinic - ERROR - 38 - Please enter a 10-digit number.
+2024-11-06 09:32:40,243 - error_clinic - ERROR - 38 - Please enter a 10-digit number.
+2024-11-06 09:34:53,494 - error_clinic - ERROR - 74 - Mobile number, doctor_id, and OTP are required.
+2024-11-06 09:35:37,760 - error_clinic - ERROR - 74 - Mobile number, doctor_id, and OTP are required.
+2024-11-06 09:37:42,776 - error_clinic - ERROR - 74 - Mobile number, doctor_id, and OTP are required.
+2024-11-06 09:40:20,769 - error_clinic - ERROR - 74 - Mobile number, doctor_id, and OTP are required.
+2024-11-06 10:00:29,907 - error_clinic - ERROR - 97 - Incorrect OTP. Please try again.

@@ -18,3 +18,4 @@
 2024-09-19 13:15:57,536 - error_reception - ERROR - 33 - Mobile number is required
 2024-09-20 07:18:04,380 - error_reception - ERROR - 33 - Mobile number is required
 2024-09-20 09:46:33,997 - error_reception - ERROR - 87 - Mobile number 9935266755 is not registered or OTP session expired. Resend OTP.
+2024-11-06 10:12:10,280 - error_reception - ERROR - 72 - Mobile number, doctor_id, and OTP are required.

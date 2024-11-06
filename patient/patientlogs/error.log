@@ -89,3 +89,18 @@ ValueError: Cannot query "PatientRegister object (19)": Must be "PatientVarryDet
 2024-11-04 11:03:06,529 - error_patient - ERROR - 803 - Error occurred in get request: Cannot resolve keyword 'patient_id' into field. Choices are: appointment, appointment_id, comment, description, id, medicine_name, time
 2024-11-04 11:11:54,829 - error_patient - ERROR - 801 - Error occurred in get request: PatientVarryDetails matching query does not exist.
 2024-11-04 12:21:31,250 - error_patient - ERROR - 801 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-05 12:53:57,633 - error_patient - ERROR - 109 - Weak password: asdsaf
+2024-11-05 13:12:41,385 - error_patient - ERROR - 279 - Incorrect OTP entered for mobile number: 9625393987
+2024-11-06 07:02:29,944 - error_patient - ERROR - 419 - Patient details not found for mobile number 7518868219
+2024-11-06 07:02:49,499 - error_patient - ERROR - 419 - Patient details not found for mobile number 7518868219
+2024-11-06 08:04:44,880 - error_patient - ERROR - 419 - Patient details not found for mobile number 7518868219
+2024-11-06 12:36:42,222 - error_patient - ERROR - 800 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-06 12:37:01,573 - error_patient - ERROR - 800 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-06 12:37:06,403 - error_patient - ERROR - 800 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-06 12:37:10,101 - error_patient - ERROR - 800 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-06 12:37:13,780 - error_patient - ERROR - 800 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-06 12:37:19,418 - error_patient - ERROR - 800 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-06 12:37:41,001 - error_patient - ERROR - 800 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-06 12:49:46,899 - error_patient - ERROR - 800 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-06 12:49:51,198 - error_patient - ERROR - 800 - Error occurred in get request: PatientVarryDetails matching query does not exist.
+2024-11-06 12:53:31,951 - error_patient - ERROR - 800 - Error occurred in get request: PatientVarryDetails matching query does not exist.

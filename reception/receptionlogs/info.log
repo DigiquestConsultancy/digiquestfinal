@@ -290,3 +290,12 @@
 2024-11-04 09:26:32,302 - info_reception - INFO - 58 - OTP generated for mobile number 6392535512: 952837
 2024-11-04 09:28:08,073 - info_reception - INFO - 49 - Mobile number: 6392535512
 2024-11-04 09:28:08,544 - info_reception - INFO - 58 - OTP generated for mobile number 6392535512: 288570
+2024-11-06 10:12:01,139 - info_reception - INFO - 49 - Mobile number: 9580260516
+2024-11-06 10:12:01,647 - info_reception - INFO - 58 - OTP generated for mobile number 9580260516: 448598
+2024-11-06 12:58:22,782 - info_reception - INFO - 49 - Mobile number: 6392535512
+2024-11-06 12:58:23,205 - info_reception - INFO - 58 - OTP generated for mobile number 6392535512: 118606
+2024-11-06 13:06:39,558 - info_reception - INFO - 49 - Mobile number: 6392535512
+2024-11-06 13:06:40,000 - info_reception - INFO - 58 - OTP generated for mobile number 6392535512: 621799
+2024-11-06 13:08:36,782 - info_reception - INFO - 49 - Mobile number: 6392535512
+2024-11-06 13:08:37,339 - info_reception - INFO - 58 - OTP generated for mobile number 6392535512: 798252
+2024-11-06 13:08:51,708 - info_reception - INFO - 104 - User with mobile number 6392535512 successfully registered.

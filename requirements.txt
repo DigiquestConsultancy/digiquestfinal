@@ -18,12 +18,10 @@ click-didyoumean==0.3.1
 click-plugins==1.1.1
 click-repl==0.3.0
 colorama==0.4.6
-cryptography==42.0.7
 dj-database-url==2.2.0
 Django==4.2.16
 django-celery-results==2.5.1
 django-cors-headers==4.3.1
-django-heroku==0.3.1
 djangorestframework==3.15.1
 djangorestframework-simplejwt==5.3.1
 everapi==0.1.1
@@ -49,9 +47,9 @@ markdown-it-py==3.0.0
 maxminddb==2.6.1
 mdurl==0.1.2
 multidict==6.0.5
+mysqlclient==2.2.5
 oauthlib==3.2.2
 packaging==24.0
-pillow==10.4.0
 pluggy==1.5.0
 prompt-toolkit==3.0.48
 proto-plus==1.24.0
@@ -79,7 +77,6 @@ six==1.16.0
 sortedcontainers==2.4.0
 sqlparse==0.5.0
 tomli==2.0.1
-twilio==9.0.5
 typing-extensions==4.12.2
 tzdata==2024.1
 uritemplate==4.1.1

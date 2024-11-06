@@ -1445,3 +1445,27 @@
 2024-11-04 10:56:19,782 - info_patient - INFO - 972 - Prescription updated successfully
 2024-11-04 11:04:39,949 - info_patient - INFO - 970 - Prescription updated successfully
 2024-11-04 12:17:23,418 - info_patient - INFO - 285 - Login successful for mobile number: 6392535512
+2024-11-05 06:12:56,608 - info_patient - INFO - 1143 - Patient record created successfully
+2024-11-05 06:13:01,702 - info_patient - INFO - 1188 - Patient record updated successfully
+2024-11-05 06:16:35,649 - info_patient - INFO - 969 - Prescription updated successfully
+2024-11-05 06:45:00,030 - info_patient - INFO - 285 - Login successful for mobile number: 9580260516
+2024-11-05 07:12:52,705 - info_patient - INFO - 969 - Prescription updated successfully
+2024-11-05 07:12:59,698 - info_patient - INFO - 969 - Prescription updated successfully
+2024-11-05 07:13:29,800 - info_patient - INFO - 969 - Prescription updated successfully
+2024-11-05 07:13:45,369 - info_patient - INFO - 1188 - Patient record updated successfully
+2024-11-05 07:13:58,770 - info_patient - INFO - 969 - Prescription updated successfully
+2024-11-05 12:24:33,909 - info_patient - INFO - 285 - Login successful for mobile number: 9565699510
+2024-11-05 12:54:09,926 - info_patient - INFO - 123 - OTP generated for mobile number 9625393987: 388784
+2024-11-05 12:55:13,043 - info_patient - INFO - 123 - OTP generated for mobile number 9625393987: 930002
+2024-11-05 12:56:14,033 - info_patient - INFO - 123 - OTP generated for mobile number 9625393987: 067661
+2024-11-05 12:57:00,088 - info_patient - INFO - 155 - Patient registered successfully with mobile number: 9625393987
+2024-11-05 13:13:18,923 - info_patient - INFO - 285 - Login successful for mobile number: 9625393987
+2024-11-06 05:22:11,967 - info_patient - INFO - 285 - Login successful for mobile number: 6388793340
+2024-11-06 06:59:34,654 - info_patient - INFO - 285 - Login successful for mobile number: 7518868219
+2024-11-06 07:25:37,435 - info_patient - INFO - 285 - Login successful for mobile number: 7518868219
+2024-11-06 09:53:09,376 - info_patient - INFO - 285 - Login successful for mobile number: 7518868219
+2024-11-06 10:53:02,020 - info_patient - INFO - 285 - Login successful for mobile number: 6388793340
+2024-11-06 11:45:27,107 - info_patient - INFO - 285 - Login successful for mobile number: 7518868219
+2024-11-06 12:06:12,864 - info_patient - INFO - 285 - Login successful for mobile number: 6388793340
+2024-11-06 12:15:28,392 - info_patient - INFO - 285 - Login successful for mobile number: 7518868219
+2024-11-06 12:53:34,874 - info_patient - INFO - 285 - Login successful for mobile number: 7518868219
